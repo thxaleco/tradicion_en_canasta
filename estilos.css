@@ -1,0 +1,150 @@
+/* ── Variables ── */
+:root {
+  --amber:        #D4831A;
+  --green:        #5A7A2E;
+  --cream:        #F5EFE0;
+  --brown:        #4A2315;
+  --text:         #2E1A0E;
+  --font-display: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  --font-body:    'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Body ── */
+body {
+  background-color: var(--cream);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem;
+}
+
+/* ── Arco decorativo superior ── */
+.arch-top {
+  width: min(820px);
+  height: 14px;
+  background: var(--brown);
+  border-radius: 0 0 120px 120px;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Tarjeta principal ── */
+.card {
+  background: var(--green);
+  border-radius: 2rem 2rem 1rem 1rem;
+  padding: 2.5rem;
+  width: min(880px);
+  min-height: 500px;
+  text-align: center;
+  line-height: 1.6;
+
+
+  display: grid;            
+  justify-content: center;    
+  align-items: center;       
+
+  position: relative;
+  box-shadow: 0 8px 32px rgba(74, 35, 21, .18);
+}
+
+/* Etiqueta píldora ámbar */
+.card__label {
+  display: inline-block;
+  background: var(--amber);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .35rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.4rem;
+}
+
+/* Título principal */
+.card__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 8vw, 2.8rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.4;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+/* Separador */
+.card__divider {
+  width: 448px;
+  height: 3px;
+  background: var(--amber);
+  border-radius: 2px;
+  margin: 0 auto 1.2rem;
+}
+
+/* Subtítulo — editable en el HTML */
+.card__subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, .88);
+  line-height: 1.55;
+  max-width: 34ch;
+  margin: 0 auto 2rem;
+}
+
+/* Puntos de progreso */
+.card__dots {
+  display: flex;
+  justify-content: center;
+  gap: .55rem;
+}
+
+.card__dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .35);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+.card__dots span:nth-child(2) { animation-delay: .25s; }
+.card__dots span:nth-child(3) { animation-delay: .5s; }
+
+@keyframes pulse {
+  0%, 100% { opacity: .35; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.25); }
+}
+
+/* ── Arco decorativo inferior ── */
+.arch-bottom {
+  width: min(820px);
+  height: 14px;
+  background: var(--brown);
+  border-radius: 120px 120px 0 0;
+  margin-top: 2.5rem;
+}
+
+/* ── Pie de página ── */
+.footer-note {
+  margin-top: 2.2rem;
+  font-size: .78rem;
+  color: var(--brown);
+  opacity: .65;
+  font-family: var(--font-body);
+  text-align: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 400px) {
+  .card { padding: 2rem 1.25rem 1.75rem; }
+}
