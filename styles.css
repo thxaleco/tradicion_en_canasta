@@ -31,7 +31,7 @@ body {
 
 /* ── Arco decorativo superior ── */
 .arch-top {
-  width: min(820px);
+  width: min(420px, 92vw);
   height: 14px;
   background: var(--brown);
   border-radius: 0 0 120px 120px;
@@ -42,17 +42,9 @@ body {
 .card {
   background: var(--green);
   border-radius: 2rem 2rem 1rem 1rem;
-  padding: 2.5rem;
-  width: min(880px);
-  min-height: 500px;
+  padding: 2.5rem 2rem 2rem;
+  width: min(480px, 92vw);
   text-align: center;
-  line-height: 1.6;
-
-
-  display: grid;            
-  justify-content: center;    
-  align-items: center;       
-
   position: relative;
   box-shadow: 0 8px 32px rgba(74, 35, 21, .18);
 }
@@ -78,14 +70,14 @@ body {
   font-size: clamp(2rem, 8vw, 2.8rem);
   font-weight: 900;
   color: #fff;
-  line-height: 1.4;
+  line-height: 1.08;
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
 /* Separador */
 .card__divider {
-  width: 448px;
+  width: 48px;
   height: 3px;
   background: var(--amber);
   border-radius: 2px;
@@ -127,7 +119,7 @@ body {
 
 /* ── Arco decorativo inferior ── */
 .arch-bottom {
-  width: min(820px);
+  width: min(420px, 92vw);
   height: 14px;
   background: var(--brown);
   border-radius: 120px 120px 0 0;
