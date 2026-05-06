@@ -1,42 +1,134 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Tradición en canasta</title>
-    <meta name="description" content="Proyecto interactivo sobre Mercasa como sistema cultural de alimentos, saberes y relaciones">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tradición en Canasta</title>
+  <link rel="stylesheet" href="styles.css">
 
-</body>
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+    <header class="hero">
+        <div class="hero__logo" id="logo">
+            <a href="#inicio" class="inicio"></a>
+            <img class="logo__img" src="IMG/logo_tc.png" alt="Logo tradición"/>
+        </div>
 
-  <!-- Arco superior -->
-  <div class="arch-top" aria-hidden="true"></div>
+        <div class="hero__blob">
 
-  <!-- Tarjeta principal -->
-  <main class="card" role="main">
-    <span class="card__label">Próximamente</span>
+        <div class="hero__content">
+            <h1 class="hero__titulo">
+            Tradición<br>
+            en Canasta
+            </h1>
+            <p class="hero__subtitulo">
+            Donde lo cotidiano conecta el campo con la vida en el barrio
+            </p>
+        </div>
+        </div>
 
-    <h1 class="card__title">Sitio web en<br>construcción</h1>
 
-    <div class="card__divider" aria-hidden="true"></div>
+        <nav class="hero__canastas" aria-label="Secciones">
 
-    <!-- ✏️ Edita el subtítulo aquí -->
-    <p class="card__subtitle">
-      Estamos preparando algo especial.<br>Vuelve pronto.
-    </p>
+        <a href="#tienda" class="canasta" id="canasta__tienda">
+            <img class="canasta__img" src="IMG/canasta-amarilla.png" alt="La tienda"/>
+        </a>
 
-    <div class="card__dots" aria-label="Cargando">
-      <span></span><span></span><span></span>
+        <a href="#recorridos" class="canasta" id="canasta__recorridos">
+            <img class="canasta__img" src="IMG/canasta-marron.png" alt="Recorridos"/>
+        </a>
+
+        <a href="#relatos" class="canasta" id="canasta__relatos">
+            <img class="canasta__img" src="IMG/canasta-vino.png" alt="Relatos"/>
+        </a>
+
+        <a href="#canasta" class="canasta" id="canasta__canasta">
+            <img class="canasta__img" src="IMG/canasta-verde.png"
+            alt="La canasta">
+        </a>
+
+        </nav>
+
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <img src="IMG/canasta_menu.png" alt="Menú">
+        </button>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════
+       UNA MIRADA A LA VIDA EN EL BARRIO
+  ═══════════════════════════════════════════ -->
+  <section class="mirada" id="tienda">
+    <h2 class="mirada__titulo">Una mirada a la<br>vida en el barrio</h2>
+
+    <div class="mirada__flex">
+      <div class="mirada__foto">
+        <img src="IMG/foto_fruta1.JPG" alt="Tienda del barrio"/>
+      </div>
+
+      <div class="mirada__derecha">
+        <div class="mirada__caja">
+          <p>Entre estantes llenos, conversaciones breves y manos que eligen, la vida del barrio se mueve todos los días. Cada tienda es más que un punto de compra: es un lugar donde circulan historias, confianza y saberes cotidianos.</p>
+          <p>En Dosquebradas, el día empieza antes de que salga el sol. Las tiendas se llenan poco a poco de colores, olores y voces. Aquí no solo circulan alimentos, también pasan historias, relaciones y formas de vivir.</p>
+          <p>Cada producto trae consigo un recorrido, y cada tienda es un punto de encuentro donde lo cotidiano cobra sentido.</p>
+        </div>
+        <a href="#" class="btn-capsula">Recorre el barrio</a>
+      </div>
     </div>
-  </main>
+  </section>
 
-  <!-- Arco inferior -->
-  <div class="arch-bottom" aria-hidden="true"></div>
+  <section class="narrativa" id="proyecto">
 
-  <p class="footer-note">© 2026 · Tradición en Canasta</p>
+    <img class="hoja hoja--izq-arriba" src=>
+
+    <div class="narrativa__flex">
+      <div class="narrativa__circulo">
+        <img src="IMG/foto_cliente.JPG" alt="Persona recolectando vegetales"/>
+      </div>
+      <div class="narrativa__caja">
+        <p>Este proyecto se construye desde las voces del barrio
+        desde quienes abren <br> la tienda cada día
+        y quienes la hacen parte de su rutina.<br>
+        Aquí, lo cotidiano también cuenta historia.</p>
+      </div>
+    </div>
+
+  </section>
+  <!-- ═══════════════════════════════════════════
+       MOMENTOS DEL BARRIO
+  ═══════════════════════════════════════════ -->
+  <section class="momentos" id="encuentros">
+    <div class="momentos__marco">
+      <h2 class="momentos__titulo">Momentos<br>del barrio</h2>
+
+      <div class="momentos__flex">
+
+        <div class="momento">
+          <span class="momento__label">Entre saludos y risas</span>
+          <div class="momento__foto">
+            <img src="IMG/foto_plaza.JPG" alt="Entre saludos y risas"/>
+          </div>
+        </div>
+
+        <div class="momento">
+          <span class="momento__label">Manos que eligen</span>
+          <div class="momento__foto">
+            <img src="IMG/foto_cliente.JPG" alt="Manos que eligen"/>
+          </div>
+        </div>
+
+        <div class="momento">
+          <span class="momento__label">De la tienda a la casa</span>
+          <div class="momento__foto">
+            <img src="IMG/foto_fruta2.JPG" alt="De la tienda a la casa"/>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
 
 </body>
 </html>
-
