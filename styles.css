@@ -75,12 +75,12 @@ a   { text-decoration: none; }
 
 .hero__blob {
   width: 85%;
-  height: 80%;
+  height: 85%;
   justify-self: start;
   margin-left: 100px;
   z-index: 0;
 
-  border-radius: 20px 200px 50px 20px;
+  border-radius: 20px 200px 20px 20px;
   background-color: var(--color-caja-amarillo);
   
 }
@@ -194,12 +194,11 @@ a   { text-decoration: none; }
 ══════════════════════════════════════════════════════ */
 .mirada {
   background-color: var(--color-caja-verde);
-  overflow: hidden;
-
+  position: relative;
+  top: -125px;
   border-radius: 50px 50px 50px 300px;
   margin: 44px;
-  margin-top: -70px;
-  z-index: 6;
+  z-index: 3;
 }
 
 .mirada__titulo {
@@ -271,7 +270,7 @@ a   { text-decoration: none; }
   background-color: var(--color-boton-secundario);
   color: var(--color-titulo-principal);
   font-family: var(--fuente-titulos);
-  font-size: clamp(1.05rem, 1.75vw, 1.22rem);
+  font-size: clamp(1.55rem, 2.25vw, 1.72rem);
   font-weight: 700;
   letter-spacing: 0.6px;
   text-transform: uppercase;
@@ -280,8 +279,11 @@ a   { text-decoration: none; }
   border: none;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.18s;
+  overflow: visible;
   margin-bottom: 30px;
-  
+  position: relative;
+  top: 80px;
+  left: -50px;
 }
 .btn-capsula:hover {
   background-color: var(--color-boton-hover-secundario);
