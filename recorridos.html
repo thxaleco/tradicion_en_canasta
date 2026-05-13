@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recorrido del Barrio · Tradición en Canasta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+ <header>
+  <div class="logo" id="logo">
+      <a href="index.html" class="inicio">
+      <img class="logo__img" src="IMG/logo_tc.png" alt="Logo tradición"/>
+      </a>
+  </div>
+  <button class="navbar__hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+  
+  <nav class="hero__canastas" aria-label="Secciones">
+
+    <a href="#tienda" class="canasta" id="canasta__tienda">
+         <img class="canasta__img" src="IMG/canasta-amarilla.png" alt="La tienda"/>
+    </a>
+
+    <a href="recorridos.html" class="canasta" id="canasta__recorridos">
+        <img class="canasta__img" src="IMG/canasta-marron.png" alt="Recorridos"/>
+    </a>
+
+    <a href="relatos.html" class="canasta" id="canasta__relatos">
+         <img class="canasta__img" src="IMG/canasta-vino.png" alt="Relatos"/>
+    </a>
+
+    <a href="canasta.html" class="canasta" id="canasta__canasta">
+        <img class="canasta__img" src="IMG/canasta-verde.png"
+            alt="La canasta">
+    </a>
+
+  </nav>
+
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <img src="IMG/canasta_menu.png" alt="Menú">
+        </button>
+
+  <div class="recorrido-header">
+    <div class="recorrido-header__inner">
+      
+      <div class="recorrido-header__text">
+        <h1 class="recorrido-header__title">
+          RECORRIDO <br> DEL BARRIO
+        </h1>
+
+        <p class="recorrido-header__subtitle">
+          Donde los caminos se encuentran
+        </p>
+      </div>
+
+    </div>
+  </div>
+  </header>
+
+<!-- INTRO -->
+<section class="section-recorrido-intro">
+  <div class="recorrido-intro__caja">
+    <p>Las tiendas no solo son un punto de llegada. Son un lugar desde donde comienzan múltiples recorridos que se extienden por el barrio. Cada tienda es parte de ese movimiento cotidiano donde los alimentos, las personas y las historias se encuentran.</p>
+    <p>Aquí encontrarás los puntos de aquellos tenderos que nos comparten su historia y dedican su día a las ventas.</p>
+  </div>
+</section>
+
+<!-- MAPA -->
+<section class="mapa-section fade-up">
+
+  <div class="mapa-section__header">
+
+    <h2 class="mapa-section__label">MAPA</h2>
+
+    <div class="mapa-section-caja">
+      <p class="mapa-section-texto">
+        Explora el mapa y entra en cada tienda.
+        Detrás de cada ubicación hay relaciones,
+        elecciones y momentos que se repiten todos los días,
+        pero que rara vez se miran con atención.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<div class="mapa-section__frame-wrap">
+    <!-- Hojas decorativas -->
+    <img src="img/hoja1.png" alt="" class="mapa-deco mapa-deco--tl" aria-hidden="true" onerror="this.style.display='none'">
+    <img src="img/hoja2.png" alt="" class="mapa-deco mapa-deco--br" aria-hidden="true" onerror="this.style.display='none'">
+ 
+    <div class="mapa-section__frame">
+      <!-- Iframe con Google Maps de Dosquebradas -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3155.8!2d-75.6981!3d4.8378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e388b6e6b6b6b6b%3A0x0!2sDosquebradas%2C+Risaralda!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco"
+        width="100%"
+        height="100%"
+        style="border:0; border-radius: 20px;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Mapa del barrio en Dosquebradas">
+      </iframe>
+    </div>
+ 
+    <a href="#tiendas" class="mapa-section__cta btn btn--primary">CONÓCELOS</a>
+  </div>
+</section>
+
+<!-- TARJETAS DE TIENDAS -->
+<section class="section tiendas-grid fade-up" id="tiendas">
+  <div class="tiendas-grid__inner">
+
+    <article class="tienda-card">
+      <div class="tienda-card__img">
+        <img src="IMG/tienda_barco_reja.jpg" alt="Tienda 1" onerror="this.parentElement.classList.add('img-placeholder'); this.style.display='none'">
+      </div>
+      <div class="tienda-card__body">
+        <h3 class="tienda-card__nombre">Distritodo</h3>
+        <p class="tienda-card__dir">Calle 42 # 8a-15, Playa Rica</p>
+        <p class="tienda-card__texto">"Barco" es a quien pertenece la tienda que lleva más de 20 años siendo punto de encuentro en el barrio.</p>
+        <a href="#" class="btn btn--secondary" style="margin-top:12px; font-size:0.65rem; padding:8px 18px;">Ver relato</a>
+      </div>
+    </article>
+
+    <article class="tienda-card">
+      <div class="tienda-card__img">
+        <img src="IMG/general_nat_1.jpg" alt="Tienda 2" onerror="this.parentElement.classList.add('img-placeholder'); this.style.display='none'">
+      </div>
+      <div class="tienda-card__body">
+        <h3 class="tienda-card__nombre">Fruver</h3>
+        <p class="tienda-card__dir">Carrera 10 # 43-08</p>
+        <p class="tienda-card__texto">Aquí la confianza genera conexiones con las personas del sector, siempre ofreciendo la mejor calidad y servicio.</p>
+        <a href="#" class="btn btn--secondary" style="margin-top:12px; font-size:0.65rem; padding:8px 18px;">Ver relato</a>
+      </div>
+    </article>
+
+    <article class="tienda-card">
+      <div class="tienda-card__img">
+        <img src="IMG/estante_al_3.jpg" alt="Tienda 3" onerror="this.parentElement.classList.add('img-placeholder'); this.style.display='none'">
+      </div>
+      <div class="tienda-card__body">
+        <h3 class="tienda-card__nombre">Tienda La 36</h3>
+        <p class="tienda-card__dir">Diagonal 42 # 10A-22</p>
+        <p class="tienda-card__texto">Cada producto viene del campo con su historia, Don Albeiro lleva años con la tienda.</p>
+        <a href="#" class="btn btn--secondary" style="margin-top:12px; font-size:0.65rem; padding:8px 18px;">Ver relato</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">Tradición en Canasta</div>
+    <div class="footer__grid">
+      <div>
+        <p class="footer__credits">Proyecto desarrollado por Alejandra Maria Correa y Sofía Moncada<br>Universidad Cooperativa de Colombia, Pereira<br>Diseño Crossmedia · 2026</p>
+      </div>
+      <div>
+        <p class="footer__col-title">Explorar</p>
+        <ul class="footer__col-links">
+          <li><a href="index.html">La tienda</a></li>
+          <li><a href="recorrido.html">Recorrido</a></li>
+          <li><a href="relatos.html">Relatos</a></li>
+          <li><a href="canasta.html">La canasta</a></li>
+        </ul>
+      </div>
+      <div class="footer__social">
+        <a href="https://instagram.com/tradicion_en_canasta" class="footer__social-link" target="_blank">
+          <svg class="footer__social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          tradición_en_canasta
+        </a>
+        <a href="https://youtube.com" class="footer__social-link" target="_blank">
+          <svg class="footer__social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7s-.3-2-1.2-2.7c-1.1-1.2-2.4-1.2-3-1.3C16.2 3 12 3 12 3s-4.2 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.3v2c0 2.1.3 4.3.3 4.3s.3 2 1.2 2.7c1.1 1.2 2.6 1.1 3.3 1.2C7.3 21.7 12 21.7 12 21.7s4.2 0 6.8-.2c.6-.1 1.9-.1 3-1.2.9-.7 1.2-2.7 1.2-2.7s.3-2.1.3-4.3v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg>
+          Tradición en Canasta
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/global.js"></script>
+</body>
+</html>
