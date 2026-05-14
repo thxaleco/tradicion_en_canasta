@@ -40,11 +40,9 @@ body {
   color: var(--color-texto-principal);
   overflow-x: hidden;
 }
-
-img { display: block; max-width: 100%; }
-a   { text-decoration: none; }
-
-
+ a{
+    text-decoration: none;
+ }
 /* ══════════════════════════════════════════════════════
    HERO
 ══════════════════════════════════════════════════════ */
@@ -62,8 +60,9 @@ a   { text-decoration: none; }
   position: absolute;
   top: 0;
   left: 40px;
-  width: 110px;
-  height: 110px;
+  width: 130px;
+  height: 130px;
+  padding: 5px;
   background: var(--color-caja-marron);
   border-radius: 0 0 50% 50%;
   display: flex;
@@ -79,10 +78,10 @@ a   { text-decoration: none; }
 .logo img:hover { transform: scale(1.06) translateY(-4px); }
 
 .hero__blob {
-  width: 85%;
+  width: 75%;
   height: 85%;
   justify-self: start;
-  margin-left: 100px;
+  margin-left: 150px;
   z-index: 0;
 
   border-radius: 20px 200px 20px 20px;
@@ -140,7 +139,6 @@ a   { text-decoration: none; }
 }
 .canasta:hover { transform: scale(1.06) translateY(-4px); }
 
-/* La tienda */
 #canasta__tienda {
   grid-column: 1;
   grid-row: 1;
@@ -148,7 +146,7 @@ a   { text-decoration: none; }
   margin-right: -10px;
   z-index: 4;
 }
-/* Memorias/Recorridos */
+
 #canasta__recorridos {
   grid-column: 2;
   grid-row: 1;
@@ -156,7 +154,7 @@ a   { text-decoration: none; }
   margin-left: -16px;
   z-index: 3;
 }
-/* Relatos */
+
 #canasta__relatos {
   grid-column: 1;
   grid-row: 2;
@@ -164,7 +162,7 @@ a   { text-decoration: none; }
   margin-right: -16px;
   z-index: 2;
 }
-/* Encuentros/Canasta */
+
 #canasta__canasta {
   grid-column: 2;
   grid-row: 2;
@@ -476,14 +474,12 @@ a   { text-decoration: none; }
   padding: 40px 0;
 }
 
-/* COLUMNA IZQUIERDA */
 .tiendas__info{
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
-/* BLOQUE VINO */
 .tiendas__bloque__vino{
   background-color: var(--color-caja-vino);
   border-radius: 0 90px 90px 0;
@@ -494,7 +490,6 @@ a   { text-decoration: none; }
   justify-content: center;
 }
 
-/* TEXTO */
 .tiendas__texto p{
   font-family: var(--fuente-textos);
   font-size: clamp(1rem, 1.5vw, 1.4rem);
@@ -502,7 +497,6 @@ a   { text-decoration: none; }
   text-align: center;
 }
 
-/* texto blanco arriba */
 .tiendas__bloque__vino p{
   color: var(--color-titulo-principal);
 }
@@ -695,7 +689,7 @@ INTERNAS
 .mapa-section__frame {
   width: 100%;
   height: 340px;
-  background: #d4c9a8;
+  background: var(--color-fondo-principal);
   border-radius: 24px;
   overflow: hidden;
   position: relative;
@@ -820,6 +814,382 @@ INTERNAS
     color: var(--color-texto-light);
 }
  
+/* ===== HEADER RELATOS ===== */
+.relatos-header {
+  width: 50%;
+  height: 330px;
+  justify-self: start;
+  margin-left: 200px;
+  z-index: 2;
+
+  border-radius: 40px;
+  background-color: var(--color-caja-verde);
+}
+
+.relatos-header__inner {
+  max-width: 900px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.relatos-header__title {
+  font-family: var(--fuente-titulos);
+  font-size: clamp(2rem, 8vw, 4rem);
+  font-weight: 900;
+  color: var(--color-titulo-principal);
+  line-height: 1;
+}
+
+.relatos-header__subtitle {
+  font-family: var(--fuente-textos);
+  font-size: 1.55rem;
+  color: var(--color-titulo-principal);
+  font-weight: 800;
+  margin-top: 8px;
+}
+
+
+.relatos-intro__caja {
+  background-color: var(--color-caja-vino);
+  border-radius: 0 40px 40px 0;
+  padding: 50px;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 980px;
+  text-align: center;
+  position: relative;
+
+  margin-top: -120px;
+  margin-left: 0;
+
+}
+
+.relatos-documental{
+  font-family: var(--fuente-titulos);
+  font-size: 1.55rem;
+  text-transform: uppercase;
+  color: var(--color-titulo-secundario);
+  background-color: var(--color-fondo-principal);
+  border-radius: 40px;
+  padding: 15px;
+  font-weight: 800;
+  position: absolute;
+  top: 200px;
+  left: 650px;
+  z-index: 5;
+  
+
+
+}
+ 
+.relatos-intro__caja p {
+  font-size: 1.2rem;
+  color: var(--color-titulo-principal);
+  line-height: 1.75;
+}
+
+@media (min-width: 768px) {
+  .relatos-header__inner {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+/* ===== RELATOS MAIN ===== */
+.relatos-main {
+  max-width: 900px;
+  margin: 40px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* =========================================
+   RELATO CARD
+========================================= */
+
+.relato-card{
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  margin-top: 120px;
+}
+
+ .relato-card--right {
+    grid-template-columns: ;
+  }
+.relato-card__img-wrap{
+  position: relative;
+  width: 500px;
+  height: 600px;
+  border-radius: 50px;
+  overflow: hidden;
+  background-color: var(--color-caja-vino);
+  padding-left: 25px;
+  padding-top: 25px;
+  z-index: 2;
+}
+
+.relato-card__img-wrap img{
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+.relato-card__content{
+  background-color: var(--color-fondo-principal);
+  border: 12px solid var(--color-caja-vino);
+  border-radius: 40px;
+  min-height: 350px;
+  min-width: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: absolute;
+  top: -80px;
+  left: 400px;
+  
+}
+
+.relato-card__cita{
+  font-family: var(--fuente-textos);
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--color-caja-marron);
+  text-align: center;
+  font-style: normal;
+  max-width: 430px;
+}
+
+.relato-card__nombre{
+  position: absolute;
+  top: 400px;
+  left: 170px;
+  background-color: var(--color-caja-verde);
+  color: var(--color-titulo-principal);
+  font-family: var(--fuente-titulos);
+  font-size: 4rem;
+  font-weight: 900;
+  padding: 20px 36px;
+  border-radius: 50px;
+}
+
+/* ===== HOJA BARCO ===== */
+
+.relato-card__decorativo{
+  position: absolute;
+
+  left: 500px;
+  top: -40px;
+
+  margin: 40px 0 40px 0;
+
+  max-width: 20px;
+  max-height: 120px;
+
+  z-index: 0;
+}
+ /* ===== HOJA ALBEIRO ===== */
+
+.relato-card--left:last-child .relato-card__hoja{
+  position: absolute;
+
+  right: -420px;
+  bottom: -180px;
+
+  width: 320px;
+
+  z-index: 0;
+
+  transform: rotate(-15deg);
+}
+
+.relato-card--left:last-child .relato-card__hoja img{
+  width: 100%;
+  display: block;
+}
+
+.relato-card--left:first-child .relato-card__hoja img{
+  width: 100%;
+  display: block;
+}
+
+/* =========================================
+   CARD NATALIA
+========================================= */
+
+.relato-card--right{
+  position: relative;
+  width: 100%;
+  min-height: 850px;
+  margin-top: 20px;
+}
+
+/* ===== FOTO ===== */
+
+.relato-card--right .relato-card__img-wrap{
+  position: absolute;
+  left: 800px;
+  top: 0;
+
+  position: relative;
+  width: 500px;
+  height: 600px;
+  border-radius: 50px;
+  overflow: hidden;
+  background-color: var(--color-caja-vino);
+  padding: 0 25px 25px 0;
+  z-index: 2;
+
+  
+}
+
+
+.relato-card--right .relato-card__img-wrap img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  border-radius: 40px;
+
+  display: block;
+}
+
+/* ===== CAJA BEIGE ===== */
+
+.relato-card--right .relato-card__content{
+  position: absolute;
+
+  left: 220px;
+  top: 430px;
+
+  background-color: var(--color-fondo-principal);
+  border: 12px solid var(--color-caja-vino);
+  border-radius: 40px;
+  min-height: 350px;
+  min-width: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: absolute;
+}
+
+/* ===== TEXTO ===== */
+
+.relato-card--right .relato-card__cita{
+  font-family: var(--fuente-textos);
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--color-caja-marron);
+  text-align: center;
+  font-style: normal;
+  max-width: 430px;
+}
+
+/* ===== TITULO ===== */
+
+.relato-card--right .relato-card__nombre{
+  position: absolute;
+
+  top: -240px;
+  left: 100px;
+
+  background-color: var(--color-caja-verde);
+  color: var(--color-titulo-principal);
+  font-family: var(--fuente-titulos);
+  font-size: 4rem;
+  font-weight: 900;
+  padding: 20px 36px;
+  border-radius: 50px;
+  z-index: 10;
+}
+
+/* ===== HOJA NATALIA ===== */
+
+.relato-card__hoja-bg{
+  position: absolute;
+
+  left: -400px;
+  top: 260px;
+
+  width: 820px;
+
+  z-index: 4;
+}
+
+.relato-card__hoja-bg img{
+  width: 100%;
+  display: block;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1200px){
+
+  .relato-card--right{
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .relato-card--right .relato-card__img-wrap{
+    position: relative;
+    right: auto;
+    top: auto;
+
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+
+    aspect-ratio: 3/4;
+
+    margin: 0 auto;
+  }
+
+  .relato-card--right .relato-card__content{
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    width: 100%;
+    height: auto;
+
+    padding: 120px 30px 60px;
+  }
+
+  .relato-card--right .relato-card__nombre{
+    top: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 20px 40px;
+
+    font-size: 2rem;
+
+    white-space: nowrap;
+  }
+
+  .relato-card__hoja-bg{
+    display: none;
+  }
+}
 /* ===== FOOTER ===== */
 .footer {
   background-color: var(--color-caja-verde-claro);
