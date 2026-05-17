@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Canasta · Tradición en Canasta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+
+<header>
+  <div class="logo" id="logo">
+            <a href="index.html" class="inicio">
+            <img class="logo-img" src="IMG/logo_tc.png" alt="logo tradición"/>
+            </a>
+        </div>
+
+  
+  <nav class="hero-canastas" aria-label="Secciones">
+
+        <a href="#tienda" class="canasta" id="canasta-tienda">
+            <img class="canasta-img" src="IMG/canasta-amarilla.png" alt="La tienda"/>
+        </a>
+
+        <a href="recorridos.html" class="canasta" id="canasta-recorridos">
+            <img class="canasta-img" src="IMG/canasta-marron.png" alt="Recorridos"/>
+        </a>
+
+        <a href="relatos.html" class="canasta" id="canasta-relatos">
+            <img class="canasta-img" src="IMG/canasta-vino.png" alt="Relatos"/>
+        </a>
+
+        <a href="canasta.html" class="canasta" id="canasta-canasta">
+            <img class="canasta-img" src="IMG/canasta-verde.png"
+            alt="La canasta">
+        </a>
+
+        </nav>
+
+    <div class="canasta-header">
+      <h1 class="canasta-header-titulo">LA CANASTA</h1>
+      <p class="canasta-header-subtitulo">Donde la comunidad se reúne y se une</p>
+    </div>
+</header>
+
+<!-- INTRO -->
+<section class="section canasta-intro fade-up">
+  <p class="canasta-intro-p">Las tiendas de barrio mantienen viva la conexión entre el campo y la ciudad. Son espacios de confianza, cercanía y memoria cotidiana, donde los alimentos llegan a las esquinas y hogares de la ciudad.
+“La Canasta” es un espacio para reconocer a quienes hacen parte de la vida del barrio. Aquí puedes inscribir y visibilizar a tu tienda de confianza, esa pequeña plaza que acompaña la rutina diaria de la comunidad.</p>
+</section>
+
+<!-- FORMULARIO - tipo ticket/recibo como en el mockup -->
+<section class="section canasta-form-section fade-up">
+  <div class="ticket">
+    <!-- Borde superior dentado -->
+    <div class="ticket-top-tear"></div>
+
+    <div class="ticket-body">
+      <h2 class="ticket-titulo">Del campo a la ciudad</h2>
+
+      <div id="form-success" class="form-success" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="40"><path d="M20 6L9 17l-5-5"/></svg>
+        <p>¡Gracias por compartir tu historia! Tu relato pasa a formar parte de esta canasta colectiva.</p>
+      </div>
+
+      <!-- PASO 1: Tu historia -->
+      <fieldset class="ticket-fieldset" id="paso-1">
+        <legend class="ticket-legend">Del campo a la ciudad</legend>
+        <div class="ticket-field">
+          <label class="ticket-label" for="nombre">¿Cómo te llamas?</label>
+          <input class="ticket__input" type="text" id="nombre" name="nombre" placeholder="Tu nombre o apodo..." autocomplete="off">
+        </div>
+        <div class="ticket-field">
+          <label class="ticket-label" for="barrio">¿En qué barrio vives?</label>
+          <input class="ticket-input" type="text" id="barrio" name="barrio" placeholder="Nombre del barrio..." autocomplete="off">
+        </div>
+        <div class="ticket-field">
+          <label class="ticket-label" for="tienda-favorita">¿Cuál es la tienda que más frecuentas?</label>
+          <input class="ticket-input" type="text" id="tienda-favorita" name="tienda-favorita" placeholder="Nombre de la tienda..." autocomplete="off">
+        </div>
+      </fieldset>
+
+      <div class="ticket-separador"></div>
+
+      <!-- PASO 2: Tu relato -->
+      <fieldset class="ticket-fieldset" id="paso-2">
+        <legend class="ticket-legend">Del campo a la ciudad</legend>
+
+        <div class="ticket-field">
+          <label class="ticket-label">¿Qué productos sueles comprar?</label>
+          <div class="ticket-check-group">
+            <label class="ticket-check-label">
+              <input type="checkbox" name="productos" value="frutas"> Frutas y verduras
+            </label>
+            <label class="ticket-check-label">
+              <input type="checkbox" name="productos" value="abarrotes"> Abarrotes
+            </label>
+            <label class="ticket-check-label">
+              <input type="checkbox" name="productos" value="carnicos"> Cárnicos
+            </label>
+            <label class="ticket-check-label">
+              <input type="checkbox" name="productos" value="lacteos"> Lácteos
+            </label>
+            <label class="ticket-check-label">
+              <input type="checkbox" name="productos" value="snacks"> Snacks y bebidas
+            </label>
+            <label class="ticket-check-label">
+              <input type="checkbox" name="productos" value="aseo"> Aseo del hogar
+            </label>
+          </div>
+        </div>
+
+        <div class="ticket-field">
+          <label class="ticket-label" for="frecuencia">¿Con qué frecuencia vas a la tienda?</label>
+          <div class="ticket-select-wrap">
+            <select class="ticket-select" id="frecuencia" name="frecuencia">
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="diario">Todos los días</option>
+              <option value="varias">Varias veces a la semana</option>
+              <option value="semanal">Una vez a la semana</option>
+              <option value="ocasional">Ocasionalmente</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="ticket-field">
+          <label class="ticket-label" for="memoria">Cuéntanos un recuerdo o historia que tengas con tu tienda de barrio</label>
+          <textarea class="ticket-textarea" id="memoria" name="memoria" rows="4" placeholder="Esa vez que llegaste sin plata y te fiaron, o el nombre del tendero que siempre te pregunta cómo estás..."></textarea>
+        </div>
+      </fieldset>
+
+      <div class="ticket-separador"></div>
+
+      <!-- PASO 3: Ubicación -->
+      <fieldset class="ticket-fieldset" id="paso-3">
+        <legend class="ticket-legend">Del campo a la ciudad</legend>
+
+        <div class="ticket-field">
+          <label class="ticket-label" for="comuna">¿A qué comuna o sector pertenece tu tienda?</label>
+          <div class="ticket-search-wrap">
+            <svg class="ticket-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input class="ticket-input ticket-input-search" type="text" id="comuna" name="comuna" placeholder="Busca tu sector o barrio..." autocomplete="off">
+          </div>
+          <div class="ticket-sugerencias" id="sugerencias" hidden>
+            <button class="ticket-sug-item" data-val="Playa Rica">Playa Rica</button>
+            <button class="ticket-sug-item" data-val="La Pilarica">La Pilarica</button>
+            <button class="ticket-sug-item" data-val="Buenos Aires">Buenos Aires</button>
+            <button class="ticket-sug-item" data-val="La Pradera">La Pradera</button>
+            <button class="ticket-sug-item" data-val="El Japón">El Japón</button>
+            <button class="ticket-sug-item" data-val="Valher">Valher</button>
+          </div>
+        </div>
+
+        <div class="ticket-field">
+          <label class="ticket-label">¿Tienes alguna foto de tu tienda favorita?</label>
+          <label class="ticket-upload-label" for="foto-tienda">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <span id="upload-label-text">Subir foto (opcional)</span>
+            <input type="file" id="foto-tienda" name="foto-tienda" accept="image/*" class="ticket-upload-input">
+          </label>
+          <div class="ticket-preview" id="foto-preview" hidden>
+            <img id="foto-preview-img" src="" alt="Vista previa">
+            <button class="ticket-remove-foto" id="remove-foto" type="button" aria-label="Quitar foto">&times;</button>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- BOTÓN ENVIAR -->
+      <div class="ticket-submit-wrap">
+        <button class="btn btn-primary ticket-submit" id="btn-enviar" type="button">Añadir a la canasta</button>
+      </div>
+
+      <!-- Código de barras decorativo -->
+      <div class="ticket-barcode" aria-hidden="true">
+        <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="3" height="40" fill="#6C3D20"/>
+          <rect x="5" y="0" width="1" height="40" fill="#6C3D20"/>
+          <rect x="8" y="0" width="4" height="40" fill="#6C3D20"/>
+          <rect x="14" y="0" width="2" height="40" fill="#6C3D20"/>
+          <rect x="18" y="0" width="3" height="40" fill="#6C3D20"/>
+          <rect x="23" y="0" width="1" height="40" fill="#6C3D20"/>
+          <rect x="26" y="0" width="5" height="40" fill="#6C3D20"/>
+          <rect x="33" y="0" width="2" height="40" fill="#6C3D20"/>
+          <rect x="37" y="0" width="1" height="40" fill="#6C3D20"/>
+          <rect x="40" y="0" width="4" height="40" fill="#6C3D20"/>
+          <rect x="46" y="0" width="2" height="40" fill="#6C3D20"/>
+          <rect x="50" y="0" width="3" height="40" fill="#6C3D20"/>
+          <rect x="55" y="0" width="1" height="40" fill="#6C3D20"/>
+          <rect x="58" y="0" width="4" height="40" fill="#6C3D20"/>
+          <rect x="64" y="0" width="2" height="40" fill="#6C3D20"/>
+          <rect x="68" y="0" width="1" height="40" fill="#6C3D20"/>
+          <rect x="71" y="0" width="3" height="40" fill="#6C3D20"/>
+          <rect x="76" y="0" width="4" height="40" fill="#6C3D20"/>
+          <rect x="82" y="0" width="2" height="40" fill="#6C3D20"/>
+          <rect x="86" y="0" width="1" height="40" fill="#6C3D20"/>
+          <rect x="89" y="0" width="5" height="40" fill="#6C3D20"/>
+          <rect x="96" y="0" width="3" height="40" fill="#6C3D20"/>
+          <rect x="101" y="0" width="1" height="40" fill="#6C3D20"/>
+          <rect x="104" y="0" width="4" height="40" fill="#6C3D20"/>
+          <rect x="110" y="0" width="2" height="40" fill="#6C3D20"/>
+          <rect x="114" y="0" width="3" height="40" fill="#6C3D20"/>
+          <rect x="119" y="0" width="1" height="40" fill="#6C3D20"/>
+          <rect x="122" y="0" width="5" height="40" fill="#6C3D20"/>
+          <rect x="129" y="0" width="2" height="40" fill="#6C3D20"/>
+          <rect x="133" y="0" width="1" height="40" fill="#6C3D20"/>
+          <rect x="136" y="0" width="4" height="40" fill="#6C3D20"/>
+          <rect x="142" y="0" width="3" height="40" fill="#6C3D20"/>
+          <rect x="147" y="0" width="1" height="40" fill="#6C3D20"/>
+          <rect x="150" y="0" width="4" height="40" fill="#6C3D20"/>
+          <rect x="156" y="0" width="2" height="40" fill="#6C3D20"/>
+          <rect x="160" y="0" width="3" height="40" fill="#6C3D20"/>
+          <rect x="165" y="0" width="1" height="40" fill="#6C3D20"/>
+          <rect x="168" y="0" width="5" height="40" fill="#6C3D20"/>
+          <rect x="175" y="0" width="2" height="40" fill="#6C3D20"/>
+          <rect x="179" y="0" width="3" height="40" fill="#6C3D20"/>
+          <rect x="184" y="0" width="1" height="40" fill="#6C3D20"/>
+          <rect x="187" y="0" width="4" height="40" fill="#6C3D20"/>
+          <rect x="193" y="0" width="2" height="40" fill="#6C3D20"/>
+          <rect x="197" y="0" width="3" height="40" fill="#6C3D20"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Borde inferior dentado -->
+    <div class="ticket-bottom-tear"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Tradición en Canasta</div>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-credits">Proyecto desarrollado por Alejandra Maria Correa y Sofía Moncada<br>Universidad Cooperativa de Colombia, Pereira<br>Diseño Crossmedia · 2026</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Explorar</p>
+        <ul class="footer-col-links">
+          <li><a href="index.html">La tienda</a></li>
+          <li><a href="recorrido.html">Recorrido</a></li>
+          <li><a href="relatos.html">Relatos</a></li>
+          <li><a href="canasta.html">La canasta</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <a href="https://instagram.com/tradicion_en_canasta" class="footer-social-link" target="_blank">
+          <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          tradición_en_canasta
+        </a>
+        <a href="https://youtube.com" class="footer-social-link" target="_blank">
+          <svg class="footer-social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7s-.3-2-1.2-2.7c-1.1-1.2-2.4-1.2-3-1.3C16.2 3 12 3 12 3s-4.2 0-6.8.1c-.6.1-1.9.1-3 1.3C1.3 5 1 7 1 7S.7 9.1.7 11.3v2c0 2.1.3 4.3.3 4.3s.3 2 1.2 2.7c1.1 1.2 2.6 1.1 3.3 1.2C7.3 21.7 12 21.7 12 21.7s4.2 0 6.8-.2c.6-.1 1.9-.1 3-1.2.9-.7 1.2-2.7 1.2-2.7s.3-2.1.3-4.3v-2C23.3 9.1 23 7 23 7zM9.7 15.5V8.4l8.1 3.6-8.1 3.5z"/></svg>
+          Tradición en Canasta
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
