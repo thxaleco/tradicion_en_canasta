@@ -748,6 +748,7 @@ INTERNAS
   gap: 24px;
   margin: 30px;
 }
+
  
 @media (min-width: 600px) {
   .tiendas-grid-inner {
@@ -813,11 +814,13 @@ INTERNAS
     color: var(--color-texto-light);
 }
  
+
 /* ══════════════════════════════════════════════════════
-  RELATOS
+   RELATOS
 ══════════════════════════════════════════════════════ */
+
 .relatos-header {
-   width: 50%;
+  width: 50%;
   height: 330px;
   justify-self: start;
   margin: 25px 0 0 200px;
@@ -826,6 +829,7 @@ INTERNAS
   border-radius: 40px;
   background-color: var(--color-caja-verde);
 }
+
 
 .relatos-header-inner {
   max-width: 900px;
@@ -852,7 +856,7 @@ INTERNAS
 }
 
 
-.relatos-intro-caja {
+.relatos-intro__caja {
   background-color: var(--color-caja-vino);
   border-radius: 0 40px 40px 0;
   padding: 50px;
@@ -887,7 +891,7 @@ INTERNAS
 
 }
  
-.relatos-intro-caja p {
+.relatos-intro__caja p {
   font-size: 1.2rem;
   color: var(--color-titulo-principal);
   line-height: 1.75;
@@ -927,7 +931,7 @@ INTERNAS
  .relato-card--right {
     grid-template-columns: ;
   }
-.relato-card-img-wrap{
+.relato-card__img-wrap{
   position: relative;
   width: 500px;
   height: 600px;
@@ -939,7 +943,7 @@ INTERNAS
   z-index: 2;
 }
 
-.relato-card-img-wrap img{
+.relato-card__img-wrap img{
   width: 100%;
   height: 100%;
 
@@ -947,7 +951,7 @@ INTERNAS
   border-radius: 40px;
 }
 
-.relato-card-content{
+.relato-card__content{
   background-color: var(--color-fondo-principal);
   border: 12px solid var(--color-caja-vino);
   border-radius: 40px;
@@ -963,7 +967,7 @@ INTERNAS
   
 }
 
-.relato-card-cita{
+.relato-card__cita{
   font-family: var(--fuente-textos);
   font-size: 1.3rem;
   line-height: 1.5;
@@ -973,7 +977,7 @@ INTERNAS
   max-width: 430px;
 }
 
-.relato-card-nombre{
+.relato-card__nombre{
   position: absolute;
   top: 400px;
   left: 170px;
@@ -988,7 +992,7 @@ INTERNAS
 
 /* ===== HOJA BARCO ===== */
 
-.relato-card-decorativo{
+.relato-card__decorativo{
   position: absolute;
 
   left: 500px;
@@ -1003,7 +1007,7 @@ INTERNAS
 }
  /* ===== HOJA ALBEIRO ===== */
 
-.relato-card-left:last-child .relato-card-hoja{
+.relato-card--left:last-child .relato-card__hoja{
   position: absolute;
 
   right: -420px;
@@ -1016,12 +1020,12 @@ INTERNAS
   transform: rotate(-15deg);
 }
 
-.relato-card-left:last-child .relato-card-hoja img{
+.relato-card--left:last-child .relato-card__hoja img{
   width: 100%;
   display: block;
 }
 
-.relato-card-left:first-child .relato-card-hoja img{
+.relato-card--left:first-child .relato-card__hoja img{
   width: 100%;
   display: block;
 }
@@ -1030,7 +1034,7 @@ INTERNAS
    CARD NATALIA
 ========================================= */
 
-.relato-card-right{
+.relato-card--right{
   position: relative;
   width: 100%;
   min-height: 850px;
@@ -1039,7 +1043,7 @@ INTERNAS
 
 /* ===== FOTO ===== */
 
-.relato-card-right .relato-card-img-wrap{
+.relato-card--right .relato-card__img-wrap{
   position: absolute;
   left: 800px;
   top: 0;
@@ -1057,7 +1061,7 @@ INTERNAS
 }
 
 
-.relato-card-right .relato-card-img-wrap img{
+.relato-card--right .relato-card__img-wrap img{
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1069,7 +1073,7 @@ INTERNAS
 
 /* ===== CAJA BEIGE ===== */
 
-.relato-card-right .relato-card-content{
+.relato-card--right .relato-card__content{
   position: absolute;
 
   left: 220px;
@@ -1089,7 +1093,7 @@ INTERNAS
 
 /* ===== TEXTO ===== */
 
-.relato-card-right .relato-card-cita{
+.relato-card--right .relato-card__cita{
   font-family: var(--fuente-textos);
   font-size: 1.3rem;
   line-height: 1.5;
@@ -1101,7 +1105,7 @@ INTERNAS
 
 /* ===== TITULO ===== */
 
-.relato-card-right .relato-card-nombre{
+.relato-card--right .relato-card__nombre{
   position: absolute;
 
   top: -240px;
@@ -1119,7 +1123,7 @@ INTERNAS
 
 /* ===== HOJA NATALIA ===== */
 
-.relato-card-hoja-bg{
+.relato-card__hoja-bg{
   position: absolute;
 
   left: -400px;
@@ -1130,7 +1134,7 @@ INTERNAS
   z-index: 4;
 }
 
-.relato-card-hoja-bg img{
+.relato-card__hoja-bg img{
   width: 100%;
   display: block;
 }
@@ -1141,14 +1145,14 @@ INTERNAS
 
 @media (max-width: 1200px){
 
-  .relato-card-right{
+  .relato-card--right{
     min-height: auto;
     display: flex;
     flex-direction: column;
     gap: 40px;
   }
 
-  .relato-card-right .relato-card-img-wrap{
+  .relato-card--right .relato-card__img-wrap{
     position: relative;
     right: auto;
     top: auto;
@@ -1191,7 +1195,6 @@ INTERNAS
     display: none;
   }
 }
-
 /* ══════════════════════════════════════════════════════
   LA CANASTA
 ══════════════════════════════════════════════════════ */
