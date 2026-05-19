@@ -17,24 +17,24 @@
         </div>
 
   
-  <nav class="hero-canastas" aria-label="Secciones">
+        <nav class="hero-canastas" aria-label="Secciones">
 
-        <a href="#tienda" class="canasta" id="canasta-tienda">
-            <img class="canasta-img" src="IMG/canasta-amarilla.png" alt="La tienda"/>
-        </a>
+            <a href="#tienda" class="canasta" id="canasta-tienda">
+                <img class="canasta-img" src="IMG/canasta-amarilla.png" alt="La tienda"/>
+            </a>
 
-        <a href="recorridos.html" class="canasta" id="canasta-recorridos">
-            <img class="canasta-img" src="IMG/canasta-marron.png" alt="Recorridos"/>
-        </a>
+            <a href="recorridos.html" class="canasta" id="canasta-recorridos">
+                <img class="canasta-img" src="IMG/canasta-vino.png" alt="Recorridos"/>
+            </a>
 
-        <a href="relatos.html" class="canasta" id="canasta-relatos">
-            <img class="canasta-img" src="IMG/canasta-vino.png" alt="Relatos"/>
-        </a>
+            <a href="relatos.html" class="canasta" id="canasta-relatos">
+                <img class="canasta-img" src="IMG/canasta-verde.png" alt="Relatos"/>
+            </a>
 
-        <a href="canasta.html" class="canasta" id="canasta-canasta">
-            <img class="canasta-img" src="IMG/canasta-verde.png"
-            alt="La canasta">
-        </a>
+            <a href="canasta.html" class="canasta" id="canasta-canasta">
+                <img class="canasta-img" src="IMG/canasta-marron.png"
+                alt="La canasta">
+            </a>
 
         </nav>
 
@@ -54,67 +54,65 @@
 <section class="section canasta-form-section fade-up">
   <div class="ticket">
     <!-- Borde superior dentado -->
-    <div class="ticket-top-tear"></div>
-
-    <div class="ticket-body">
-      <h2 class="ticket-titulo">Del campo a la ciudad</h2>
-
-      <div id="form-success" class="form-success" hidden>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="40"><path d="M20 6L9 17l-5-5"/></svg>
-        <p>¡Gracias por compartir tu historia! Tu relato pasa a formar parte de esta canasta colectiva.</p>
+    <div class="ticket__top-tear"></div>
+ 
+    <div class="ticket__body">
+      <h2 class="ticket__titulo">Del campo a la ciudad</h2>
+ 
+      <!-- RESULTADO DE CLASIFICACIÓN (oculto hasta enviar) -->
+      <div id="resultado-canasta" class="resultado-canasta" hidden>
+        <!-- Se rellena con JS -->
       </div>
-
+ 
       <!-- PASO 1: Tu historia -->
-      <fieldset class="ticket-fieldset" id="paso-1">
-        <legend class="ticket-legend">Del campo a la ciudad</legend>
-        <div class="ticket-field">
-          <label class="ticket-label" for="nombre">¿Cómo te llamas?</label>
+      <fieldset class="ticket__fieldset" id="paso-1">
+        <legend class="ticket__legend">La tienda de siempre</legend>
+        <div class="ticket__field">
+          <label class="ticket__label" for="nombre">¿Cómo te llamas?</label>
           <input class="ticket__input" type="text" id="nombre" name="nombre" placeholder="Tu nombre o apodo..." autocomplete="off">
         </div>
-        <div class="ticket-field">
-          <label class="ticket-label" for="barrio">¿En qué barrio vives?</label>
-          <input class="ticket-input" type="text" id="barrio" name="barrio" placeholder="Nombre del barrio..." autocomplete="off">
+        <div class="ticket__field">
+          <label class="ticket__label" for="barrio">¿En qué barrio vives?</label>
+          <input class="ticket__input" type="text" id="barrio" name="barrio" placeholder="Nombre del barrio..." autocomplete="off">
         </div>
-        <div class="ticket-field">
-          <label class="ticket-label" for="tienda-favorita">¿Cuál es la tienda que más frecuentas?</label>
-          <input class="ticket-input" type="text" id="tienda-favorita" name="tienda-favorita" placeholder="Nombre de la tienda..." autocomplete="off">
+        <div class="ticket__field">
+          <label class="ticket__label" for="tienda-favorita">¿Cuál es la tienda que más frecuentas?</label>
+          <input class="ticket__input" type="text" id="tienda-favorita" name="tienda-favorita" placeholder="Nombre de la tienda..." autocomplete="off">
         </div>
       </fieldset>
-
-      <div class="ticket-separador"></div>
-
+ 
+      <div class="ticket__separador"></div>
+ 
       <!-- PASO 2: Tu relato -->
-      <fieldset class="ticket-fieldset" id="paso-2">
-        <legend class="ticket-legend">Del campo a la ciudad</legend>
-
-        <div class="ticket-field">
-          <label class="ticket-label">¿Qué productos sueles comprar?</label>
-          <div class="ticket-check-group">
-            <label class="ticket-check-label">
-              <input type="checkbox" name="productos" value="frutas"> Frutas y verduras
+      <fieldset class="ticket__fieldset" id="paso-2">
+        <legend class="ticket__legend">Lo que guarda la canasta</legend>
+ 
+        <div class="ticket__field">
+          <label class="ticket__label">¿Qué productos vende la tienda?</label>
+          <p class="ticket__field-hint">Puedes marcar varias opciones</p>
+          <div class="ticket__check-group ticket__check-group--col">
+            <label class="ticket__check-label">
+              <input type="checkbox" name="verduras" value="frutas" id="chk-frutas">
+              <span class="ticket__check-custom"></span>
+              🥬 Frutas, verduras y condimentos
             </label>
-            <label class="ticket-check-label">
-              <input type="checkbox" name="productos" value="abarrotes"> Abarrotes
+            <label class="ticket__check-label">
+              <input type="checkbox" name="carnes" value="carnicos" id="chk-carnicos">
+              <span class="ticket__check-custom"></span>
+              🥩 Cárnicos
             </label>
-            <label class="ticket-check-label">
-              <input type="checkbox" name="productos" value="carnicos"> Cárnicos
-            </label>
-            <label class="ticket-check-label">
-              <input type="checkbox" name="productos" value="lacteos"> Lácteos
-            </label>
-            <label class="ticket-check-label">
-              <input type="checkbox" name="productos" value="snacks"> Snacks y bebidas
-            </label>
-            <label class="ticket-check-label">
-              <input type="checkbox" name="productos" value="aseo"> Aseo del hogar
+            <label class="ticket__check-label">
+              <input type="checkbox" name="abarrotes" value="abarrotes" id="chk-abarrotes">
+              <span class="ticket__check-custom"></span>
+              🛒 Abarrotes
             </label>
           </div>
         </div>
-
-        <div class="ticket-field">
-          <label class="ticket-label" for="frecuencia">¿Con qué frecuencia vas a la tienda?</label>
-          <div class="ticket-select-wrap">
-            <select class="ticket-select" id="frecuencia" name="frecuencia">
+ 
+        <div class="ticket__field">
+          <label class="ticket__label" for="frecuencia">¿Con qué frecuencia vas a la tienda?</label>
+          <div class="ticket__select-wrap">
+            <select class="ticket__select" id="frecuencia" name="frecuencia">
               <option value="" disabled selected>Selecciona una opción</option>
               <option value="diario">Todos los días</option>
               <option value="varias">Varias veces a la semana</option>
@@ -123,56 +121,62 @@
             </select>
           </div>
         </div>
-
-        <div class="ticket-field">
-          <label class="ticket-label" for="memoria">Cuéntanos un recuerdo o historia que tengas con tu tienda de barrio</label>
-          <textarea class="ticket-textarea" id="memoria" name="memoria" rows="4" placeholder="Esa vez que llegaste sin plata y te fiaron, o el nombre del tendero que siempre te pregunta cómo estás..."></textarea>
+ 
+        <div class="ticket__field">
+          <label class="ticket__label" for="memoria">Cuéntanos sobre esta tienda</label>
+          <textarea class="ticket__textarea" id="memoria" name="memoria" rows="4" placeholder="¿Cuánto tiempo lleva abierta? ¿Qué la hace especial en el barrio? ¿Hay alguna historia que recuerdes?"></textarea>
         </div>
       </fieldset>
-
-      <div class="ticket-separador"></div>
-
+ 
+      <div class="ticket__separador"></div>
+ 
       <!-- PASO 3: Ubicación -->
-      <fieldset class="ticket-fieldset" id="paso-3">
-        <legend class="ticket-legend">Del campo a la ciudad</legend>
-
-        <div class="ticket-field">
-          <label class="ticket-label" for="comuna">¿A qué comuna o sector pertenece tu tienda?</label>
-          <div class="ticket-search-wrap">
-            <svg class="ticket-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            <input class="ticket-input ticket-input-search" type="text" id="comuna" name="comuna" placeholder="Busca tu sector o barrio..." autocomplete="off">
+      <fieldset class="ticket__fieldset" id="paso-3">
+        <legend class="ticket__legend">Donde nace la tradición</legend>
+ 
+        <div class="ticket__field">
+          <label class="ticket__label" for="ciudad">¿En qué ciudad está la tienda?</label>
+          <div class="ticket__search-wrap">
+            <svg class="ticket__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input class="ticket__input ticket__input--search" type="text" id="ciudad" name="ciudad" placeholder="Ej: Dosquebradas, Pereira..." autocomplete="off">
           </div>
-          <div class="ticket-sugerencias" id="sugerencias" hidden>
-            <button class="ticket-sug-item" data-val="Playa Rica">Playa Rica</button>
-            <button class="ticket-sug-item" data-val="La Pilarica">La Pilarica</button>
-            <button class="ticket-sug-item" data-val="Buenos Aires">Buenos Aires</button>
-            <button class="ticket-sug-item" data-val="La Pradera">La Pradera</button>
-            <button class="ticket-sug-item" data-val="El Japón">El Japón</button>
-            <button class="ticket-sug-item" data-val="Valher">Valher</button>
+          <div class="ticket__sugerencias" id="sugerencias" hidden>
+            <button class="ticket__sug-item" data-val="Dosquebradas">Dosquebradas</button>
+            <button class="ticket__sug-item" data-val="Pereira">Pereira</button>
+            <button class="ticket__sug-item" data-val="Santa Rosa de Cabal">Santa Rosa de Cabal</button>
+            <button class="ticket__sug-item" data-val="La Virginia">La Virginia</button>
+            <button class="ticket__sug-item" data-val="Marsella">Marsella</button>
+            <button class="ticket__sug-item" data-val="Cartago">Cartago</button>
+            <button class="ticket__sug-item" data-val="Manizales">Manizales</button>
+            <button class="ticket__sug-item" data-val="Armenia">Armenia</button>
           </div>
         </div>
-
-        <div class="ticket-field">
-          <label class="ticket-label">¿Tienes alguna foto de tu tienda favorita?</label>
-          <label class="ticket-upload-label" for="foto-tienda">
+ 
+        <div class="ticket__field">
+          <label class="ticket__label">¿Tienes alguna foto de tu tienda favorita?</label>
+          <label class="ticket__upload-label" for="foto-tienda">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
             <span id="upload-label-text">Subir foto (opcional)</span>
-            <input type="file" id="foto-tienda" name="foto-tienda" accept="image/*" class="ticket-upload-input">
+            <input type="file" id="foto-tienda" name="foto-tienda" accept="image/*" class="ticket__upload-input">
           </label>
-          <div class="ticket-preview" id="foto-preview" hidden>
+          <div class="ticket__preview" id="foto-preview" hidden>
             <img id="foto-preview-img" src="" alt="Vista previa">
-            <button class="ticket-remove-foto" id="remove-foto" type="button" aria-label="Quitar foto">&times;</button>
+            <button class="ticket__remove-foto" id="remove-foto" type="button" aria-label="Quitar foto">&times;</button>
           </div>
         </div>
       </fieldset>
-
+ 
       <!-- BOTÓN ENVIAR -->
-      <div class="ticket-submit-wrap">
-        <button class="btn btn-primary ticket-submit" id="btn-enviar" type="button">Añadir a la canasta</button>
+      <div class="ticket__submit-wrap">
+        <button class="ticket__btn-registrar" id="btn-enviar" type="button">
+          <span class="ticket__btn-registrar__icono" aria-hidden="true"></span>
+          Registrar tienda 
+          <span class="ticket__btn-registrar__flecha" aria-hidden="true">→</span>
+        </button>
       </div>
-
+ 
       <!-- Código de barras decorativo -->
-      <div class="ticket-barcode" aria-hidden="true">
+      <div class="ticket__barcode" aria-hidden="true">
         <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
           <rect x="0" y="0" width="3" height="40" fill="#6C3D20"/>
           <rect x="5" y="0" width="1" height="40" fill="#6C3D20"/>
@@ -221,12 +225,15 @@
         </svg>
       </div>
     </div>
-
+ 
     <!-- Borde inferior dentado -->
-    <div class="ticket-bottom-tear"></div>
+    <div class="ticket__bottom-tear"></div>
+    <div id="form-success" hidden>
+  ¡Tu tienda fue registrada correctamente!
+</div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
@@ -242,6 +249,7 @@
           <li><a href="recorrido.html">Recorrido</a></li>
           <li><a href="relatos.html">Relatos</a></li>
           <li><a href="canasta.html">La canasta</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
         </ul>
       </div>
       <div class="footer-social">
@@ -258,6 +266,7 @@
   </div>
 </footer>
 
+<script src="script.js"></script>
 
 </body>
 </html>
