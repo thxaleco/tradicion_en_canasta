@@ -194,66 +194,70 @@
 ══════════════════════════════════════ -->
 <section class="tiendita" aria-label="Tienda de productos">
  
-  <!-- Canastas decorativas laterales -->
-  <div class="tiendita__canasta-izq" aria-hidden="true">
-    <img src="IMG/canasta-marron.png" alt="" onerror="this.style.display='none'">
-    <img src="IMG/canasta-marron.png" alt="" onerror="this.style.display='none'">
-    <img src="IMG/canasta-amarilla.png" alt="" onerror="this.style.display='none'">
-  </div>
-  <div class="tiendita__canasta-der" aria-hidden="true">
-    <img src="IMG/canasta-verde.png" alt="" onerror="this.style.display='none'">
-    <img src="IMG/canasta-vino.png" alt="" onerror="this.style.display='none'">
-    <img src="IMG/canasta-verde.png" alt="" onerror="this.style.display='none'">
-  </div>
+  <!--
+    Contenedor con la imagen de la tiendita como fondo.
+    La imagen tiene fondo negro transparente, así que usamos
+    position:relative y ponemos el contenido encima del área
+    beige central (el "mostrador" de la ilustración).
+  -->
+  <div class="tiendita__marco">
  
-  <!-- Techo de la tiendita -->
-  <div class="tiendita__techo" aria-hidden="true">
-    <div class="techo__banner">
-      <span>➤</span>
-      <span class="techo__nombre">LA GALERÍA</span>
-      <span>◀</span>
-    </div>
-    <div class="techo__flecos"></div>
-  </div>
+    <!-- Imagen de la tiendita (fondo decorativo) -->
+    <img
+      src="IMG/la_galeria.png"
+      alt="La Galería – tiendita ilustrada"
+      class="tiendita__img-fondo"
+      aria-hidden="true"
+    >
  
-  <!-- Cuerpo de la tiendita -->
-  <div class="tiendita__cuerpo">
+    <!-- Contenido superpuesto sobre el área beige de la ilustración -->
+    <div class="tiendita__contenido">
  
-    <!-- Producto: POSTALES -->
-    <div class="producto" id="prod-postales">
-      <p class="producto__cat">POSTALES</p>
-      <button class="producto__btn" data-producto="postales" aria-label="Ver postales">
-        <div class="producto__img-wrap">
-          <img src="IMG/postales_preview.png" alt="Postales de las tiendas" onerror="this.parentElement.classList.add('producto__img-wrap--placeholder')">
-        </div>
+      <!-- Producto: POSTALES -->
+      <div class="producto" id="prod-postales">
+        <p class="producto__cat">POSTALES</p>
+        <button class="producto__btn" data-producto="postales" aria-label="Ver postales">
+          <div class="producto__img-wrap">
+            <img
+              src="IMG/postales_preview.png"
+              alt="Postales de las tiendas"
+              onerror="this.parentElement.classList.add('producto__img-wrap--placeholder')"
+            >
+          </div>
+        </button>
+        <p class="producto__desc">Diferentes fotografías propias de las tiendas, elige tu favorita y compártela con otros</p>
+      </div>
+ 
+      <!-- Separador vertical -->
+      <div class="tiendita__divisor" aria-hidden="true"></div>
+ 
+      <!-- Producto: SELLOS -->
+      <div class="producto" id="prod-sellos">
+        <p class="producto__cat">SELLOS</p>
+        <button class="producto__btn" data-producto="sellos" aria-label="Ver sellos">
+          <div class="producto__img-wrap">
+            <img
+              src="IMG/sellos_preview.png"
+              alt="Sellos de especialidad"
+              onerror="this.parentElement.classList.add('producto__img-wrap--placeholder')"
+            >
+          </div>
+        </button>
+        <p class="producto__desc">Conoce tu tienda, selecciona tu especialidad y compra tu propio sello</p>
+      </div>
+ 
+    </div><!-- /tiendita__contenido -->
+ 
+    <!-- Botón comprar + contador (dentro del marco, debajo del contenido) -->
+    <div class="tiendita__footer">
+      <button class="btn-comprar" id="btn-comprar" aria-label="Ver carrito">
+        <span class="btn-comprar__icono" aria-hidden="true">🛒</span>
+        <span class="btn-comprar__texto">¡COMPRA AQUÍ!</span>
+        <span class="btn-comprar__badge" id="carrito-badge" aria-live="polite">0</span>
       </button>
-      <p class="producto__desc">Diferentes fotografías propias de las tiendas, elige tu favorita y compártela con otros</p>
     </div>
  
-    <!-- Separador vertical -->
-    <div class="tiendita__divisor" aria-hidden="true"></div>
- 
-    <!-- Producto: SELLOS -->
-    <div class="producto" id="prod-sellos">
-      <p class="producto__cat">SELLOS</p>
-      <button class="producto__btn" data-producto="sellos" aria-label="Ver sellos">
-        <div class="producto__img-wrap">
-          <img src="IMG/sellos_preview.png" alt="Sellos de especialidad" onerror="this.parentElement.classList.add('producto__img-wrap--placeholder')">
-        </div>
-      </button>
-      <p class="producto__desc">Conoce tu tienda, selecciona tu especialidad y compra tu propio sello</p>
-    </div>
- 
-  </div>
- 
-  <!-- Botón comprar + contador -->
-  <div class="tiendita__footer">
-    <button class="btn-comprar" id="btn-comprar" aria-label="Ver carrito">
-      <span class="btn-comprar__icono" aria-hidden="true">🛒</span>
-      <span class="btn-comprar__texto">¡COMPRA AQUÍ!</span>
-      <span class="btn-comprar__badge" id="carrito-badge" aria-live="polite">0</span>
-    </button>
-  </div>
+  </div><!-- /tiendita__marco -->
  
 </section>
  

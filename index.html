@@ -48,6 +48,17 @@
 
         </nav>
 
+        <!-- Nav móvil overlay -->
+        <nav class="nav-mobile" id="navMobile" aria-hidden="true">
+            <button class="nav-mobile-cerrar" id="navCerrar" aria-label="Cerrar menú">✕</button>
+            <a href="#tienda"        class="nav-mobile-link" tabindex="-1">La tienda</a>
+            <a href="recorridos.html" class="nav-mobile-link" tabindex="-1">Recorridos</a>
+            <a href="relatos.html"   class="nav-mobile-link" tabindex="-1">Relatos</a>
+            <a href="canasta.html"   class="nav-mobile-link" tabindex="-1">La canasta</a>
+            <a href="galeria.html"   class="nav-mobile-link" tabindex="-1">Galería</a>
+        </nav>
+    
+
   </header>
 
 
@@ -65,8 +76,8 @@
       <div class="mirada-derecha">
         <div class="mirada-caja">
           <p>Entre estantes llenos, conversaciones breves y manos que eligen, la vida del barrio se mueve todos los días. Cada tienda es más que un punto de compra: es un lugar donde circulan historias, confianza y saberes cotidianos.</p>
-          <p>En Dosquebradas, el día empieza antes de que salga el sol. Las tiendas se llenan poco a poco de colores, olores y voces. Aquí no solo circulan alimentos, también pasan historias, relaciones y formas de vivir.</p>
-          <p>Cada producto trae consigo un recorrido, y cada tienda es un punto de encuentro donde lo cotidiano cobra sentido.</p>
+          <br>
+          <p>En Dosquebradas, el día empieza antes de que salga el sol. Las tiendas se llenan poco a poco de colores, olores y voces. Cada producto trae consigo un recorrido, y cada tienda es un punto de encuentro donde lo cotidiano cobra sentido.</p>
         </div>
         <a href="#" class="btn-capsula">Recorre el barrio</a>
       </div>
@@ -76,15 +87,17 @@
   <section class="narrativa" id="proyecto">
 
    <!-- hojas decorativas -->
-  <img class="hoja hoja-izq-arriba"
+        <img class="hoja hoja-izq-arriba"
        src="IMG/planta_gr_amarilla.png"
        alt="planta amarilla">
+       <img src="IMG/planta_gr_amarilla.png"
+       alt=""
+       class="hoja hoja-der-abajo">
 
- 
 
     <div class="narrativa-flex">
       <div class="narrativa-circulo">
-        <img src="IMG/general_nat_6.jpg" alt="Persona recolectando vegetales"/>
+        <img src="IMG/cliente_det_nat_4.jpg" alt="Persona recolectando vegetales"/>
       </div>
       <div class="narrativa-caja">
         <p>Este proyecto se construye desde las voces del barrio
@@ -99,6 +112,12 @@
        MOMENTOS DEL BARRIO
   ═══════════════════════════════════════════ -->
   <section class="momentos" id="encuentros">
+
+ <img src="IMG/planta_gr_amarilla.png"
+       alt=""
+       class="hoja-tienda hoja-momentos-izq">
+
+
     
     <div class="momentos-marco">
       <h2 class="momentos-titulo">Momentos<br>del barrio</h2>
@@ -106,23 +125,23 @@
       <div class="momentos-flex">
 
         <div class="momento">
-          <span class="momento-label">Entre saludos y risas</span>
+          <span class="momento-label">Momentos que conectan</span>
           <div class="momento-foto">
-            <img src="IMG/foto_plaza.JPG" alt="Entre saludos y risas"/>
+            <img src="IMG/cliente_nat_horiz_4.jpg" alt="Entre saludos y risas"/>
           </div>
         </div>
 
         <div class="momento">
           <span class="momento-label">Manos que eligen</span>
           <div class="momento-foto">
-            <img src="IMG/foto_cliente.JPG" alt="Manos que eligen"/>
+            <img src="IMG/entrada_tienda_al_2.jpg" alt="Manos que eligen"/>
           </div>
         </div>
 
         <div class="momento">
           <span class="momento-label">De la tienda a la casa</span>
           <div class="momento-foto">
-            <img src="IMG/foto_fruta2.JPG" alt="De la tienda a la casa"/>
+            <img src="IMG/manos_nat_1.jpg" alt="De la tienda a la casa"/>
           </div>
         </div>
 
@@ -135,6 +154,18 @@
   ═══════════════════════════════════════════ -->
 
   <section class="tiendas" id="tienda">
+
+   <!-- hojas decorativas -->
+
+    <img src="IMG/planta_gr_amarilla.png"
+       alt=""
+       class="hoja-tienda hoja-tienda-der">
+
+        <img src="IMG/planta_gr_amarilla.png"
+       alt=""
+       class="hoja-tienda hoja-tienda-izq">
+
+
 
     <h2 class="tiendas-titulo">Entiende cómo<br>funcionan las tiendas</h2>
 
@@ -178,20 +209,21 @@
   </div>
 
   <div class="tiendas-foto">
-    <img src="IMG/tienda_al_4.jpg" alt="">
+    <img src="IMG/canasta_al_3.jpg" alt="Estante con canastas">
   </div>
 
 </div>
 </section>
+
 
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">Tradición en Canasta</div>
     <div class="footer-grid">
-      <div>
-        <p class="footer-credits">Proyecto desarrollado por Alejandra Maria Correa y Sofía Moncada<br>Universidad Cooperativa de Colombia, Pereira<br>Diseño Crossmedia · 2026</p>
-      </div>
+        <div>
+            <p class="footer-credits">Proyecto desarrollado por Alejandra Maria Correa y Sofía Moncada<br>Universidad Cooperativa de Colombia, Pereira<br>Diseño Crossmedia · 2026<br> <br> Interfaz optimizada bajo los criterios de usabilidad de J. E. Córcoles Tendero (2015).</p>
+        </div>
       <div>
         <p class="footer-col-title">Explorar</p>
         <ul class="footer-col-links">

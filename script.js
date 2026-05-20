@@ -1,3 +1,33 @@
+const ham     = document.getElementById('ham');
+const nav     = document.getElementById('navMobile');
+const cerrar  = document.getElementById('navCerrar');
+const links   = nav.querySelectorAll('.nav-mobile-link');
+
+function abrirMenu() {
+  ham.classList.add('activo');
+  nav.classList.add('activo');
+  nav.setAttribute('aria-hidden', 'false');
+  links.forEach(l => l.setAttribute('tabindex', '0'));
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarMenu() {
+  ham.classList.remove('activo');
+  nav.classList.remove('activo');
+  nav.setAttribute('aria-hidden', 'true');
+  links.forEach(l => l.setAttribute('tabindex', '-1'));
+  document.body.style.overflow = '';
+}
+
+ham.addEventListener('click', abrirMenu);
+cerrar.addEventListener('click', cerrarMenu);
+links.forEach(l => l.addEventListener('click', cerrarMenu));
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') cerrarMenu();
+});
+
+
 
 // canasta.js – lógica del formulario
 document.addEventListener('DOMContentLoaded', () => {
