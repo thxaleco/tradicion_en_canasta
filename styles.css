@@ -77,7 +77,7 @@ body {
   display: block;
   width: 24px;
   height: 2.5px;
-  background: var(--color-titulo-principal);
+  background: var(--color-fondo-principal);
   border-radius: 2px;
   transition: transform 0.28s ease, opacity 0.2s ease;
 }
@@ -91,23 +91,28 @@ body {
    NAV MOBILE OVERLAY
    ============================================= */
 .nav-mobile {
-  display: none;
   position: fixed;
   inset: 0;
   background: var(--color-caja-marron);
-  z-index: 190;
+  z-index: 9999;
+
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 28px;
+
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+
+  transition: opacity .3s ease;
 }
- 
+
 .nav-mobile.activo {
   opacity: 1;
-  pointer-events: all;
+  visibility: visible;
+  pointer-events: auto;
 }
  
 .nav-mobile-cerrar {
@@ -190,7 +195,7 @@ body {
 .hero-titulo {
   font-family: var(--fuente-titulos);
   font-weight: 900;
-  font-size: clamp(2.8rem, 5.6vw, 4rem);
+  font-size: clamp(3.8rem, 5.6vw, 2rem);
   color: var(--color-titulo-principal);
   text-transform: uppercase;
   line-height: 1;
@@ -538,7 +543,7 @@ body {
 .tiendas-titulo {
   font-family: var(--fuente-titulos);
   font-weight: 900;
-  font-size: clamp(1.8rem, 5.5vw, 4rem);
+  font-size: clamp(1.4rem, 5.1vw, 3.8rem);
   color: var(--color-titulo-secundario);
   text-transform: uppercase;
   text-align: center;
@@ -553,6 +558,9 @@ body {
   background-color: var(--color-caja-amarillo);
   border-radius: 40px;
   padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
  
 .tiendas-intro p {
@@ -2937,16 +2945,14 @@ INTERNAS
 }
 
 /* =============================================
-   RESPONSIVE — TABLET  (≤ 1024px)
+   RESPONSIVE HOME— TABLET  (≤ 1024px)
    Canastas se ocultan, aparece hamburguesa
    ============================================= */
 @media (max-width: 1024px) {
- 
-  /* Mostrar botón hamburguesa */
+
   .hamburguesa { display: flex; }
  
-  /* Mostrar overlay al activarse */
-  .nav-mobile { display: flex; }
+  
  
   /* Ocultar canastas */
   .hero-canastas { display: none; }
@@ -3044,14 +3050,7 @@ INTERNAS
  
   .momentos-flex {
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
- 
-  /* Centrar el 3er momento si queda solo */
-  .momento:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    max-width: 200px;
-    margin: 0 auto;
+    gap: 15px;
   }
  
   .momento-label { 
@@ -3065,14 +3064,7 @@ INTERNAS
     border-radius: 24px;
     max-width: 150px; }
  
-  /* Tiendas: apiladas */
-  .tiendas-contenedor {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px 0;
-  }
  
-  /* Foto arriba en mobile */
   .tiendas-foto {
     order: -1;
     border-radius: 40px;
@@ -3086,8 +3078,19 @@ INTERNAS
     padding: 36px 28px;
   }
  
-  .tiendas-intro { padding: 28px 20px; margin-bottom: 32px; }
+  .tiendas-intro { 
+    padding: 36px 28px;
+    width: min(700px, 100%);
+    margin-bottom: 15px;
+
+  }
  
+  .tiendas-contenedor {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    
+  }
   /* Hojas: ocultar para evitar overflow horizontal */
   .hoja,
   .hoja-momentos-izq,
@@ -3096,7 +3099,7 @@ INTERNAS
  
  
 /* =============================================
-   RESPONSIVE — MÓVIL  (≤ 600px)
+   RESPONSIVE HOME — MÓVIL  (≤ 600px)
    ============================================= */
 @media (max-width: 600px) {
  
@@ -3109,43 +3112,76 @@ INTERNAS
   .hero { padding: 16px 12px 36px; }
  
   .hero-contenido {
-    padding: 40px 16px 50px 16px;
+    padding: 40px 10px 70px 20px;
     border-radius: 14px 90px 14px 14px;
+   
   }
  
-  .hero-titulo { font-size: clamp(2.2rem, 9vw, 3rem); }
+  .hero-titulo { 
+    font-size: clamp(1rem, 9vw, 1.5rem); 
+  }
  
   .hero-subtitulo { font-size: clamp(0.95rem, 3.5vw, 1.1rem); }
  
-  /* Mirada */
-  .mirada { border-radius: 16px 16px 16px 50px; }
-  .mirada-titulo { font-size: clamp(1.3rem, 5vw, 1.8rem); padding: 16px 16px 8px; }
-  .mirada-contenido { padding: 0 12px 16px; }
- 
-  /* Narrativa */
-  .narrativa { margin: 28px 10px; }
-  .narrativa-caja { padding: 28px 18px; }
-  .narrativa-caja p { font-size: clamp(0.95rem, 3.5vw, 1.1rem); }
- 
-  /* Momentos: 1 columna en móvil */
-  .momentos-flex { grid-template-columns: 1fr; gap: 28px; }
- 
-  .momento:last-child:nth-child(odd) {
-    grid-column: auto;
-    max-width: 260px;
+  
+  .mirada { 
+    border-radius: 25px;
+    top: -75px;
+    margin: 0 15px;
+  }
+  .mirada-titulo { 
+    font-size: clamp(1.3rem, 5vw, 1.8rem); 
+    padding: 16px 16px 8px; 
+  
+}
+  .mirada-contenido { 
+    padding: 0 12px 16px; 
+  }
+
+   .narrativa { margin: 40px 16px 0 16px; }
+
+  .narrativa-flex {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .narrativa-caja { 
+    padding: 28px 28px; 
+  }
+  .narrativa-caja p { 
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem); 
   }
  
+  .narrativa-circulo {
+    width: min(300px, 80%);
+    margin: 0 auto;
+    border-radius: 150px;
+    border: solid 20px var(--color-caja-marron);
+    aspect-ratio: 4/5;
+    
+  }
+ 
+  .momentos-flex { grid-template-columns: 1fr; gap: 28px; }
+ 
   .momentos-marco {
-    border-width: 10px;
+    border-width: 0;
     padding: 20px 12px;
     border-radius: 20% 20% 40px 40px;
+  }
+
+  .momento-foto{
+    max-width: 200px;
   }
  
   /* Tiendas */
   .tiendas-bloque-vino,
-  .tiendas-bloque-beige { padding: 24px 14px; border-radius: 24px; }
+  .tiendas-bloque-beige { padding: 24px; border-radius: 24px; }
  
-  .tiendas-intro { padding: 18px 14px; border-radius: 24px; }
+  .tiendas-intro { padding: 18px 14px; border-radius: 0px; }
+
+  .tiendas-intro p{
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+  }
  
   .tiendas-foto { border-radius: 24px; }
  
