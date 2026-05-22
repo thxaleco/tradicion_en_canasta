@@ -32,7 +32,28 @@
   --fuente-titulos: "Unbounded", sans-serif;
   --fuente-textos:  "Inter", sans-serif;
 
+  --margen-seccion: 40px;
+
+  --interlineado-textos: 1.2;
+
+  --tamano-fuente-titulo-principal:
+    clamp(2.2rem, 7vw, 3.5rem);
+
+  --tamano-fuente-titulo-secundario:
+    clamp(1.4rem, 4vw, 2.5rem);
+
+  --tamano-fuente-subtitulo:
+    clamp(1.2rem, 2vw, 1.6rem);
+
+  --tamano-fuente-textos:
+    clamp(1rem, 0.9vw + 0.6rem, 1.25rem);
+
+  --tamano-fuente-textos-pequeños: 
+    clamp(0.85rem, 0.7vw + 0.5rem, 1rem);
+
 }
+
+
 
 html { scroll-behavior: smooth;
   overflow-x: hidden;
@@ -62,8 +83,8 @@ body {
   background: var(--color-caja-marron);
   border: none;
   border-radius: 12px;
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -130,7 +151,7 @@ body {
  
 .nav-mobile-link {
   font-family: var(--fuente-titulos);
-  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  font-size: var(--tamano-fuente-subtitulo);
   font-weight: 900;
   text-transform: uppercase;
   color: var(--color-titulo-principal);
@@ -170,13 +191,16 @@ body {
   cursor: pointer;
   z-index: 20;
 }
- 
+
+.logo-img:hover {
+  transform: scale(1.06) translateY(-1px);
+}
+
 .logo-img {
   width: 100%;
   height: 100%;
+  transition: transform .5s ease-in-out;
 }
- 
-.logo img:hover { transform: scale(1.06) translateY(-4px); }
  
 /* --- Hero contenido --- */
 .hero-contenido {
@@ -195,10 +219,10 @@ body {
 .hero-titulo {
   font-family: var(--fuente-titulos);
   font-weight: 900;
-  font-size: clamp(3.8rem, 5.6vw, 2rem);
+  font-size: var(--tamano-fuente-titulo-principal);
   color: var(--color-titulo-principal);
   text-transform: uppercase;
-  line-height: 1;
+  line-height: var(--interlineado-textos);
   letter-spacing: -0.5px;
 }
  
@@ -206,10 +230,10 @@ body {
   margin-top: 10px;
   font-family: var(--fuente-textos);
   font-weight: 700;
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-size: var(--tamano-fuente-subtitulo);
   color: var(--color-titulo-principal);
   opacity: 0.95;
-  line-height: 1.5;
+  line-height: var(--interlineado-textos);
   max-width: 90%;
 }
  
@@ -258,8 +282,8 @@ body {
 .mirada {
   background-color: var(--color-caja-verde);
   border-radius: 50px 50px 50px 300px;
-  margin: 40px 0 20px 0;
-  padding: 25px 25px;
+  margin: var(--margen-seccion);
+  padding: 30px;
   position: relative;
   top: -140px;
   z-index: 3;
@@ -268,11 +292,11 @@ body {
 .mirada-titulo {
   font-family: var(--fuente-titulos);
   font-weight: 900;
-  font-size: clamp(1.6rem, 3.6vw, 2.3rem);
+  font-size: var(--tamano-fuente-titulo-secundario);
   color: var(--color-titulo-principal);
   text-transform: uppercase;
-  line-height: 1.1;
-  padding: 30px;
+  line-height: var(--interlineado-textos);
+  padding: 20px;
 }
  
 .mirada-contenido {
@@ -313,13 +337,13 @@ body {
   flex-direction: column;
   transform: translateX(90px);
   margin-right: 0;
-  margin-top: -110px;
+  margin-top: -80px;
 }
  
 .mirada-caja p {
   font-family: var(--fuente-textos);
-  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
-  line-height: 1.72;
+  font-size: var(--tamano-fuente-textos);
+  line-height: var(--interlineado-textos);
   color: var(--color-texto-secundario);
   text-align: left;
   width: 95%;
@@ -331,7 +355,7 @@ body {
   background-color: var(--color-boton-secundario);
   color: var(--color-titulo-principal);
   font-family: var(--fuente-titulos);
-  font-size: clamp(1.2rem, 2vw, 1.92rem);
+  font-size: var(--tamano-fuente-subtitulo);
   font-weight: 700;
   letter-spacing: 0.6px;
   text-transform: uppercase;
@@ -341,7 +365,7 @@ body {
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
   position: absolute;
-  top: 280px;
+  top: 270px;
   left: 200px;
 }
  
@@ -356,12 +380,12 @@ body {
    ============================================= */
 .narrativa {
   position: relative;
-  margin: 0 30px;
+  margin: 0 40px;
 }
  
 .narrativa-flex {
   display: grid;
-  grid-template-columns: 420px 1fr;
+  grid-template-columns: 400px 1fr;
   align-items: center;
   gap: 40px;
   position: relative;
@@ -385,11 +409,12 @@ body {
   position: relative;
   background: var(--color-caja-verde);
   border-radius: 40px;
-  padding: 80px;
-  min-height: 350px;
+  padding: 40px;
+  min-height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
  
 .narrativa-caja::after {
@@ -406,9 +431,9 @@ body {
  
 .narrativa-caja p {
   text-align: center;
-  line-height: 1.7;
+  line-height: var(--interlineado-textos);
   color: var(--color-texto-light);
-  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-size: var(--tamano-fuente-textos);
 }
  
  
@@ -421,7 +446,7 @@ body {
 }
  
 .hoja.hoja-izq-arriba {
-  left: 0;
+  left: -100px;
   top: -300px;
   width: 950px;
   transform: translateX(-200px) rotate(20deg);
@@ -441,7 +466,7 @@ body {
    ============================================= */
 .momentos {
   padding: 40px;
-  margin: 40px 30px;
+  margin: var(--margen-seccion);
   position: relative;
 }
  
@@ -454,7 +479,7 @@ body {
 }
  
 .momentos-marco {
-  border: 45px solid var(--color-caja-marron);
+  border: 35px solid var(--color-caja-marron);
   border-radius: 45% 45% 100px 100px;
   padding: 60px 50px;
   background-color: var(--color-fondo-principal);
@@ -464,7 +489,7 @@ body {
   text-align: center;
   font-family: var(--fuente-titulos);
   font-weight: 900;
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: var(--tamano-fuente-titulo-secundario);
   color: var(--color-caja-verde);
   margin-bottom: 60px;
   text-transform: uppercase;
@@ -487,7 +512,7 @@ body {
 .momento-label {
   display: block;
   font-family: var(--fuente-textos);
-  font-size:clamp(1.1rem, 2vw, 1.5rem);
+  font-size:var(--tamano-fuente-subtitulo);
   font-weight: 700;
   color: var(--color-caja-verde);
   text-transform: uppercase;
@@ -516,6 +541,7 @@ body {
    ============================================= */
 .tiendas {
   position: relative;
+  margin: var(--margen-seccion);
 }
  
 .hoja-tienda {
@@ -543,11 +569,11 @@ body {
 .tiendas-titulo {
   font-family: var(--fuente-titulos);
   font-weight: 900;
-  font-size: clamp(1.4rem, 5.1vw, 3.8rem);
+  font-size: var(--tamano-fuente-titulo-principal);
   color: var(--color-titulo-secundario);
   text-transform: uppercase;
   text-align: center;
-  line-height: 0.95;
+  line-height: var(--interlineado-textos);
   letter-spacing: 1px;
   margin-bottom: 32px;
 }
@@ -565,8 +591,8 @@ body {
  
 .tiendas-intro p {
   font-family: var(--fuente-textos);
-  font-size: clamp(1.1rem, 2.1vw, 1.65rem);
-  line-height: 1.8;
+  font-size: var(--tamano-fuente-textos);
+  line-height: var(--interlineado-textos);
   color: var(--color-titulo-principal);
   text-align: center;
 }
@@ -588,7 +614,8 @@ body {
 .tiendas-info {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  padding: 60px 0;
+  gap: 60px;
 }
  
 .tiendas-bloque-vino {
@@ -598,12 +625,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transform: translateX(-90px);
 }
  
 .tiendas-texto p {
   font-family: var(--fuente-textos);
-  font-size: clamp(0.95rem, 1.5vw, 1.4rem);
-  line-height: 1.6;
+  font-size: var(--tamano-fuente-textos);
+  line-height: var(--interlineado-textos);
   text-align: center;
 }
  
@@ -617,6 +646,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transform: translateX(-90px);
 }
  
 .tiendas-bloque-beige p { color: var(--color-caja-vino); }
@@ -626,6 +657,8 @@ body {
   height: 100%;
   overflow: hidden;
   border-radius: 40px 0 0 40px;
+
+   transform: translateX(80px);
 }
  
 .tiendas-foto img {
@@ -669,15 +702,15 @@ INTERNAS
 
 .recorrido-header-titulo {
   font-family: var(--fuente-titulos);
-  font-size: clamp(1.8rem, 7vw, 3.5rem);
+  font-size: var(--tamano-fuente-titulo-principal);
   font-weight: 900;
   color: var(--color-titulo-principal);
-  line-height: 1.05;
+  line-height: var(--interlineado-textos);
 }
 
 .recorrido-header-subtitulo {
   font-family: var(--fuente-textos);
-  font-size: 1.55rem;
+  font-size: var(--tamano-fuente-subtitulo);
   color: var(--color-titulo-principal);
   font-weight: 800;
   margin-top: 8px;
@@ -694,19 +727,19 @@ INTERNAS
   max-width: 700px;
   text-align: center;
 
-  margin-top: -120px;
+  margin-top: -90px;
   margin-left: 300px;
 }
  
 .recorrido-intro-caja p {
-  font-size: 1.2rem;
+  font-size: var(--tamano-fuente-textos);
   color: var(--color-texto-light);
-  line-height: 1.75;
+  line-height: var(--interlineado-textos);
 }
 
 .mapa-section {
   position: relative;
-  overflow: hidden;
+  margin: var(--margen-seccion);
 }
 
 .mapa-section-header {
@@ -715,11 +748,12 @@ INTERNAS
   align-items: center;
   position: relative;
   z-index: 2;
+
 }
 
 .mapa-section-label {
   font-family: var(--fuente-titulos);
-  font-size: clamp(2rem, 6vw, 4rem);
+  font-size: var(--tamano-fuente-titulo-principal);
   font-weight: 900;
   color: var(--color-caja-vino);
   line-height: 0.9;
@@ -729,26 +763,30 @@ INTERNAS
 .mapa-section-caja {
   background-color: var(--color-caja-marron);
   border-radius: 80px 0 0 80px;
-  padding: 40px 60px;
   min-height: 180px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 40px 0 40px 40px;
+  transform: translateX(100px) 
 }
 
 .mapa-section-texto {
   font-family: var(--fuente-textos);
-  font-size: clamp(1rem, 1.7vw, 1.7rem);
-  line-height: 1.4;
+  font-size: var(--tamano-fuente-textos);
+  line-height: var(--interlineado-textos);
   color: var(--color-titulo-principal);
   text-align: center;
   max-width: 900px;
+  padding: 40px 60px;
 }
 
 .mapa-section-rame-wrap {
   position: relative;
+  display: flex;
+  justify-content: center;  
+  align-items: center;     
+  height: 100vh;     
 }
  
 .mapa-deco {
@@ -773,8 +811,8 @@ INTERNAS
 }
  
 .mapa-section-frame {
-  width: 100%;
-  height: 340px;
+  height: 640px;
+  margin: var(--margen-seccion);
   background: var(--color-fondo-principal);
   border-radius: 24px;
   overflow: hidden;
@@ -782,48 +820,18 @@ INTERNAS
   z-index: 1;
 }
  
-@media (min-width: 600px) {
-  .mapa-section__frame {
-    height: 420px;
-  }
-}
- 
 .mapa-section-cta {
   display: block;
   width: fit-content;
   margin: 28px auto 0;
   padding: 14px 48px;
-  font-size: 1rem;
+  font-size: var(--tamano-fuente-subtitulo);
   font-weight: 900;
   background-color: var(--color-boton-hover-principal);
   color: var(--color-titulo-principal);
   border-radius: 30px;
 }
 
-/* ===== RESPONSIVE ===== */
-
-@media (max-width: 900px) {
-
-  .mapa-section__header {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .mapa-section__label {
-    text-align: center;
-  }
-
-  .mapa-section__desc-box {
-    border-radius: 40px;
-    padding: 30px 24px;
-  }
-
-  .mapa-section__desc {
-    text-align: center;
-  }
-
-}
- 
 /* ===== TIENDAS GRID ===== */
 .tiendas-grid {
   padding-top: 0;
@@ -831,16 +839,9 @@ INTERNAS
  
 .tiendas-grid-inner {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin: 30px;
-}
-
- 
-@media (min-width: 600px) {
-  .tiendas-grid-inner {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
  
 .tienda-card {
@@ -849,7 +850,6 @@ INTERNAS
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(64,76,16,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
- 
 }
  
 .tienda-card:hover {
@@ -880,25 +880,26 @@ INTERNAS
  
 .tienda-card-nombre {
   font-family: var(--fuente-titulos);
-  font-size: 0.85rem;
+  font-size: var(--tamano-fuente-subtitulo);
   color: var(--color-caja-vino);
   margin-bottom: 4px;
 }
  
 .tienda-card-dir {
-  font-size: 0.75rem;
+  font-size: var(--tamano-fuente-textos);
   color: var(--color-texto-secundario);
   margin-bottom: 10px;
 }
  
 .tienda-card-texto {
-  font-size: 0.85rem;
+  font-size: var(--tamano-fuente-textos);
   color: var(--color-texto-principal);
-  line-height: 1.6;
+  line-height: var(--interlineado-textos);
 }
  
 .btn.btn-secondary{
     color: var(--color-texto-light);
+    font-size: var(--tamano-fuente-textos);
 }
  
 
@@ -926,17 +927,17 @@ INTERNAS
   padding: 40px;
 }
 
-.relatos-header-title {
+.relatos-header-titulo {
   font-family: var(--fuente-titulos);
-  font-size: clamp(2rem, 8vw, 4rem);
+  font-size: var(--tamano-fuente-titulo-principal);
   font-weight: 900;
   color: var(--color-titulo-principal);
   line-height: 1;
 }
 
-.relatos-header-subtitle {
+.relatos-header-subtitulo {
   font-family: var(--fuente-textos);
-  font-size: 1.55rem;
+  font-size: var(--tamano-fuente-subtitulo);
   color: var(--color-titulo-principal);
   font-weight: 800;
   margin-top: 8px;
@@ -962,7 +963,7 @@ INTERNAS
 
 .relatos-documental{
   font-family: var(--fuente-titulos);
-  font-size: 1.55rem;
+  font-size: var(--tamano-fuente-subtitulo);
   text-transform: uppercase;
   color: var(--color-titulo-secundario);
   background-color: var(--color-fondo-principal);
@@ -979,18 +980,11 @@ INTERNAS
 }
  
 .relatos-intro__caja p {
-  font-size: 1.2rem;
+  font-size: var(--tamano-fuente-textos);
   color: var(--color-titulo-principal);
   line-height: 1.75;
 }
 
-@media (min-width: 768px) {
-  .relatos-header__inner {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-}
 
 /* ===== RELATOS MAIN ===== */
 .relatos-main {
@@ -1039,25 +1033,26 @@ INTERNAS
   background-color: var(--color-fondo-principal);
   border: 12px solid var(--color-caja-vino);
   border-radius: 40px;
-  min-height: 350px;
-  min-width: 650px;
+  min-height: 300px;
+  min-width: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px;
   position: absolute;
   top: -80px;
-  left: 400px;
+  left: 450px;
   
 }
 
 .relato-card__cita{
   font-family: var(--fuente-textos);
-  font-size: 1.3rem;
+  font-size: var(--tamano-fuente-textos);
   line-height: 1.5;
   color: var(--color-caja-marron);
   text-align: center;
   font-style: normal;
+  padding: 40px;
   max-width: 430px;
 }
 
@@ -1068,7 +1063,7 @@ INTERNAS
   background-color: var(--color-caja-verde);
   color: var(--color-titulo-principal);
   font-family: var(--fuente-titulos);
-  font-size: 4rem;
+  font-size: var(--tamano-fuente-titulo-principal);
   font-weight: 900;
   padding: 20px 36px;
   border-radius: 50px;
@@ -1164,8 +1159,8 @@ INTERNAS
   background-color: var(--color-fondo-principal);
   border: 12px solid var(--color-caja-vino);
   border-radius: 40px;
-  min-height: 350px;
-  min-width: 650px;
+  min-height: 300px;
+  min-width: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1177,7 +1172,7 @@ INTERNAS
 
 .relato-card--right .relato-card__cita{
   font-family: var(--fuente-textos);
-  font-size: 1.3rem;
+  font-size: var(--tamano-fuente-textos);
   line-height: 1.5;
   color: var(--color-caja-marron);
   text-align: center;
@@ -1196,7 +1191,7 @@ INTERNAS
   background-color: var(--color-caja-verde);
   color: var(--color-titulo-principal);
   font-family: var(--fuente-titulos);
-  font-size: 4rem;
+  font-size: var(--tamano-fuente-titulo-principal);
   font-weight: 900;
   padding: 20px 36px;
   border-radius: 50px;
@@ -1221,62 +1216,7 @@ INTERNAS
   display: block;
 }
 
-/* =========================================
-   RESPONSIVE
-========================================= */
 
-@media (max-width: 1200px){
-
-  .relato-card--right{
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .relato-card--right .relato-card__img-wrap{
-    position: relative;
-    right: auto;
-    top: auto;
-
-    width: 100%;
-    max-width: 420px;
-    height: auto;
-
-    aspect-ratio: 3/4;
-
-    margin: 0 auto;
-  }
-
-  .relato-card--right .relato-card__content{
-    position: relative;
-
-    left: auto;
-    top: auto;
-
-    width: 100%;
-    height: auto;
-
-    padding: 120px 30px 60px;
-  }
-
-  .relato-card--right .relato-card__nombre{
-    top: 30px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    padding: 20px 40px;
-
-    font-size: 2rem;
-
-    white-space: nowrap;
-  }
-
-  .relato-card__hoja-bg{
-    display: none;
-  }
-}
 /* ══════════════════════════════════════════════════════
   LA CANASTA
 ══════════════════════════════════════════════════════ */
@@ -1301,7 +1241,7 @@ INTERNAS
 
 .canasta-header-titulo {
   font-family: var(--fuente-titulos);
-  font-size: clamp(1.8rem, 7vw, 3.5rem);
+  font-size: var(--tamano-fuente-titulo-principal);
   font-weight: 900;
   color: var(--color-titulo-principal);
   line-height: 1.05;
@@ -1309,21 +1249,12 @@ INTERNAS
 
 .canasta-header-subtitulo {
   font-family: var(--fuente-textos);
-  font-size: 1.55rem;
+  font-size: var(--tamano-fuente-subtitulo);
   color: var(--color-titulo-principal);
   font-weight: 800;
   margin-top: 8px;
 }
 
-
-
-@media (min-width: 768px) {
-  .canasta-header__inner {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
 
 /* ===== INTRO ===== */
 .canasta-intro {
@@ -1341,7 +1272,7 @@ INTERNAS
 }
 
 .canasta-intro-p {
-  font-size: 1.2rem;
+  font-size: var(--tamano-fuente-textos);
   color: var(--color-titulo-principal);
   line-height: 1.75;
 }
@@ -1396,7 +1327,8 @@ INTERNAS
  
 .ticket__titulo {
   font-family: var(--fuente-titulos);
-  font-size: 1rem;
+  font-size: var(--tamano-fuente-subtitulo);
+  text-transform: uppercase;
   font-weight: 700;
   color: var(--color-caja-vino);
   text-align: center;
@@ -1414,7 +1346,7 @@ INTERNAS
  
 .ticket__legend {
   font-family: var(--fuente-titulos);
-  font-size: 0.6rem;
+  font-size: var(--tamano-fuente-textos);
   color: var(--color-caja-amarillo);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1428,7 +1360,7 @@ INTERNAS
  
 .ticket__label {
   display: block;
-  font-size: 0.82rem;
+  font-size: var(--tamano-fuente-textos);
   font-weight: 500;
   color: var(--color-texto-principal);
   margin-bottom: 6px;
@@ -1443,7 +1375,7 @@ INTERNAS
   padding: 12px 20px;
   color: var(--color-titulo-principal);
   font-family: var(--fuente-textos);
-  font-size: 0.88rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   outline: none;
   transition: box-shadow 0.2s;
 }
@@ -1465,7 +1397,7 @@ INTERNAS
   padding: 14px 18px;
   color: var(--color-titulo-principal);
   font-family: var(--fuente-textos);
-  font-size: 0.88rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   resize: vertical;
   outline: none;
   line-height: 1.6;
@@ -1494,7 +1426,7 @@ INTERNAS
   padding: 12px 40px 12px 20px;
   color: var(--color-titulo-principal);
   font-family: var(--fuente-textos);
-  font-size: 0.88rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   outline: none;
   cursor: pointer;
   transition: box-shadow 0.2s;
@@ -1517,7 +1449,7 @@ INTERNAS
   transform: translateY(-50%);
   color: var(--color-titulo-principal);
   pointer-events: none;
-  font-size: 0.9rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
 }
  
 /* CHECKBOXES */
@@ -1533,7 +1465,7 @@ INTERNAS
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.84rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   color: var(--color-texto-principal);
   cursor: pointer;
   padding: 8px 12px;
@@ -1589,7 +1521,7 @@ INTERNAS
   padding: 10px 20px;
   color: var(--color-titulo-principal);
   font-family: var(--fuente-textos);
-  font-size: 0.85rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   text-align: left;
   cursor: pointer;
   transition: background 0.15s;
@@ -1613,7 +1545,7 @@ INTERNAS
   padding: 12px 22px;
   cursor: pointer;
   color: var(--color-titulo-principal);
-  font-size: 0.88rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   transition: box-shadow 0.2s;
 }
  
@@ -1655,7 +1587,7 @@ INTERNAS
   background: var(--color-caja-vino);
   color: #fff;
   border: none;
-  font-size: 1rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   line-height: 1;
   cursor: pointer;
   display: flex;
@@ -1680,7 +1612,7 @@ INTERNAS
  
 .ticket__submit {
   padding: 14px 48px;
-  font-size: 0.8rem;
+  font-size: var(--tamano-fuente-textos);
   letter-spacing: 0.08em;
 }
  
@@ -1708,7 +1640,7 @@ INTERNAS
 }
  
 .ticket__field-hint {
-  font-size: 0.72rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   color: var(--color-texto-light);
   margin-bottom: 10px;
   font-style: italic;
@@ -1719,7 +1651,7 @@ INTERNAS
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 0.88rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   color: var(--color-texto-principal);
   cursor: pointer;
   padding: 12px 16px;
@@ -1797,7 +1729,7 @@ INTERNAS
   border-radius: 50px;
   padding: 16px 36px;
   font-family: var(--fuente-titulos);
-  font-size: 0.78rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -1837,10 +1769,10 @@ INTERNAS
   transform: none;
 }
  
-.ticket__btn-registrar__icono { font-size: 1.2rem; }
+.ticket__btn-registrar__icono { font-size: var(--tamano-fuente-textos) }
  
 .ticket__btn-registrar__flecha {
-  font-size: 1rem;
+  font-size: var(--tamano-fuente-textos);
   transition: transform 0.2s;
 }
  
@@ -1867,7 +1799,7 @@ INTERNAS
 }
  
 .resultado-canasta__intro {
-  font-size: 0.82rem;
+  font-size: var(--tamano-fuente-textos);
   color: var(--color-texto-light);
   font-style: italic;
   margin-bottom: 6px;
@@ -1875,7 +1807,7 @@ INTERNAS
  
 .resultado-canasta__tipo-label {
   font-family: var(--fuente-titulos);
-  font-size: 0.6rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--color-texto-light);
@@ -1884,7 +1816,7 @@ INTERNAS
  
 .resultado-canasta__nombre {
   font-family: var(--fuente-titulos);
-  font-size: clamp(1.1rem, 4vw, 1.6rem);
+  font-size: var(--tamano-fuente-subtitulo);
   font-weight: 900;
   color: var(--color-texto-light);
   line-height: 1.15;
@@ -1917,7 +1849,7 @@ INTERNAS
 }
  
 .resultado-canasta__descripcion {
-  font-size: 0.88rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   color: var(--color-texto-light);
   line-height: 1.7;
   max-width: 380px;
@@ -1937,7 +1869,7 @@ INTERNAS
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.8rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   color: var(--color-texto-light);
 }
  
@@ -1964,7 +1896,7 @@ INTERNAS
  
 /* Mensaje de validación inline */
 .ticket__error {
-  font-size: 0.75rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   color: #f87171;
   margin-top: 6px;
   padding-left: 4px;
@@ -2006,7 +1938,7 @@ INTERNAS
 
 .galeria-header-titulo {
   font-family: var(--fuente-titulos);
-  font-size: clamp(1.8rem, 7vw, 3.5rem);
+  font-size: var(--tamano-fuente-titulo-principal);
   font-weight: 900;
   color: var(--color-titulo-principal);
   line-height: 1.05;
@@ -2014,7 +1946,7 @@ INTERNAS
 
 .galeria-header-subtitulo {
   font-family: var(--fuente-textos);
-  font-size: 1.55rem;
+  font-size: var(--tamano-fuente-subtitulo);
   color: var(--color-titulo-principal);
   font-weight: 800;
   margin-top: 8px;
@@ -2054,7 +1986,7 @@ INTERNAS
 }
 
 .galeria-intro__caja p {
-  font-size: 1.2rem;
+  font-size: var(--tamano-fuente-textos);
   color: var(--color-titulo-principal);
   line-height: 1.75;
 }
@@ -2204,7 +2136,7 @@ INTERNAS
 
 .foto-card--placeholder .foto-card__front::after {
   content: 'Fotografía';
-  font-size: 0.75rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   color: #a0946e;
   font-family: var(--fuente-textos);
 }
@@ -2222,7 +2154,7 @@ INTERNAS
 
 .foto-card__curatorial {
   font-family: var(--fuente-textos);
-  font-size: 0.82rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   color: var(--color-titulo-principal);
   line-height: 1.65;
   text-align: center;
@@ -2374,7 +2306,7 @@ INTERNAS
  
 .producto__cat {
   font-family: var(--fuente-titulos);
-  font-size: clamp(0.55rem, 1.5vw, 0.7rem);
+  font-size: var(--tamano-fuente-textos-pequeños);
   font-weight: 700;
   color: var(--color-caja-marron);
   text-transform: uppercase;
@@ -2420,7 +2352,7 @@ INTERNAS
 }
  
 .producto__desc {
-  font-size: clamp(0.62rem, 1.4vw, 0.76rem);
+  font-size: var(--tamano-fuente-textos-pequeños);
   color: var(--color-texto-principal);
   line-height: 1.45;
   text-align: center;
@@ -2438,7 +2370,7 @@ INTERNAS
   border-radius: 50px;
   padding: 10px 26px;
   font-family: var(--fuente-titulos);
-  font-size: clamp(0.6rem, 1.8vw, 0.75rem);
+  font-size: var(--tamano-fuente-textos-pequeños);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2454,7 +2386,7 @@ INTERNAS
   transform: translateY(-2px);
 }
  
-.btn-comprar__icono { font-size: 1.1rem; }
+.btn-comprar__icono { font-size: var(--tamano-fuente-subtitulo); }
  
 .btn-comprar__badge {
   position: absolute;
@@ -2463,7 +2395,7 @@ INTERNAS
   background: var(--color-caja-amarillo);
   color: var(--color-caja-vino);
   font-family: var(--fuente-titulos);
-  font-size: 0.65rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   font-weight: 900;
   width: 22px;
   height: 22px;
@@ -2541,7 +2473,7 @@ INTERNAS
   border-radius: 50%;
   width: 28px;
   height: 28px;
-  font-size: 0.9rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -2553,13 +2485,13 @@ INTERNAS
  
 .popup__titulo {
   font-family: var(--fuente-titulos);
-  font-size: 1.1rem;
+  font-size: var(--tamano-fuente-textos);
   color: var(--color-caja-vino);
   margin-bottom: 4px;
 }
  
 .popup__subtitulo {
-  font-size: 0.82rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   color: var(--color-texto-principal);
   margin-bottom: 20px;
 }
@@ -2603,7 +2535,7 @@ INTERNAS
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  font-size: 0.7rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2623,7 +2555,7 @@ INTERNAS
 }
  
 .popup-item__nombre {
-  font-size: 0.72rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   font-family: var(--fuente-titulos);
   color: var(--color-caja-vino);
   padding: 6px 8px;
@@ -2631,7 +2563,7 @@ INTERNAS
 }
  
 .popup-item__precio {
-  font-size: 0.7rem;
+  font-size:var(--tamano-fuente-textos-pequeños);
   color: var(--color-caja-marron);
   padding: 0 8px 8px;
   font-weight: 600;
@@ -2647,7 +2579,7 @@ INTERNAS
 }
  
 .popup__seleccionados {
-  font-size: 0.82rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   color: var(--color-texto-principal);
 }
  
@@ -2664,7 +2596,7 @@ INTERNAS
   border-radius: 50px;
   padding: 10px 22px;
   font-family: var(--fuente-titulos);
-  font-size: 0.68rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -2713,14 +2645,14 @@ INTERNAS
 }
  
 .carrito__item-nombre {
-  font-size: 0.82rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   color: var(--color-texto-principal);
   font-weight: 500;
   flex: 1;
 }
  
 .carrito__item-tipo {
-  font-size: 0.68rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   color: var(--color-caja-marron);
   background: rgba(108,61,32,0.12);
   padding: 2px 8px;
@@ -2732,7 +2664,7 @@ INTERNAS
   border: none;
   color: var(--color-caja-vino);
   cursor: pointer;
-  font-size: 1rem;
+  font-size: var(--tamano-fuente-textos);
   padding: 2px 4px;
   border-radius: 4px;
   transition: background 0.15s;
@@ -2743,7 +2675,7 @@ INTERNAS
 .carrito__vacio {
   text-align: center;
   padding: 24px 0;
-  font-size: 0.88rem;
+  font-size: var(--tamano-fuente-textos-pequeños);
   color: #a09060;
   line-height: 1.6;
 }
@@ -2759,14 +2691,14 @@ INTERNAS
 }
  
 .carrito__total {
-  font-size: 0.85rem;
+  font-size: var(--tamano-fuente-textos);
   color: var(--color-texto-principal);
 }
  
 .carrito__total strong {
   color: var(--color-caja-vino);
   font-family: var(--fuente-titulos);
-  font-size: 1rem;
+  font-size: var(--tamano-fuente-textos);
 }
  
 .btn-whatsapp {
@@ -2952,34 +2884,27 @@ INTERNAS
 
   .hamburguesa { display: flex; }
  
-  
- 
-  /* Ocultar canastas */
   .hero-canastas { display: none; }
  
-  /* Hero: columna única */
   .hero {
     grid-template-columns: 1fr;
     margin: 0 40px;
     min-height: unset;
   }
 
-  /* Logo más pequeño */
   .logo {
     width: 100px;
     height: 100px;
     left: 10px;
   }
  
-  /* Hero contenido ocupa todo el ancho */
   .hero-contenido {
     margin-left: 20px;
     padding: 25px 20px 100px 40px;
     border-radius: 16px 100px 16px 16px;
     max-width: 100%;
   }
- 
-  /* Mirada: sin pull up, columna única */
+
   .mirada {
     top: -95px;
     margin: 0 15px;
@@ -3017,7 +2942,6 @@ INTERNAS
     padding: 14px 28px;
   }
  
-  /* Narrativa: apilada */
   .narrativa { margin: 0 15px; }
  
   .narrativa-flex {
@@ -3037,7 +2961,6 @@ INTERNAS
     min-height: unset;
   }
  
-  /* Momentos: 2 columnas en tablet */
   .momentos { padding: 20px 8px; margin: 24px 0; }
  
   .momentos-marco {
@@ -3067,15 +2990,15 @@ INTERNAS
  
   .tiendas-foto {
     order: -1;
-    border-radius: 40px;
+    border-radius: 40px 0 0 40px  ;
     aspect-ratio: 16 / 8;
     height: auto;
   }
  
   .tiendas-bloque-vino,
   .tiendas-bloque-beige {
-    border-radius: 40px;
-    padding: 36px 28px;
+    border-radius: 0 40px 40px 0;
+    padding: 36px 42px;
   }
  
   .tiendas-intro { 
@@ -3091,11 +3014,108 @@ INTERNAS
     padding: 20px;
     
   }
-  /* Hojas: ocultar para evitar overflow horizontal */
-  .hoja,
-  .hoja-momentos-izq,
-  .hoja-tienda { display: none; }
+
+  .hoja.hoja-izq-arriba {
+    left: 0;
+    top: -200px;
+    width: 650px;
+  }
+
+  .hoja.hoja-der-abajo {
+    left: 350px;
+    top: 200px;
+    width: 400px;
+  }
+  .hoja-momentos-izq{
+    left: 0;
+    top: 300px;
+    width: 350px;
+  }
+  .hoja-tienda-der {
+    left: 350px;
+    top: -30px;
+    width: 550px;
+  }
+
+  .hoja-tienda-izq{
+    left: 90px;
+    top: 950px;
+    width: 350px;
+  }
+
+  /* -- RECORRIDOS -- */
+
+  .recorrido-header {
+    width: 600px;
+    height: auto;
+    margin: 40px auto 0 ;
+    border-radius: 32px;
+  }
+
+  .recorrido-header-inner {
+    padding: 40px;
+  }
+
+  .recorrido-header-titulo {
+    font-size: clamp(2rem, 8vw, 3.2rem);
+    text-align: left;
+  }
+
+  .recorrido-header-subtitulo {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+
+  .recorrido-intro-caja {
+    max-width: 85%;
+    margin: -50px auto 0;
+    padding: 32px;
+  }
+
+  .recorrido-intro-caja p {
+    font-size: 1rem;
+  }
+
+  .mapa-section-header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .mapa-section-label {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .mapa-section-caja {
+    margin: 0 20px 30px;
+    border-radius: 40px;
+    padding: 30px;
+    min-height: auto;
+  }
+
+  .mapa-section-texto {
+    font-size: 1rem;
+  }
+
+  .mapa-section-frame {
+    height: 500px;
+    margin: 20px;
+  }
+
+  .mapa-deco-tl {
+    width: 90px;
+  }
+
+  .mapa-deco-br {
+    width: 80px;
+  }
+
+  .tiendas-grid-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 }
+
  
  
 /* =============================================
@@ -3107,6 +3127,15 @@ INTERNAS
     width: 80px;
     height: 80px;
     left: 12px;
+  }
+
+  .hamburguesa{
+    width: 45px;
+    height: 45px;
+  }
+  .hamburguesa span {
+    width: 20px;
+    height: 2.5px;
   }
  
   .hero { padding: 16px 12px 36px; }
@@ -3175,9 +3204,14 @@ INTERNAS
  
   /* Tiendas */
   .tiendas-bloque-vino,
-  .tiendas-bloque-beige { padding: 24px; border-radius: 24px; }
+  .tiendas-bloque-beige { 
+    padding: 36px; 
+    border-radius: 24px; 
+  }
  
-  .tiendas-intro { padding: 18px 14px; border-radius: 0px; }
+  .tiendas-intro { 
+    padding: 18px 14px; 
+    border-radius: 20px; }
 
   .tiendas-intro p{
     font-size: clamp(0.95rem, 2vw, 1.1rem);
