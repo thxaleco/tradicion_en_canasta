@@ -62,6 +62,10 @@ html { scroll-behavior: smooth;
 body {
   font-family: var(--fuente-textos);
   background-color: var(--color-fondo-principal);
+  background-image: url(IMG/fondo.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--color-texto-principal);
   overflow-x: hidden;
 }
@@ -173,6 +177,7 @@ body {
   min-height: 400px;
   position: relative;
   padding: 40px 60px;
+  overflow: hidden;
 }
  
 /* --- Logo --- */
@@ -189,7 +194,7 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 20;
+  z-index: 99;
 }
 
 .logo-img:hover {
@@ -259,7 +264,7 @@ body {
   align-items: center;
   cursor: pointer;
   transition: transform 0.18s ease;
-  position: relative;
+
 }
  
 .canasta:hover { transform: scale(1.06) translateY(-4px); }
@@ -336,7 +341,6 @@ body {
   display: flex;
   flex-direction: column;
   transform: translateX(90px);
-  margin-right: 0;
   margin-top: -80px;
 }
  
@@ -551,16 +555,15 @@ body {
 }
  
 .hoja-tienda-der {
-  position: absolute;
   width: 800px;
   right: -120px;
-  top: 0;
+  top: 30px;
   transform: rotate(-100deg);
   max-width: none;
 }
  
 .hoja-tienda-izq {
-  left: 0;
+  left: 90px;
   top: 1050px;
   width: 650px;
   transform: translateX(-200px) rotate(90deg);
@@ -688,6 +691,7 @@ INTERNAS
 
   border-radius: 40px;
   background-color: var(--color-caja-marron);
+
 }
 
 .recorrido-header-inner {
@@ -724,12 +728,12 @@ INTERNAS
   display: flex;
   flex-direction: column;
   gap: 14px;
-  max-width: 700px;
+  max-width: 650px;
   text-align: center;
 
-  margin-top: -90px;
-  margin-left: 300px;
+  margin: -90px 0 0 330px;
 }
+
  
 .recorrido-intro-caja p {
   font-size: var(--tamano-fuente-textos);
@@ -751,12 +755,28 @@ INTERNAS
 
 }
 
+.hoja-recorridos-arriba{
+ position: absolute;
+
+  left: -250px;
+  top: -90px;
+
+  width: 500px;
+
+  z-index: 4;
+}
+
+.hoja-recorridos-arriba img{
+  width: 100%;
+  display: block;
+}
+
 .mapa-section-label {
   font-family: var(--fuente-titulos);
   font-size: var(--tamano-fuente-titulo-principal);
   font-weight: 900;
   color: var(--color-caja-vino);
-  line-height: 0.9;
+  line-height: var(--interlineado-textos);
   margin: 20px;
 }
 
@@ -768,7 +788,7 @@ INTERNAS
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translateX(100px) 
+  transform: translateX(100px);
 }
 
 .mapa-section-texto {
@@ -781,37 +801,34 @@ INTERNAS
   padding: 40px 60px;
 }
 
-.mapa-section-rame-wrap {
+.mapa-section-frame-wrap {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;  
   align-items: center;     
-  height: 100vh;     
+
 }
- 
-.mapa-deco {
+
+.hoja-recorridos-mapa-arriba{
   position: absolute;
-  z-index: 2;
-  pointer-events: none;
-  opacity: 0.3;
+  left: 900px;
+  top: 500px;
+
+  width: 600px;
+
+  z-index: -1;
 }
- 
-.mapa-deco-tl {
-  top: -30px;
-  left: -30px;
-  width: 120px;
-  transform: rotate(-20deg);
+
+.hoja-recorridos-mapa-arriba img{
+  width: 100%;
+  display: block;
+
 }
- 
-.mapa-deco-br {
-  bottom: 40px;
-  right: -20px;
-  width: 100px;
-  transform: rotate(10deg);
-}
- 
+
 .mapa-section-frame {
   height: 640px;
+  width: 90%;
   margin: var(--margen-seccion);
   background: var(--color-fondo-principal);
   border-radius: 24px;
@@ -823,8 +840,8 @@ INTERNAS
 .mapa-section-cta {
   display: block;
   width: fit-content;
-  margin: 28px auto 0;
-  padding: 14px 48px;
+  margin: 20px;
+  padding: 16px 28px;
   font-size: var(--tamano-fuente-subtitulo);
   font-weight: 900;
   background-color: var(--color-boton-hover-principal);
@@ -832,9 +849,33 @@ INTERNAS
   border-radius: 30px;
 }
 
+.mapa-section-cta:hover{
+  background-color: var(--color-boton-secundario);
+  transform: scale(1.04);
+}
+
 /* ===== TIENDAS GRID ===== */
 .tiendas-grid {
   padding-top: 0;
+  position: relative;
+}
+
+.hoja-recorridos-tiendas-arriba{
+  position: absolute;
+
+  left: -150px;
+  top: 1150px;
+
+  width: 600px;
+
+  z-index: -1;
+  transform:  rotateX(180deg);
+}
+
+.hoja-recorridos-tiendas-arriba img{
+  width: 100%;
+  display: block;
+
 }
  
 .tiendas-grid-inner {
@@ -892,7 +933,7 @@ INTERNAS
 }
  
 .tienda-card-texto {
-  font-size: var(--tamano-fuente-textos);
+  font-size: var(--tamano-fuente-textos-pequeños);
   color: var(--color-texto-principal);
   line-height: var(--interlineado-textos);
 }
@@ -3046,34 +3087,28 @@ INTERNAS
   /* -- RECORRIDOS -- */
 
   .recorrido-header {
-    width: 600px;
+    width: 70%;
     height: auto;
     margin: 40px auto 0 ;
     border-radius: 32px;
   }
 
   .recorrido-header-inner {
-    padding: 40px;
+    padding: 30px 30px 50px 30px;
   }
 
   .recorrido-header-titulo {
-    font-size: clamp(2rem, 8vw, 3.2rem);
     text-align: left;
   }
 
   .recorrido-header-subtitulo {
-    font-size: 1.2rem;
     text-align: left;
   }
 
   .recorrido-intro-caja {
-    max-width: 85%;
-    margin: -50px auto 0;
+    max-width: 75%;
+    margin: -30px 20px 20px 200px;
     padding: 32px;
-  }
-
-  .recorrido-intro-caja p {
-    font-size: 1rem;
   }
 
   .mapa-section-header {
@@ -3082,19 +3117,16 @@ INTERNAS
   }
 
   .mapa-section-label {
-    text-align: center;
+    text-align: left;
     margin-bottom: 0;
   }
 
   .mapa-section-caja {
     margin: 0 20px 30px;
     border-radius: 40px;
-    padding: 30px;
+    padding: 20px;
     min-height: auto;
-  }
-
-  .mapa-section-texto {
-    font-size: 1rem;
+    transform: translateX(0);
   }
 
   .mapa-section-frame {
@@ -3111,9 +3143,202 @@ INTERNAS
   }
 
   .tiendas-grid-inner {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
+  /* -- RELATOS -- */
+
+  .relatos-header{
+    width: 75%;
+    height: auto;
+    margin: 30px 0 0 60px;
+    border-radius: 36px;
+  }
+
+  .relatos-header-inner{
+    padding: 36px;
+  }
+
+  .relatos-header-titulo{
+    font-size: var(--tamano-fuente-titulo-principal);
+  }
+
+  .relatos-header-subtitulo{
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  /* ===== INTRO ===== */
+
+  .relatos-intro__caja{
+    max-width: 90%;
+    margin-top: -70px;
+    padding: 40px;
+    border-radius: 0 36px 36px 0;
+  }
+
+  .relatos-documental{
+    top: auto;
+    left: 40px;
+    bottom: -24px;
+
+    font-size: 0.9rem;
+    padding: 14px 24px;
+  }
+
+  /* ===== MAIN ===== */
+
+  .relatos-main{
+    max-width: 100%;
+    margin: 0;
+    padding: 40px;
+    gap: 100px;
+  }
+
+  /* =========================================
+     CARD GENERAL
+  ========================================= */
+
+  .relato-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    margin-top: 60px;
+  }
+
+  /* ===== FOTO ===== */
+
+  .relato-card__img-wrap{
+    width: 420px;
+    height: 520px;
+
+    padding-left: 20px;
+    padding-top: 20px;
+
+    border-radius: 40px;
+  }
+
+  .relato-card__img-wrap img{
+    border-radius: 32px;
+  }
+
+  /* ===== CONTENIDO ===== */
+
+  .relato-card__content{
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    min-width: 100%;
+    min-height: auto;
+
+    padding: 36px;
+    border-width: 10px;
+    border-radius: 36px;
+  }
+
+  .relato-card__cita{
+    max-width: 100%;
+    padding: 0;
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: center;
+  }
+
+  /* ===== NOMBRE ===== */
+
+  .relato-card__nombre{
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    margin-top: -10px;
+
+    font-size: 2rem;
+    padding: 18px 32px;
+    border-radius: 40px;
+  }
+
+  /* ===== DECORATIVOS ===== */
+
+  .relato-card__decorativo{
+    display: none;
+  }
+
+  .relato-card--left:last-child .relato-card__hoja{
+    width: 220px;
+
+    right: -40px;
+    bottom: -120px;
+  }
+
+  /* =========================================
+     CARD RIGHT
+  ========================================= */
+
+  .relato-card--right{
+    min-height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .relato-card--right .relato-card__img-wrap{
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    width: 420px;
+    height: 520px;
+
+    padding: 0 20px 20px 0;
+  }
+
+  .relato-card--right .relato-card__content{
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    min-width: 100%;
+    min-height: auto;
+
+    padding: 36px;
+  }
+
+  .relato-card--right .relato-card__cita{
+    max-width: 100%;
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .relato-card--right .relato-card__nombre{
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    font-size: 2rem;
+    padding: 18px 32px;
+  }
+
+  .relato-card__hoja-bg{
+    width: 500px;
+
+    left: -180px;
+    top: 420px;
+
+    opacity: 0.4;
+  }
 }
 
  
@@ -3126,7 +3351,7 @@ INTERNAS
   .logo {
     width: 80px;
     height: 80px;
-    left: 12px;
+    left: 8px;
   }
 
   .hamburguesa{
@@ -3141,25 +3366,27 @@ INTERNAS
   .hero { padding: 16px 12px 36px; }
  
   .hero-contenido {
+    width: 90%;
+    margin-left: 40px;
     padding: 40px 10px 70px 20px;
     border-radius: 14px 90px 14px 14px;
    
   }
  
   .hero-titulo { 
-    font-size: clamp(1rem, 9vw, 1.5rem); 
+    font-size: var(--tamano-fuente-titulo-secundario); 
   }
  
-  .hero-subtitulo { font-size: clamp(0.95rem, 3.5vw, 1.1rem); }
+  .hero-subtitulo { font-size: var(--tamano-fuente-textos); }
  
   
   .mirada { 
     border-radius: 25px;
     top: -75px;
-    margin: 0 15px;
+    margin: 0 16px;
   }
   .mirada-titulo { 
-    font-size: clamp(1.3rem, 5vw, 1.8rem); 
+    font-size: var(--tamano-fuente-subtitulo); 
     padding: 16px 16px 8px; 
   
 }
@@ -3178,7 +3405,7 @@ INTERNAS
     padding: 28px 28px; 
   }
   .narrativa-caja p { 
-    font-size: clamp(0.95rem, 3.5vw, 1.1rem); 
+    font-size: var(--tamano-fuente-textos-pequeños) 
   }
  
   .narrativa-circulo {
@@ -3214,15 +3441,307 @@ INTERNAS
     border-radius: 20px; }
 
   .tiendas-intro p{
-    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    font-size: var(--tamano-fuente-textos-pequeños);
   }
  
   .tiendas-foto { border-radius: 24px; }
  
-  .btn-capsula { font-size: 1rem; padding: 12px 22px; }
+  .btn-capsula { 
+    font-size: var(--tamano-fuente-textos); 
+    padding: 12px 22px; }
  
-  /* Nav móvil: links más compactos */
-  .nav-mobile-link { font-size: clamp(1.5rem, 7vw, 2rem); }
+  .nav-mobile-link { font-size: var(--tamano-fuente-subtitulo);}
   .nav-mobile { gap: 20px; }
-}
- 
+
+    /* -- RECORRIDOS -- */
+
+  .recorrido-header {
+    width: 60%;
+    margin: 16px auto;
+    height: auto;
+    border-radius: 24px;
+    margin: 25px 0 0 90px;
+    
+  }
+
+  .recorrido-header-inner {
+    padding: 20px 16px 30px 26px;
+    gap: 14px;
+  }
+
+  .recorrido-header-titulo{
+    font-size: var(--tamano-fuente-titulo-secundario);
+  }
+  .recorrido-header-subtitulo {
+    font-size: var(--tamano-fuente-textos);
+  }
+
+  .recorrido-intro-caja {
+    width: 100%;
+    margin: -20px auto 0;
+    padding: 22px;
+    border-radius: 24px;
+    
+  }
+
+  .recorrido-intro-caja p {
+    font-size: var(--tamano-fuente-textos-pequeños);
+  }
+
+  .mapa-section {
+    margin: 20px 12px;
+  }
+
+  .mapa-section-header {
+    grid-template-columns: 1fr;
+  }
+
+  .mapa-section-label {
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: var(--tamano-fuente-titulo-secundario);
+  }
+
+  .mapa-section-caja {
+    border-radius: 24px;
+    transform: none;
+  }
+
+  .mapa-section-texto {
+    padding: 16px;
+    font-size: var(--tamano-fuente-textos-pequeños);
+  }
+
+  .mapa-section-rame-wrap {
+    height: auto;
+  }
+
+  .mapa-section-frame {
+    height: 320px;
+    width: 90%;
+    margin: 30px 0;
+    border-radius: 18px;
+  }
+
+
+  .mapa-section-cta {
+    width: 50%;
+    text-align: center;
+  }
+
+  .tiendas-grid-inner {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin: 16px;
+  }
+
+  .tienda-card-nombre {
+    font-size: var(--tamano-fuente-textos);
+  }
+   
+  .tienda-card-dir,
+  .tienda-card-texto {
+    font-size: var(--tamano-fuente-textos-pequeños);
+  }
+
+  /* -- RELATOS -- */
+
+  .relatos-header{
+    width: calc(100% - 32px);
+    height: auto;
+    margin: 20px 16px 0;
+    border-radius: 28px;
+  }
+
+  .relatos-header-inner{
+    padding: 28px 24px;
+  }
+
+  .relatos-header-titulo{
+    font-size: clamp(2.3rem, 10vw, 4rem);
+    line-height: 0.95;
+  }
+
+  .relatos-header-subtitulo{
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 12px;
+  }
+
+  /* ===== INTRO ===== */
+
+  .relatos-intro__caja{
+    max-width: calc(100% - 32px);
+    margin: -40px auto 0;
+    padding: 28px 24px 80px;
+    border-radius: 28px;
+    text-align: left;
+  }
+
+  .relatos-intro__caja p{
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .relatos-documental{
+    position: absolute;
+    top: auto;
+    left: 24px;
+    bottom: 20px;
+
+    font-size: 0.8rem;
+    padding: 12px 18px;
+    border-radius: 30px;
+  }
+
+  /* ===== MAIN ===== */
+
+  .relatos-main{
+    width: 100%;
+    margin: 0;
+    padding: 24px 16px 60px;
+    gap: 70px;
+  }
+
+  /* =========================================
+     CARD GENERAL
+  ========================================= */
+
+  .relato-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    margin-top: 0;
+    position: relative;
+  }
+
+  /* ===== FOTO ===== */
+
+  .relato-card__img-wrap{
+    width: 100%;
+    max-width: 320px;
+    height: 420px;
+
+    padding: 16px 0 0 16px;
+    border-radius: 32px;
+  }
+
+  .relato-card__img-wrap img{
+    border-radius: 24px;
+  }
+
+  /* ===== CAJA TEXTO ===== */
+
+  .relato-card__content{
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    min-width: 100%;
+    min-height: auto;
+
+    padding: 24px;
+    border-width: 8px;
+    border-radius: 28px;
+  }
+
+  .relato-card__cita{
+    max-width: 100%;
+    padding: 0;
+
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  /* ===== NOMBRE ===== */
+
+  .relato-card__nombre{
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    margin-top: -10px;
+
+    font-size: 1.3rem;
+    padding: 14px 24px;
+    border-radius: 30px;
+
+    text-align: center;
+  }
+
+  /* ===== DECORATIVOS ===== */
+
+  .relato-card__decorativo,
+  .relato-card__hoja,
+  .relato-card__hoja-bg{
+    display: none;
+  }
+
+  /* =========================================
+     CARD RIGHT (NATALIA)
+  ========================================= */
+
+  .relato-card--right{
+    min-height: auto;
+    margin-top: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .relato-card--right .relato-card__img-wrap{
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    width: 100%;
+    max-width: 320px;
+    height: 420px;
+
+    padding: 0 16px 16px 0;
+    border-radius: 32px;
+  }
+
+  .relato-card--right .relato-card__content{
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    min-width: 100%;
+    min-height: auto;
+
+    padding: 24px;
+    border-width: 8px;
+    border-radius: 28px;
+  }
+
+  .relato-card--right .relato-card__cita{
+    max-width: 100%;
+
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  .relato-card--right .relato-card__nombre{
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    font-size: 1.3rem;
+    padding: 14px 24px;
+    border-radius: 30px;
+
+    text-align: center;
+  }
+  }

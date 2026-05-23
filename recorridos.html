@@ -9,38 +9,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/>
 </head>
+
 <body>
 
 <!-- NAVBAR -->
  <header>
     <div class="logo" id="logo">
-            <a href="index.html" class="inicio">
-            <img class="logo-img" src="IMG/logo_tc.png" alt="logo tradición"/>
-            </a>
+      <a href="index.html" class="inicio">
+        <img class="logo-img" src="IMG/logo_tc.png" alt="logo tradición"/>
+      </a>
         </div>
 
   
-        <nav class="hero-canastas" aria-label="Secciones">
+      <nav class="hero-canastas" aria-label="Secciones">
 
-          <a href="galeria.html" class="canasta" id="canasta-tienda">
-              <img class="canasta-img" src="IMG/canasta-amarilla.png" alt="La tienda"/>
-          </a>
+        <a href="galeria.html" class="canasta"id="canasta-tienda">
+            <img class="canasta-img" src="IMG/canasta-amarilla.png" alt="La tienda"/>
+         </a>
 
-          <a href="recorridos.html" class="canasta" id="canasta-recorridos">
-              <img class="canasta-img" src="IMG/canasta-vino.png" alt="Recorridos"/>
-          </a>
+         <a href="recorridos.html" class="canasta"id="canasta-recorridos">
+            <img class="canasta-img" src="IMG/canasta-vino.png" alt="Recorridos"/>
+         </a>
 
-          <a href="relatos.html" class="canasta" id="canasta-relatos">
-              <img class="canasta-img" src="IMG/canasta-verde.png" alt="Relatos"/>
-          </a>
+         <a href="relatos.html" class="canasta"id="canasta-relatos">
+             <img class="canasta-img" src="IMG/canasta-verde.png" alt="Relatos"/>
+        </a>
 
-          <a href="canasta.html" class="canasta" id="canasta-canasta">
-              <img class="canasta-img" src="IMG/canasta-marron.png"
-              alt="La canasta">
+         <a href="canasta.html" class="canasta"id="canasta-canasta">
+             <img class="canasta-img" src="IMG/canasta-marron.png"
+             alt="La canasta">
           </a>
           
-        </nav>
+      </nav>
 
+        
         <button class="hamburguesa" id="ham" aria-label="Abrir menú">
           <span></span>
           <span></span>
@@ -56,6 +58,7 @@
             <a href="canasta.html"   class="nav-mobile-link" tabindex="-1">La canasta</a>
             <a href="galeria.html"   class="nav-mobile-link" tabindex="-1">Galería</a>
         </nav>
+    
       
     <div class="recorrido-header">
       <div class="recorrido-header-inner">
@@ -77,7 +80,7 @@
 <!-- INTRO -->
 <section class="section-recorrido-intro">
   <div class="recorrido-intro-caja">
-    <p>Las tiendas no solo son un punto de llegada. Son un lugar desde donde comienzan múltiples recorridos que se extienden por el barrio. Cada tienda es parte de ese movimiento cotidiano donde los alimentos, las personas y las historias se encuentran.</p>
+    <p>Las tiendas no solo son un punto de llegada. Son el lugar donde comienzan múltiples recorridos que se extienden por el barrio y hacen parte del movimiento cotidiano.</p>
     <p>Aquí encontrarás los puntos de aquellos tenderos que nos comparten su historia y dedican su día a las ventas.</p>
   </div>
 </section>
@@ -86,6 +89,11 @@
 <section class="mapa-section fade-up">
 
   <div class="mapa-section-header">
+
+    <!-- hojas decorativas -->
+        <img class="hoja hoja-recorridos-arriba"
+       src="IMG/hoja_verde.png"
+       alt="Hoja decorativa">
 
     <h2 class="mapa-section-label">MAPA</h2>
 
@@ -102,13 +110,10 @@
 
 </section>
 <section>
-<div class="mapa-section-frame-wrap">
-    <!-- Hojas decorativas -->
-    <img src="img/hoja1.png" alt="" class="mapa-deco mapa-deco-tl" aria-hidden="true" onerror="this.style.display='none'">
-    <img src="img/hoja2.png" alt="" class="mapa-deco mapa-deco-br" aria-hidden="true" onerror="this.style.display='none'">
- 
+    <div class="mapa-section-frame-wrap">
+  
     <div class="mapa-section-frame">
-      <!-- Iframe con Google Maps de Dosquebradas -->
+
       <iframe
          src="https://www.google.com/maps/d/embed?mid=14Y3Y-U0bUxEu71P7wrUXjcvbTdYFRoM&ehbc=2E312F" 
         width="100%"
@@ -127,6 +132,8 @@
 
 <!-- TARJETAS DE TIENDAS -->
 <section class="section tiendas-grid fade-up" id="tiendas">
+
+
   <div class="tiendas-grid-inner">
 
     <article class="tienda-card">
@@ -200,6 +207,6 @@
   </div>
 </footer>
 
-<script src="js/global.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
