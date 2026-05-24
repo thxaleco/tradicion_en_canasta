@@ -991,9 +991,10 @@ INTERNAS
 
 .relatos-header-inner {
   max-width: 900px;
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  gap: 24px;
   padding: 40px;
 }
 
@@ -1002,7 +1003,7 @@ INTERNAS
   font-size: var(--tamano-fuente-titulo-principal);
   font-weight: 900;
   color: var(--color-titulo-principal);
-  line-height: 1;
+  line-height: var(--interlineado-textos);
 }
 
 .relatos-header-subtitulo {
@@ -1017,7 +1018,7 @@ INTERNAS
 .relatos-intro__caja {
   background-color: var(--color-caja-vino);
   border-radius: 0 40px 40px 0;
-  padding: 50px;
+  padding: 60px;
   
   display: flex;
   flex-direction: column;
@@ -1027,7 +1028,6 @@ INTERNAS
   position: relative;
 
   margin-top: -120px;
-  margin-left: 0;
 
 }
 
@@ -1050,7 +1050,7 @@ INTERNAS
 .relatos-intro__caja p {
   font-size: var(--tamano-fuente-textos);
   color: var(--color-titulo-principal);
-  line-height: 1.75;
+  line-height: var(--interlineado-textos);
 }
 
 
@@ -1330,12 +1330,9 @@ INTERNAS
 
 .canasta-header {
   width: 50%;
-  height: 330px;
+  height: 300px;
   justify-self: start;
   margin: 25px 0 0 200px;
-  max-width: 900px;
-  display: flex;
-  flex-direction: column;
   gap: 24px;
   padding: 40px;
 
@@ -1351,7 +1348,7 @@ INTERNAS
   font-size: var(--tamano-fuente-titulo-principal);
   font-weight: 900;
   color: var(--color-titulo-principal);
-  line-height: 1.05;
+  line-height: var(--interlineado-textos);
 }
 
 .canasta-header-subtitulo {
@@ -1365,9 +1362,9 @@ INTERNAS
 
 /* ===== INTRO ===== */
 .canasta-intro {
-  padding: 40px 60px;
+  padding: 60px;
   background-color: var(--color-caja-amarillo);
-  border-radius: 150px 40px 150px 40px;
+  border-radius: 120px 40px 120px 40px;
   
   display: flex;
   flex-direction: column;
@@ -1381,7 +1378,7 @@ INTERNAS
 .canasta-intro-p {
   font-size: var(--tamano-fuente-textos);
   color: var(--color-titulo-principal);
-  line-height: 1.75;
+  line-height: var(--interlineado-textos);
 }
 
 /* ===== TICKET / FORMULARIO ===== */
@@ -1394,28 +1391,81 @@ INTERNAS
   max-width: 620px;
   margin: 0 auto;
   position: relative;
-  filter: drop-shadow(0 8px 32px rgba(108,61,32,0.18));
+  
+}
+
+/* -- HOJAS -- */
+.hoja-canasta-arriba-der{
+  position: absolute;
+  width: 800px;
+  left: 340px;
+  top: 130px;
+  z-index: -1;
+}
+
+.hoja-canasta-arriba-izq{
+  position: absolute;
+  width: 800px;
+  left: -460px;
+  top: -40px;
+  transform: rotate(270deg);
+
+  z-index: -1;
+}
+
+.hoja-canasta-arriba img{
+  width: 100%;
+  display: block;
 }
  
-/* Bordes dentados (scallop) */
+.hoja-canasta-medio {
+  position: absolute;
+  left: -450px;
+  top: 640px;
+  width: 800px;
+  transform: rotate(210deg);
+
+  z-index: -1;
+}
+
+.hoja-canasta-medio img{
+  width: 100%;
+  display: block;
+}
+
+ .hoja-canasta-abajo{
+  position: absolute;
+  width: 800px;
+  left: 250px;
+  top: 900px;
+  transform: rotate(60deg);
+  z-index: -1;
+
+}
+
+.hoja-canasta-abajo img{
+  width: 100%;
+  display: block;
+}
+ 
 .ticket__top-tear,
 .ticket__bottom-tear {
   height: 18px;
   background:
     radial-gradient(circle at 50% 0%, var(--color-fondo-ticket) 8px, transparent 8px) 0 0 / 20px 18px repeat-x,
     var(--color-fondo-ticket);
-  /* Se sobreescribe con el fondo del ticket */
+
 }
  
 .ticket__top-tear {
   background:
-    radial-gradient(circle at 50% 100%, var(--color-fondo-ticket) 9px, #f0e8cc 9px) 0 0 / 22px 18px repeat-x;
+    radial-gradient(circle at 50% 100%, var(--color-fondo-ticket) 9px, #f0e8cc 9px 0) 0 0 / 22px 18px repeat-x;
   border-radius: 12px 12px 0 0;
 }
  
 .ticket__bottom-tear {
   background:
-    radial-gradient(circle at 50% 0%, var(--color-fondo-ticket) 9px, #f0e8cc 9px) 0 0 / 22px 18px repeat-x;
+    radial-gradient(circle at 50% 0%, var(--color-fondo-ticket) 9px, #f0e8cc 9px 0) 0 0 / 22px 18px repeat-x;
   border-radius: 0 0 12px 12px;
 }
  
@@ -1429,7 +1479,7 @@ INTERNAS
       rgba(108,61,32,0.06) 31px,
       rgba(108,61,32,0.06) 32px
     );
-  padding: 28px 24px 32px;
+  padding: 42px 32px 42px 32px;
 }
  
 .ticket__titulo {
@@ -1437,7 +1487,7 @@ INTERNAS
   font-size: var(--tamano-fuente-subtitulo);
   text-transform: uppercase;
   font-weight: 700;
-  color: var(--color-caja-vino);
+  color: var(--color-texto-principal);
   text-align: center;
   margin-bottom: 28px;
   letter-spacing: 0.04em;
@@ -1452,12 +1502,13 @@ INTERNAS
 }
  
 .ticket__legend {
-  font-family: var(--fuente-titulos);
+  font-family: var(--fuente-textos);
   font-size: var(--tamano-fuente-textos);
   color: var(--color-caja-amarillo);
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 16px;
+  letter-spacing: var(--interlineado-textos);
+  margin: 10px;
   display: block;
 }
  
@@ -1470,7 +1521,7 @@ INTERNAS
   font-size: var(--tamano-fuente-textos);
   font-weight: 500;
   color: var(--color-texto-principal);
-  margin-bottom: 6px;
+  margin: 16px;
 }
  
 /* INPUT */
@@ -1485,6 +1536,7 @@ INTERNAS
   font-size: var(--tamano-fuente-textos-pequeños);
   outline: none;
   transition: box-shadow 0.2s;
+  opacity: .9;
 }
  
 .ticket__input::placeholder {
@@ -1507,8 +1559,9 @@ INTERNAS
   font-size: var(--tamano-fuente-textos-pequeños);
   resize: vertical;
   outline: none;
-  line-height: 1.6;
+  line-height: var(--interlineado-textos);
   transition: box-shadow 0.2s;
+  opacity: .9;
 }
  
 .ticket__textarea::placeholder {
@@ -1537,6 +1590,7 @@ INTERNAS
   outline: none;
   cursor: pointer;
   transition: box-shadow 0.2s;
+  opacity: .9;
 }
  
 .ticket__select:focus {
@@ -1579,6 +1633,7 @@ INTERNAS
   border-radius: 8px;
   background: rgba(108,61,32,0.08);
   transition: background 0.2s;
+  opacity: .9;
   
 }
  
@@ -1598,7 +1653,7 @@ INTERNAS
 .ticket__search-wrap {
   position: relative;
 }
- 
+
 .ticket__search-icon {
   position: absolute;
   left: 16px;
@@ -1606,10 +1661,13 @@ INTERNAS
   transform: translateY(-50%);
   width: 18px;
   color: rgba(255,244,217,0.7);
+  z-index: 2;
 }
- 
+
 .ticket__input--search {
   padding-left: 44px;
+  position: relative;
+  z-index: 1;
 }
  
 .ticket__sugerencias {
@@ -1654,6 +1712,7 @@ INTERNAS
   color: var(--color-titulo-principal);
   font-size: var(--tamano-fuente-textos-pequeños);
   transition: box-shadow 0.2s;
+  opacity: .9;
 }
  
 .ticket__upload-label:hover {
@@ -1663,7 +1722,7 @@ INTERNAS
 .ticket__upload-label svg {
   flex-shrink: 0;
   color: rgba(255,244,217,0.7);
-
+  width: 18px;
 }
  
 .ticket__upload-input {
@@ -1742,8 +1801,6 @@ INTERNAS
   flex-direction: column;
   gap: 10px;
 
-  
-
 }
  
 .ticket__field-hint {
@@ -1771,18 +1828,16 @@ INTERNAS
 
  
 .ticket__check-label:hover {
-  background:var(--color-caja-verde-claro);
+  background:var(--color-caja-marron 0.9);
 }
  
-/* Ocultar checkbox nativo */
 .ticket__check-label input[type="checkbox"] {
   position: absolute;
   opacity: 0;
   width: 0;
   height: 0;
 }
- 
-/* Checkbox custom */
+
 .ticket__check-custom {
   flex-shrink: 0;
   width: 20px;
@@ -1908,12 +1963,12 @@ INTERNAS
 .resultado-canasta__intro {
   font-size: var(--tamano-fuente-textos);
   color: var(--color-texto-light);
-  font-style: italic;
+  line-height: var(--interlineado-textos);
   margin-bottom: 6px;
 }
  
 .resultado-canasta__tipo-label {
-  font-family: var(--fuente-titulos);
+  font-family: var(--fuente-textos);
   font-size: var(--tamano-fuente-textos-pequeños);
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -1926,16 +1981,15 @@ INTERNAS
   font-size: var(--tamano-fuente-subtitulo);
   font-weight: 900;
   color: var(--color-texto-light);
-  line-height: 1.15;
+  line-height: var(--interlineado-textos);
   margin-bottom: 10px;
   text-transform: uppercase;
 }
- 
-/* Zona de la imagen de canasta */
+
 .resultado-canasta__img-wrap {
   margin: 4px auto 16px;
-  width: 110px;
-  height: 110px;
+  width: 200px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1958,12 +2012,11 @@ INTERNAS
 .resultado-canasta__descripcion {
   font-size: var(--tamano-fuente-textos-pequeños);
   color: var(--color-texto-light);
-  line-height: 1.7;
-  max-width: 380px;
+  line-height: var(--interlineado-textos);
+  max-width: 460px;
   margin: 0 auto;
 }
- 
-/* Franja inferior con datos de la tienda */
+
 .resultado-canasta__datos {
   background: rgba(0,0,0,0.18);
   padding: 16px 22px;
@@ -1981,7 +2034,7 @@ INTERNAS
 }
  
 .resultado-canasta__dato strong {
-  color: var(--color-titulo-principal);
+  color: var(--color-texto-light);
   font-weight: 600;
 }
  
@@ -2000,8 +2053,7 @@ INTERNAS
 .resultado-canasta--amarillo .resultado-canasta__datos  { background: rgba(0,0,0,0.12); }
 .resultado-canasta--amarillo .resultado-canasta__dato   { color: rgba(88,17,26,0.75); }
 .resultado-canasta--amarillo .resultado-canasta__dato strong { color: var(--color-caja-vino); }
- 
-/* Mensaje de validación inline */
+
 .ticket__error {
   font-size: var(--tamano-fuente-textos-pequeños);
   color: #f87171;
@@ -2128,7 +2180,7 @@ INTERNAS
 
 .collage-deco-icono_bascula {
   top: 220px;
-  left: ;
+  left: 0;
   width: 120px;
   height: 150px;
   transform: rotate(-20deg);
@@ -2180,7 +2232,6 @@ INTERNAS
   border-radius: 30px;
 }
 
-/* Indicador "toca para voltear" */
 .foto-card::after {
   content: '↩';
   position: absolute;
@@ -2326,13 +2377,6 @@ INTERNAS
   user-select: none;
 }
  
-/*
-  Área de contenido superpuesta al "mostrador" beige de la ilustración.
-  La ilustración es ~1456×728 px.
-  Área beige: horizontalmente 22%–78%, verticalmente 26%–68%.
-  El botón vive en el 70%–82% vertical, centrado.
-  ↓ Ajusta estos % si tu imagen tiene proporciones distintas.
-*/
 .tiendita__contenido {
   position: absolute;
   top: 30%;
@@ -2575,7 +2619,6 @@ INTERNAS
   margin-bottom: 20px;
 }
  
-/* Grid de productos en popup */
 .popup__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2587,7 +2630,6 @@ INTERNAS
   grid-template-columns: repeat(3, 1fr);
 }
  
-/* Tarjeta de item seleccionable */
 .popup-item {
   border-radius: 14px;
   overflow: hidden;

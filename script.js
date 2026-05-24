@@ -113,9 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
     ) {
       return {
         tipo:        'marron',
-        nombre:      'Canasta Marrón',
+        nombre:      'Canasta Despensa',
         subtipo:     'Alimentos básicos del diario',
-        descripcion: 'Una tienda completa que abastece la despensa del hogar. Aquí se encuentra desde lo fresco hasta lo indispensable de la alacena: un lugar de confianza donde el barrio se surte día a día.',
+        descripcion: 'Una tienda completa que abastece la despensa del hogar. Aquí se encuentra desde lo fresco hasta lo indispensable de la alacena.',
         imgSrc:      'IMG/despensa.png',
         imgAlt:      'Canasta Despensa'
       };
@@ -124,9 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // SOLO frutas/verduras
     return {
       tipo:        'verde',
-      nombre:      'Canasta Verde',
-      subtipo:     'Verdulería · Vegetales y condimentos',
-      descripcion: 'Esta tienda es un remanso de frescura en el barrio. Frutas, verduras y condimentos que llegan directamente del campo a la mesa de la comunidad. Un espacio esencial para quienes buscan lo natural y lo sencillo.',
+      nombre:      'Canasta Cosecha',
+      subtipo:     'Frutas · Vegetales · Condimentos',
+      descripcion: 'Entre frutas frescas, verduras y productos del campo, se convierte en un punto cercano para quienes encuentran en lo simple una parte esencial de la vida del barrio.',
       imgSrc:      'IMG/cosecha.png',
       imgAlt:      'Canasta Cosecha'
     };
@@ -136,9 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (total === 2) {
     return {
       tipo:        'marron',
-      nombre:      'Canasta Marrón',
-      subtipo:     'Alimentos básicos del diario',
-      descripcion: 'Una tienda completa que abastece la despensa del hogar. Aquí se encuentra desde lo fresco hasta lo indispensable de la alacena: un lugar de confianza donde el barrio se surte día a día.',
+      nombre:      'Canasta Despensa',
+      subtipo:     'Alimentos básicos',
+      descripcion: 'Una tienda completa que abastece la despensa del hogar. Aquí se encuentra desde lo fresco hasta lo indispensable de la alacena.',
       imgSrc:      'IMG/despensa.png',
       imgAlt:      'Canasta Despensa'
     };
@@ -147,11 +147,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // TRES categorías → amarillo
   return {
     tipo:        'amarillo',
-    nombre:      'Canasta Amarilla',
-    subtipo:     'Variedades · Minimercado',
-    descripcion: 'Más que una tienda: un minimercado de barrio. Aquí se consigue de todo, desde los alimentos del mercado hasta artículos de primera necesidad. Un espacio que se convierte en el corazón de la cuadra.',
+    nombre:      'Canasta Variedades',
+    subtipo:     'Variedades · Surtida',
+    descripcion: 'Más que un lugar para comprar, esta tienda hace parte de la rutina del barrio. Entre alimentos, productos básicos y objetos para el día a día se genera un espacio cercano donde las personas se encuentran.',
     imgSrc:      'IMG/variedades.png',
-    imgAlt:      'Canasta Cosecha'
+    imgAlt:      'Canasta Variedades'
   };
 }
 
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="resultado-canasta__datos">
         <div class="resultado-canasta__dato">
-          🧺 <span>La tienda <strong>${nombreTienda || 'registrada'}</strong> es de tipo <strong>${clasificacion.nombre}</strong></span>
+          <span>La tienda <strong>${nombreTienda || 'registrada'}</strong> es de tipo <strong>${clasificacion.nombre}</strong></span>
         </div>
         ${ciudad ? `<div class="resultado-canasta__dato">📍 <span>Ciudad: <strong>${ciudad}</strong></span></div>` : ''}
       </div>
