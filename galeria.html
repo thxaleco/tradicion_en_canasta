@@ -80,7 +80,7 @@
 <section class="collage" aria-label="Galería fotográfica">
  
   <!-- Elementos decorativos orgánicos -->
-  <div class="collage__deco collage__deco--estrella-vino" aria-hidden="true"> <img src="" alt=""></div>
+  <div class="collage-deco-icono_bascula" aria-hidden="true"> <img src="IMG/icono_bascula.png" alt="Icono bascula"></div>
   <div class="collage__deco collage__deco--mancha-verde"  aria-hidden="true"></div>
   <div class="collage__deco collage__deco--mancha-amarilla" aria-hidden="true"></div>
   <div class="collage__deco collage__deco--flor-marron"  aria-hidden="true"></div>
@@ -103,7 +103,7 @@
   <div class="foto-card foto-card--2" data-descripcion="El vendedor y su puesto. Cada producto dispuesto con cuidado, como una vitrina que cuenta lo que el barrio consume.">
     <div class="foto-card__inner">
       <div class="foto-card__front">
-        <img src="IMG/general_nat_3.jpg" alt="Vendedor en su puesto" onerror="this.parentElement.parentElement.parentElement.classList.add('foto-card--placeholder')">
+        <img src="IMG/general_nat_3.jpg" alt="Interiror de una tienda" onerror="this.parentElement.parentElement.parentElement.classList.add('foto-card--placeholder')">
       </div>
       <div class="foto-card__back">
         <p class="foto-card__curatorial"></p>
@@ -126,7 +126,7 @@
   </div>
  
   <!-- FOTO 4 -->
-  <div class="foto-card foto-card--4" data-descripcion="Canastas apiladas, colores. El plástico industrial convive con el mercado de siempre.">
+  <div class="foto-card foto-card--4" data-descripcion="Canastas apiladas, colores.">
     <div class="foto-card__inner">
       <div class="foto-card__front">
         <img src="IMG/canasta_al_2.jpg" alt="Canastas de mercado" onerror="this.parentElement.parentElement.parentElement.classList.add('foto-card--placeholder')">
@@ -142,7 +142,7 @@
   <div class="foto-card foto-card--5" data-descripcion="Interior de la tienda. Los estantes hablan de los hábitos de un barrio entero.">
     <div class="foto-card__inner">
       <div class="foto-card__front">
-        <img src="IMG/galeria_5.jpg" alt="Interior tienda" onerror="this.parentElement.parentElement.parentElement.classList.add('foto-card--placeholder')">
+        <img src="IMG/esquina_al_det_horiz_1.jpg" alt="Interior tienda" onerror="this.parentElement.parentElement.parentElement.classList.add('foto-card--placeholder')">
       </div>
       <div class="foto-card__back">
         <p class="foto-card__curatorial"></p>
@@ -155,7 +155,7 @@
   <div class="foto-card foto-card--6" data-descripcion="La plaza de mercado: verde sobre verde. La abundancia como lenguaje.">
     <div class="foto-card__inner">
       <div class="foto-card__front">
-        <img src="IMG/galeria_6.jpg" alt="Frutas y verduras en la plaza" onerror="this.parentElement.parentElement.parentElement.classList.add('foto-card--placeholder')">
+        <img src="IMG/frutas_bc_5.jpg" alt="Frutas y verduras en la plaza" onerror="this.parentElement.parentElement.parentElement.classList.add('foto-card--placeholder')">
       </div>
       <div class="foto-card__back">
         <p class="foto-card__curatorial"></p>
@@ -168,7 +168,7 @@
   <div class="foto-card foto-card--7" data-descripcion="Mangos y piñas. La estación no existe cuando el campo llega cada mañana al barrio.">
     <div class="foto-card__inner">
       <div class="foto-card__front">
-        <img src="IMG/galeria_7.jpg" alt="Mangos y piñas" onerror="this.parentElement.parentElement.parentElement.classList.add('foto-card--placeholder')">
+        <img src="IMG/tienda_bc_6.jpg" alt="Mangos y piñas" onerror="this.parentElement.parentElement.parentElement.classList.add('foto-card--placeholder')">
       </div>
       <div class="foto-card__back">
         <p class="foto-card__curatorial"></p>
@@ -181,7 +181,7 @@
   <div class="foto-card foto-card--8" data-descripcion="Naranjillas y tomates de árbol. Frutas que viajan desde las laderas hasta la mesa del barrio.">
     <div class="foto-card__inner">
       <div class="foto-card__front">
-        <img src="IMG/galeria_8.jpg" alt="Naranjillas y frutos" onerror="this.parentElement.parentElement.parentElement.classList.add('foto-card--placeholder')">
+        <img src="IMG/cliente_det_nat_2.jpg" alt="Naranjillas y frutos" onerror="this.parentElement.parentElement.parentElement.classList.add('foto-card--placeholder')">
       </div>
       <div class="foto-card__back">
         <p class="foto-card__curatorial"></p>
@@ -194,7 +194,7 @@
   <div class="foto-card foto-card--9" data-descripcion="La tienda al atardecer. Cuando el barrio vuelve a pasar, la tienda sigue abierta.">
     <div class="foto-card__inner">
       <div class="foto-card__front">
-        <img src="IMG/galeria_9.jpg" alt="Tienda al atardecer" onerror="this.parentElement.parentElement.parentElement.classList.add('foto-card--placeholder')">
+        <img src="IMG/entrada_tienda_al_1.jpg" alt="Tienda al atardecer" onerror="this.parentElement.parentElement.parentElement.classList.add('foto-card--placeholder')">
       </div>
       <div class="foto-card__back">
         <p class="foto-card__curatorial"></p>
@@ -210,15 +210,8 @@
 ══════════════════════════════════════ -->
 <section class="tiendita" aria-label="Tienda de productos">
  
-  <!--
-    Contenedor con la imagen de la tiendita como fondo.
-    La imagen tiene fondo negro transparente, así que usamos
-    position:relative y ponemos el contenido encima del área
-    beige central (el "mostrador" de la ilustración).
-  -->
   <div class="tiendita__marco">
  
-    <!-- Imagen de la tiendita (fondo decorativo) -->
     <img
       src="IMG/la_galeria.png"
       alt="La Galería – tiendita ilustrada"
@@ -226,7 +219,6 @@
       aria-hidden="true"
     >
  
-    <!-- Contenido superpuesto sobre el área beige de la ilustración -->
     <div class="tiendita__contenido">
  
       <!-- Producto: POSTALES -->

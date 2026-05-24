@@ -34,6 +34,8 @@
 
   --margen-seccion: 40px;
 
+  --margen-responsive-pequeño: 15px;
+
   --interlineado-textos: 1.2;
 
   --tamano-fuente-titulo-principal:
@@ -743,7 +745,7 @@ INTERNAS
 
 .mapa-section {
   position: relative;
-  margin: var(--margen-seccion);
+  margin: 60px var(--margen-seccion);
 }
 
 .mapa-section-header {
@@ -759,9 +761,9 @@ INTERNAS
  position: absolute;
 
   left: -250px;
-  top: -90px;
+  top: -120px;
 
-  width: 500px;
+  width: 600px;
 
   z-index: 4;
 }
@@ -769,6 +771,39 @@ INTERNAS
 .hoja-recorridos-arriba img{
   width: 100%;
   display: block;
+}
+
+.hoja-recorridos-mapa-arriba{
+  position: absolute;
+  left: 800px;
+  top: -450px;
+
+  width: 800px;
+
+  z-index: -1;
+}
+
+.hoja-recorridos-mapa-arriba img{
+  width: 100%;
+  display: block;
+
+}
+
+
+.hoja-recorridos-tiendas-arriba{
+  position: absolute;
+  left: 300px;
+  top: -100px;
+
+  width: 900px;
+
+  z-index: 0;
+}
+
+.hoja-recorridos-tiendas-arriba img{
+  width: 100%;
+  display: block;
+
 }
 
 .mapa-section-label {
@@ -810,31 +845,25 @@ INTERNAS
 
 }
 
-.hoja-recorridos-mapa-arriba{
-  position: absolute;
-  left: 900px;
-  top: 500px;
-
-  width: 600px;
-
-  z-index: -1;
-}
-
-.hoja-recorridos-mapa-arriba img{
-  width: 100%;
-  display: block;
-
-}
-
 .mapa-section-frame {
+  width: calc(100% - 120px);
+  max-width: 1400px;
   height: 640px;
-  width: 90%;
-  margin: var(--margen-seccion);
-  background: var(--color-fondo-principal);
-  border-radius: 24px;
+  margin: 60px auto;
+
+  background: var(--color-caja-amarillo);
+  border-radius: 80px;
   overflow: hidden;
+
   position: relative;
+
   z-index: 1;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+
+  border: 8px solid rgba(255,255,255,0.4);
+
+  backdrop-filter: blur(6px);
 }
  
 .mapa-section-cta {
@@ -864,7 +893,7 @@ INTERNAS
   position: absolute;
 
   left: -150px;
-  top: 1150px;
+  top: 50px;
 
   width: 600px;
 
@@ -1015,8 +1044,6 @@ INTERNAS
   top: 200px;
   left: 650px;
   z-index: 5;
-  
-
 
 }
  
@@ -1110,46 +1137,104 @@ INTERNAS
   border-radius: 50px;
 }
 
-/* ===== HOJA BARCO ===== */
-
-.relato-card__decorativo{
+.relato-card__contenido-al{
+  background-color: var(--color-fondo-principal);
+  border: 12px solid var(--color-caja-vino);
+  border-radius: 40px;
+  min-height: 300px;
+  min-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
   position: absolute;
-
-  left: 500px;
-  top: -40px;
-
-  margin: 40px 0 40px 0;
-
-  max-width: 20px;
-  max-height: 120px;
-
-  z-index: 0;
-}
- /* ===== HOJA ALBEIRO ===== */
-
-.relato-card--left:last-child .relato-card__hoja{
-  position: absolute;
-
-  right: -420px;
-  bottom: -180px;
-
-  width: 320px;
-
-  z-index: 0;
-
-  transform: rotate(-15deg);
+  top: 350px;
+  left: 450px;
 }
 
-.relato-card--left:last-child .relato-card__hoja img{
+.relato-card__contenido-al .relato-card__nombre{
+  position: absolute;
+
+  top: -240px;
+  left: 100px;
+
+  background-color: var(--color-caja-verde);
+  color: var(--color-titulo-principal);
+  font-family: var(--fuente-titulos);
+  font-size: var(--tamano-fuente-titulo-principal);
+  font-weight: 900;
+  padding: 20px 36px;
+  border-radius: 50px;
+  z-index: 10;
+}
+
+/* =========================================
+   HOJA BARCO
+========================================= */
+
+.relato-card__hoja-bc{
+  position: absolute;
+
+  left: 880px;
+  top: -120px;
+
+  width: 820px;
+
+  z-index: 2;
+
+  opacity: .95;
+}
+
+.relato-card__hoja-bc img{
   width: 100%;
   display: block;
 }
 
-.relato-card--left:first-child .relato-card__hoja img{
+
+/* =========================================
+   HOJA NATALIA
+========================================= */
+
+.relato-card__hoja-nat{
+  position: absolute;
+
+  left: -320px;
+  top: -10px;
+
+  width: 680px;
+
+  z-index: 0;
+
+  transform: rotate(-8deg);
+}
+
+.relato-card__hoja-nat img{
   width: 100%;
   display: block;
 }
 
+
+/* =========================================
+   HOJA ALBEIRO
+========================================= */
+
+.relato-card__hoja-al{
+  position: absolute;
+
+  left: 920px;
+  top: -400px;
+
+  width: 860px;
+
+  z-index: 0;
+
+  transform: rotate(150deg) scaleY(-1);
+}
+
+.relato-card__hoja-al img{
+  width: 100%;
+  display: block;
+}
 /* =========================================
    CARD NATALIA
 ========================================= */
@@ -1239,26 +1324,7 @@ INTERNAS
   z-index: 10;
 }
 
-/* ===== HOJA NATALIA ===== */
-
-.relato-card__hoja-bg{
-  position: absolute;
-
-  left: -400px;
-  top: 260px;
-
-  width: 820px;
-
-  z-index: 4;
-}
-
-.relato-card__hoja-bg img{
-  width: 100%;
-  display: block;
-}
-
-
-/* ══════════════════════════════════════════════════════
+/*═════════════════════════════════════════════════════
   LA CANASTA
 ══════════════════════════════════════════════════════ */
 
@@ -1982,7 +2048,7 @@ INTERNAS
   font-size: var(--tamano-fuente-titulo-principal);
   font-weight: 900;
   color: var(--color-titulo-principal);
-  line-height: 1.05;
+  line-height: var(--interlineado-textos);
 }
 
 .galeria-header-subtitulo {
@@ -2029,7 +2095,7 @@ INTERNAS
 .galeria-intro__caja p {
   font-size: var(--tamano-fuente-textos);
   color: var(--color-titulo-principal);
-  line-height: 1.75;
+  line-height: var(--interlineado-textos);
 }
 
 .deco {
@@ -2049,24 +2115,22 @@ INTERNAS
   width: 100%;
   max-width: 680px;
   margin: 40px auto 0;
-  /* altura dinámica: las fotos se posicionan en absolute */
   height: 1000px;
   padding: 0 16px;
 }
 
-/* Elementos decorativos orgánicos */
-.collage__deco {
+.collage-deco {
   position: absolute;
   pointer-events: none;
   z-index: 0;
   user-select: none;
 }
 
-.collage__deco--estrella-vino {
-
-  font-size: 4rem;
+.collage-deco-icono_bascula {
   top: 220px;
-  left: 48%;
+  left: ;
+  width: 120px;
+  height: 150px;
   transform: rotate(-20deg);
   opacity: 0.85;
 }
@@ -2307,33 +2371,7 @@ INTERNAS
   );
   opacity: 0.3;
 }
- 
-/* ── Mobile: el contenido pasa a fluir normal ── */
-@media (max-width: 500px) {
-  .tiendita__contenido {
-    position: static;
-    flex-direction: column;
-    gap: 16px;
-    padding: 16px;
-    background: #f5ecd5;
-    border-radius: 0 0 14px 14px;
-  }
-  .tiendita__img-fondo {
-    border-radius: 14px 14px 0 0;
-  }
-  .tiendita__footer {
-    position: static;
-    transform: none;
-    padding: 16px 0 0;
-    justify-content: center;
-  }
-  .tiendita__divisor {
-    width: 80%;
-    height: 1px;
-    align-self: auto;
-  }
-}
- 
+
 /* ── PRODUCTO ── */
 .producto {
   display: flex;
@@ -3117,12 +3155,12 @@ INTERNAS
   }
 
   .mapa-section-label {
-    text-align: left;
+    text-align: center;
     margin-bottom: 0;
   }
 
   .mapa-section-caja {
-    margin: 0 20px 30px;
+    margin: 50px 30px 20px 30px;
     border-radius: 40px;
     padding: 20px;
     min-height: auto;
@@ -3144,43 +3182,60 @@ INTERNAS
 
   .tiendas-grid-inner {
     grid-template-columns: repeat(1, 1fr);
+    margin: 60px;
+  
+  }
+  
+  .hoja-recorridos-arriba{
+    left: -250px;
+    top: -200px;
+
+    width: 450px;
+  }
+
+  .hoja-recorridos-mapa-arriba{
+    position: absolute;
+    left: 800px;
+    top: -450px;
+
+    width: 500px;
+
+  }
+
+  .hoja-recorridos-tiendas-arriba{
+    position: absolute;
+    left: 300px;
+    top: -300px;
+
+    width: 600px;
+    transform: rotateX(45deg);
   }
 
   /* -- RELATOS -- */
 
   .relatos-header{
-    width: 75%;
+     width: 70%;
     height: auto;
-    margin: 30px 0 0 60px;
-    border-radius: 36px;
+    margin: 40px auto 0 ;
+    border-radius: 32px;
   }
 
   .relatos-header-inner{
-    padding: 36px;
-  }
-
-  .relatos-header-titulo{
-    font-size: var(--tamano-fuente-titulo-principal);
-  }
-
-  .relatos-header-subtitulo{
-    font-size: 1.1rem;
-    line-height: 1.6;
+    padding: 40px 40px 60px 40px;
   }
 
   /* ===== INTRO ===== */
 
   .relatos-intro__caja{
     max-width: 90%;
-    margin-top: -70px;
-    padding: 40px;
-    border-radius: 0 36px 36px 0;
+    margin: -30px 20px 20px 0px;
+    padding: 50px;
   }
 
   .relatos-documental{
     top: auto;
-    left: 40px;
-    bottom: -24px;
+    left: 60%;
+    
 
     font-size: 0.9rem;
     padding: 14px 24px;
@@ -3199,149 +3254,151 @@ INTERNAS
      CARD GENERAL
   ========================================= */
 
-  .relato-card{
+  .relato-card,
+  .relato-card--right{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    justify-content: flex-start;
 
-    margin-top: 60px;
+    width: 100%;
+    min-height: auto;
+    position: relative;
+
+    margin-top: 0;
+    gap: 30px;
   }
 
-  /* ===== FOTO ===== */
+  .relato-card__img-wrap,
+  .relato-card--right .relato-card__img-wrap{
+    position: relative;
+    left: auto;
+    top: auto;
 
-  .relato-card__img-wrap{
     width: 420px;
     height: 520px;
 
-    padding-left: 20px;
-    padding-top: 20px;
-
+    padding: 20px 0 0 20px;
     border-radius: 40px;
-  }
-
-  .relato-card__img-wrap img{
-    border-radius: 32px;
-  }
-
-  /* ===== CONTENIDO ===== */
-
-  .relato-card__content{
-    position: relative;
-
-    top: auto;
-    left: auto;
-
-    min-width: 100%;
-    min-height: auto;
-
-    padding: 36px;
-    border-width: 10px;
-    border-radius: 36px;
-  }
-
-  .relato-card__cita{
-    max-width: 100%;
-    padding: 0;
-
-    font-size: 1.05rem;
-    line-height: 1.8;
-    text-align: center;
-  }
-
-  /* ===== NOMBRE ===== */
-
-  .relato-card__nombre{
-    position: relative;
-
-    top: auto;
-    left: auto;
-
-    margin-top: -10px;
-
-    font-size: 2rem;
-    padding: 18px 32px;
-    border-radius: 40px;
-  }
-
-  /* ===== DECORATIVOS ===== */
-
-  .relato-card__decorativo{
-    display: none;
-  }
-
-  .relato-card--left:last-child .relato-card__hoja{
-    width: 220px;
-
-    right: -40px;
-    bottom: -120px;
-  }
-
-  /* =========================================
-     CARD RIGHT
-  ========================================= */
-
-  .relato-card--right{
-    min-height: auto;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
   }
 
   .relato-card--right .relato-card__img-wrap{
-    position: relative;
+    padding: 0 20px 20px 0;
+  }
 
-    left: auto;
+  .relato-card__img-wrap img,
+  .relato-card--right .relato-card__img-wrap img{
+    border-radius: 32px;
+  }
+
+  .relato-card__content,
+  .relato-card__contenido-al,
+  .relato-card--right .relato-card__content{
+    position: relative;
     top: auto;
+    left: auto;
+
+    width: 90%;
+    min-width: unset;
+    min-height: auto;
+
+    padding: 40px;
+
+    border-radius: 36px;
+    border-width: 10px;
+  }
+
+  .relato-card__nombre,
+  .relato-card__contenido-al .relato-card__nombre,
+  .relato-card__nombre{
+    top: -60px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: var(--tamano-fuente-titulo-secundario);
+    padding: 16px 30px;
+
+    white-space: nowrap;
+    z-index: 10;
+  }
+
+  .relato-card__cita,
+  .relato-card--right .relato-card__cita{
+    max-width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .relato-card--right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    min-height: auto;
+  }
+
+  .relato-card--right .relato-card__img-wrap{
+    position: static !important;
 
     width: 420px;
     height: 520px;
 
-    padding: 0 20px 20px 0;
+    order: 1;
+
+    padding: 20px 0 0 20px;
   }
 
   .relato-card--right .relato-card__content{
-    position: relative;
+    position: static !important;
 
-    left: auto;
-    top: auto;
+    order: 2;
 
-    min-width: 100%;
+    width: 90%;
+    min-width: unset;
     min-height: auto;
 
-    padding: 36px;
-  }
-
-  .relato-card--right .relato-card__cita{
-    max-width: 100%;
-
-    font-size: 1.05rem;
-    line-height: 1.8;
+    padding: 40px;
   }
 
   .relato-card--right .relato-card__nombre{
-    position: relative;
-
-    top: auto;
-    left: auto;
-
-    font-size: 2rem;
-    padding: 18px 32px;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  .relato-card__hoja-bg{
-    width: 500px;
+  .relato-card--right .relato-card__nombre{
+    font-size: var(--tamano-fuente-titulo-secundario);
+    top: 500px;
+    left: 50%px;
+  }
 
-    left: -180px;
-    top: 420px;
+  /* ===== HOJAS ===== */
 
-    opacity: 0.4;
+  .relato-card__hoja-bc{
+    width: 640px;
+    left: 50%;
+    top: 100px;
+    z-index: -1;
+
+  }
+
+  .relato-card__hoja-nat{
+    width: 800px;
+    left: -160px;
+    top: 280px;
+    z-index: -1;
+ 
+  }
+
+  .relato-card__hoja-al{
+    width: 800px;
+    left: 200px;
+    top: 90px;
+    z-index: -1;
+   
   }
 }
-
- 
  
 /* =============================================
    RESPONSIVE HOME — MÓVIL  (≤ 600px)
@@ -3363,11 +3420,15 @@ INTERNAS
     height: 2.5px;
   }
  
-  .hero { padding: 16px 12px 36px; }
+  .hero { 
+    grid-template-columns: 1fr;
+    margin: 0 8px;
+    min-height: unset;
+  }
  
   .hero-contenido {
     width: 90%;
-    margin-left: 40px;
+    margin-left: 30px;
     padding: 40px 10px 70px 20px;
     border-radius: 14px 90px 14px 14px;
    
@@ -3377,7 +3438,9 @@ INTERNAS
     font-size: var(--tamano-fuente-titulo-secundario); 
   }
  
-  .hero-subtitulo { font-size: var(--tamano-fuente-textos); }
+  .hero-subtitulo { 
+    font-size: var(--tamano-fuente-textos); 
+  }
  
   
   .mirada { 
@@ -3429,7 +3492,6 @@ INTERNAS
     max-width: 200px;
   }
  
-  /* Tiendas */
   .tiendas-bloque-vino,
   .tiendas-bloque-beige { 
     padding: 36px; 
@@ -3457,7 +3519,7 @@ INTERNAS
 
   .recorrido-header {
     width: 60%;
-    margin: 16px auto;
+    margin-left: 40px;
     height: auto;
     border-radius: 24px;
     margin: 25px 0 0 90px;
@@ -3498,13 +3560,13 @@ INTERNAS
 
   .mapa-section-label {
     text-align: center;
-    margin-bottom: 16px;
     font-size: var(--tamano-fuente-titulo-secundario);
   }
 
   .mapa-section-caja {
     border-radius: 24px;
     transform: none;
+    margin: 16px;
   }
 
   .mapa-section-texto {
@@ -3544,204 +3606,169 @@ INTERNAS
     font-size: var(--tamano-fuente-textos-pequeños);
   }
 
-  /* -- RELATOS -- */
 
-  .relatos-header{
-    width: calc(100% - 32px);
+  .hoja-recorridos-arriba{
+  position: absolute;
+
+    left: -150px;
+    top: -140px;
+
+    width: 300px;
+  }
+
+  .hoja-recorridos-mapa-arriba{
+    position: absolute;
+    left: 800px;
+    top: -450px;
+
+    width: 800px;
+
+    z-index: -1;
+  }
+
+  .hoja-recorridos-tiendas-arriba{
+    position: absolute;
+    left: 40%;
+    top: -200px;
+
+    width: 400px;
+
+    z-index: 0;
+  }
+
+  /* -- RELATOS -- */
+.relatos-header{
+    width: 60%;
+    margin: 20px 40px;
     height: auto;
-    margin: 20px 16px 0;
-    border-radius: 28px;
+    border-radius: 24px;
+    margin: 25px 0 0 90px;
   }
 
   .relatos-header-inner{
-    padding: 28px 24px;
+    padding: 30px 22px 50px 22px;
   }
 
   .relatos-header-titulo{
-    font-size: clamp(2.3rem, 10vw, 4rem);
-    line-height: 0.95;
+    font-size: var(--tamano-fuente-titulo-secundario);
+    line-height: var(--interlineado-textos);
   }
 
   .relatos-header-subtitulo{
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-top: 12px;
-  }
-
-  /* ===== INTRO ===== */
-
-  .relatos-intro__caja{
-    max-width: calc(100% - 32px);
-    margin: -40px auto 0;
-    padding: 28px 24px 80px;
-    border-radius: 28px;
-    text-align: left;
-  }
-
-  .relatos-intro__caja p{
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: var(--tamano-fuente-textos);
+    margin-top: 10px;
   }
 
   .relatos-documental{
-    position: absolute;
-    top: auto;
-    left: 24px;
-    bottom: 20px;
+    font-size: var(--tamano-fuente-textos-pequeños);
+    padding: 10px;
+    margin: 10px 16px 0 16px;
+    left: 45%;
 
-    font-size: 0.8rem;
-    padding: 12px 18px;
-    border-radius: 30px;
   }
 
-  /* ===== MAIN ===== */
-
-  .relatos-main{
-    width: 100%;
-    margin: 0;
-    padding: 24px 16px 60px;
-    gap: 70px;
-  }
-
-  /* =========================================
-     CARD GENERAL
-  ========================================= */
-
-  .relato-card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-
-    margin-top: 0;
-    position: relative;
-  }
-
-  /* ===== FOTO ===== */
-
-  .relato-card__img-wrap{
-    width: 100%;
-    max-width: 320px;
-    height: 420px;
-
-    padding: 16px 0 0 16px;
-    border-radius: 32px;
-  }
-
-  .relato-card__img-wrap img{
-    border-radius: 24px;
-  }
-
-  /* ===== CAJA TEXTO ===== */
-
-  .relato-card__content{
-    position: relative;
-
-    top: auto;
-    left: auto;
-
-    min-width: 100%;
-    min-height: auto;
-
-    padding: 24px;
-    border-width: 8px;
+  .relatos-intro__caja{
+    width: 90%;
+    margin: -25px auto 0;
+    padding: 32px 22px;
     border-radius: 28px;
   }
 
-  .relato-card__cita{
-    max-width: 100%;
-    padding: 0;
-
-    font-size: 1rem;
-    line-height: 1.7;
-    text-align: left;
+  .relatos-intro__caja p{
+    font-size: .95rem;
+    line-height: 1.6;
   }
 
-  /* ===== NOMBRE ===== */
-
-  .relato-card__nombre{
-    position: relative;
-
-    top: auto;
-    left: auto;
-
-    margin-top: -10px;
-
-    font-size: 1.3rem;
-    padding: 14px 24px;
-    border-radius: 30px;
-
-    text-align: center;
-  }
-
-  /* ===== DECORATIVOS ===== */
-
-  .relato-card__decorativo,
-  .relato-card__hoja,
-  .relato-card__hoja-bg{
-    display: none;
+  .relatos-main{
+    padding: 40px 16px 80px;
+    gap: 90px;
   }
 
   /* =========================================
-     CARD RIGHT (NATALIA)
+     TODAS LAS CARDS IGUALES
   ========================================= */
 
+  .relato-card,
   .relato-card--right{
-    min-height: auto;
-    margin-top: 0;
+    gap: 22px;
+  }
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
+  .relato-card__img-wrap,
+  .relato-card--right .relato-card__img-wrap{
+    width: 100%;
+    max-width: 320px;
+    height: 400px;
+
+    padding: 14px 0 0 14px;
+    border-radius: 30px;
   }
 
   .relato-card--right .relato-card__img-wrap{
-    position: relative;
-
-    left: auto;
-    top: auto;
-
-    width: 100%;
-    max-width: 320px;
-    height: 420px;
-
-    padding: 0 16px 16px 0;
-    border-radius: 32px;
+    padding: 0 14px 14px 0;
   }
 
+  .relato-card__img-wrap img,
+  .relato-card--right .relato-card__img-wrap img{
+    border-radius: 22px;
+  }
+
+  .relato-card__content,
+  .relato-card__contenido-al,
   .relato-card--right .relato-card__content{
-    position: relative;
+    width: 100%;
+    padding: 30px;
 
-    left: auto;
-    top: auto;
-
-    min-width: 100%;
-    min-height: auto;
-
-    padding: 24px;
-    border-width: 8px;
-    border-radius: 28px;
+    border-width: 7px;
+    border-radius: 24px;
   }
 
-  .relato-card--right .relato-card__cita{
-    max-width: 100%;
+  .relato-card__nombre,
+  .relato-card__contenido-al .relato-card__nombre,
+  .relato-card--right .relato-card__nombre{
+    top: -40px;
 
-    font-size: 1rem;
-    line-height: 1.7;
-    text-align: left;
+    padding: 12px 18px;
+
+    border-radius: 24px;
   }
 
   .relato-card--right .relato-card__nombre{
-    position: relative;
+    top: 380px;
 
-    top: auto;
-    left: auto;
+    padding: 12px 18px;
 
-    font-size: 1.3rem;
-    padding: 14px 24px;
-    border-radius: 30px;
-
-    text-align: center;
+    border-radius: 24px;
   }
+
+  .relato-card__cita,
+  .relato-card--right .relato-card__cita{
+    font-size: .95rem;
+    line-height: 1.5;
   }
+
+  /* ===== HOJAS ===== */
+
+  .relato-card__hoja-bc{
+    width: 540px;
+    left: 160px;
+    top: 30px;
+    
+  }
+
+  .relato-card__hoja-nat{
+    width: 520px;
+    left: -120px;
+    top: 320px;
+
+  }
+
+  .relato-card__hoja-al{
+    width: 520px;
+    left: 90px;
+    top: 280px;
+  
+  }
+  
+
+}
+ 
