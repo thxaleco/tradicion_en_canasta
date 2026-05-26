@@ -2470,7 +2470,7 @@ INTERNAS
   flex-shrink: 0;
   width: 1px;
   align-self: stretch;
-  margin: 8px 0;
+  margin: 3px 0;
   background: repeating-linear-gradient(
     180deg,
     var(--color-caja-marron) 0,
@@ -3344,7 +3344,7 @@ INTERNAS
     left: 60%;
     
 
-    font-size: 0.9rem;
+    font-size: var(--tamano-fuente-textos-pequeños);
     padding: 14px 24px;
   }
 
@@ -3574,7 +3574,158 @@ INTERNAS
     left: 360px;
     top: 1050px;
   }
+
+  /* ===== GALERIA ===== */
+  .galeria-header {
+    width: 70%;
+    height: auto;
+    margin: 40px auto 0 ;
+    border-radius: 32px;
+  }
+
+  /* ===== INTRO ===== */
+  .galeria-intro {
+    max-width: 90%;
+    margin: -60px auto 60px;
+    padding: 40px;
+    border-radius: 80px 30px 80px 30px;
+  }
+
+  .galeria-intro__caja {
+    max-width: 90%;
+    margin: -10px 20px 20px 0px;
+    padding: 50px;
+  }
+
+  .deco--tr {
+    width: 100px;
+    right: -20px;
+  }
+
+  .deco--br {
+    width: 90px;
+    bottom: -30px;
+  }
+
+  /* ===== COLLAGE ===== */
+  .collage {
+    max-width: 100%;
+    height: 1300px;
+    overflow: hidden;
+  }
+
+  /* Decoraciones */
+  .collage-deco_bascula {
+    width: 320px;
+    height: 320px;
+    left: -40px;
+    top: 280px;
+  }
+
+  .collage-deco--estrella {
+    width: 180px;
+    height: 180px;
+    left: 40%;
+    top: 50px;
+  }
+
+  .collage-deco--silla {
+    width: 320px;
+    height: 320px;
+    top: 340px;
+    left: 35%;
+  }
+
+  .collage-deco--aguacate {
+    width: 260px;
+    height: 260px;
+    top: 740px;
+  }
+
+  .collage-deco--tomate {
+    width: 180px;
+    top: 1080px;
+    left: 50%;
+  }
+
+  /* Fotos */
+  .foto-card {
+    transform: scale(.85);
+    transform-origin: top left;
+  }
+
+  .foto-card--1 { left: 2%; top: 0; }
+  .foto-card--2 { left: 64%; top: 460px; }
+  .foto-card--3 { left: 60%; top: 40px; }
+  .foto-card--4 { left: 5%; top: 500px; }
+  .foto-card--5 { left: 35%; top: 160px; }
+  .foto-card--6 { left: 40%; top: 520px; }
+  .foto-card--7 { left: 38%; top: 840px; }
+  .foto-card--8 { left: 65%; top: 860px; }
+  .foto-card--9 { left: 5%; top: 920px; }
+
+  /* ===== TIENDITA ===== */
+  .tiendita {
+    margin: 90px 20px 40px;
+  }
+
+   
+.tiendita__img-fondo {
+    display: block;
+    width: 100%;
+    height: auto;
+    mix-blend-mode: multiply; 
+    pointer-events: none;
+    user-select: none;
+
 }
+
+  .producto__cat {
+    font-size: var(--tamano-fuente-textos-pequeños);
+  }
+
+  .producto__desc {
+    font-size: var(--tamano-fuente-textos-pequeños);
+    max-width: 130px;
+  }
+
+  .producto__img-wrap {
+    width: clamp(90px, 10vw, 90px);
+    height: clamp(90px, 10vw, 90px);
+  
+  }
+
+  .btn-comprar {
+    padding: 10px 20px;
+    font-size: 0.75rem;
+  }
+
+  /* ===== POPUPS ===== */
+  .popup {
+    max-width: 90%;
+  }
+
+  .popup__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ===== FOOTER ===== */
+  .footer__inner {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer__nav ul {
+    align-items: center;
+  }
+
+  .footer__redes {
+    align-items: center;
+  }
+}
+
+
+
 
 /* =============================================
    RESPONSIVE HOME — MÓVIL  (≤ 600px)
@@ -4088,6 +4239,189 @@ INTERNAS
     left: 160px;
     top: 980px;
   }
+  /* ===== GALERIA ===== */
+  .galeria-header {
+    width: 60%;
+    height: auto;
+    border-radius: 24px;
+    margin: 25px 0 0 90px;
+    padding: 20px 16px 40px 26px;
+    gap: 14px;
+  }
 
+  .galeria-header-titulo {
+    font-size: var(--tamano-fuente-titulo-secundario);
+
+  }
+
+  .galeria-header-subtitulo {
+    font-size:var(--tamano-fuente-textos);
+    margin-top: 12px;
+  }
+
+  /* ===== INTRO ===== */
+  .galeria-intro {
+    width: 100%;
+    margin: -50px auto 0;
+
+  }
+
+  .galeria-intro__caja {
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .galeria-intro__caja p {
+     font-size: var(--tamano-fuente-textos-pequeños);
+  }
+
+
+  /* ===== COLLAGE ===== */
+  .collage {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 12px;
+    margin-top: 20px;
+  }
+
+  .deco{
+    display: none;
+  }
+  
+
+  .foto-card {
+    position: relative;
+    width: 90% !important;
+    height: 360px !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    margin: 20px auto; 
+  }
+
+  .foto-card__curatorial {
+    font-size: var(--tamano-fuente-textos-pequeños);
+  }
+
+  /* ===== TIENDITA ===== */
+  .tiendita {
+    margin: 80px 12px 20px;
+    padding: 0;
+  }
+
+  .tiendita__img-fondo {
+    display: none;
+  }
+
+  .tiendita__marco {
+    background: var(--color-fondo-ticket);
+    border-radius: 28px;
+    padding: 24px 18px 90px;
+    position: relative;
+  }
+
+  .tiendita__contenido {
+    position: relative;
+    inset: auto;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .tiendita__divisor {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+    align-self: auto;
+
+    background: repeating-linear-gradient(
+      90deg,
+      var(--color-caja-marron) 0,
+      var(--color-caja-marron) 6px,
+      transparent 6px,
+      transparent 12px
+    );
+  }
+
+  .producto {
+    width: 100%;
+    padding: 0;
+  }
+
+  .producto__img-wrap {
+    width: 180px;
+    height: 180px;
+  }
+
+  .producto__desc {
+    max-width: 90%;
+    font-size: 0.9rem;
+  }
+
+  .tiendita__footer {
+    bottom: 20px;
+    width: 100%;
+  }
+
+  .btn-comprar {
+    width: 90%;
+    justify-content: center;
+    font-size: 0.82rem;
+  }
+
+  /* ===== POPUP ===== */
+  .popup {
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+
+  .popup__titulo {
+    font-size: 1rem;
+  }
+
+  .popup__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .popup__grid--sellos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .popup__footer,
+  .carrito__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-pill,
+  .btn-whatsapp {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    padding: 28px 16px;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .footer__nav ul {
+    align-items: center;
+  }
+
+  .footer__redes {
+    align-items: center;
+  }
+
+  .red {
+    justify-content: center;
+  }
 }
- 
