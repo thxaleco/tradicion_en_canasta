@@ -260,12 +260,12 @@ const WHATSAPP_NUMERO = '573001234567';
 
 // ── DATOS DE PRODUCTOS ──────────────────────────────────────────
 const POSTALES = [
-  { id: 'p1', nombre: 'La tienda del barrio',       img: 'IMG/postal_1.jpg', precio: '$5.000' },
-  { id: 'p2', nombre: 'Manos que organizan',         img: 'IMG/postal_2.jpg', precio: '$5.000' },
-  { id: 'p3', nombre: 'Frutas en la plaza',          img: 'IMG/postal_3.jpg', precio: '$5.000' },
-  { id: 'p4', nombre: 'El tendero de madrugada',     img: 'IMG/postal_4.jpg', precio: '$5.000' },
-  { id: 'p5', nombre: 'Colores del mercado',         img: 'IMG/postal_5.jpg', precio: '$5.000' },
-  { id: 'p6', nombre: 'De la canasta a la mesa',     img: 'IMG/postal_6.jpg', precio: '$5.000' },
+  { id: 'p1', nombre: 'De la canasta a la mesa',       img: 'IMG/A1.png', precio: '$5.000' },
+  { id: 'p2', nombre: 'Manos que organizan',         img: 'IMG/B1.png', precio: '$5.000' },
+  { id: 'p3', nombre: 'Frutas en canasta',          img: 'IMG/C1.png', precio: '$5.000' },
+  { id: 'p4', nombre: 'La tienda del barrio',     img: 'IMG/D1.png', precio: '$5.000' },
+  { id: 'p5', nombre: 'Colores del mercado',         img: 'IMG/E1.png', precio: '$5.000' },
+  { id: 'p6', nombre: 'Productos cotidianos',     img: 'IMG/F1.png', precio: '$5.000' },
 ];
 
 const SELLOS = [
@@ -536,7 +536,7 @@ function actualizarWhatsapp() {
     '¿Me pueden confirmar disponibilidad? 🌿'
   ].join('\n');
 
-  const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensaje)}`;
+  const url = `https://wa.me/${3103982677}?text=${encodeURIComponent(mensaje)}`;
   btnWhatsapp.href = url;
 }
 
