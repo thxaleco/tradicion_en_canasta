@@ -78,7 +78,6 @@ body {
  }
 
  
- 
 /* =============================================
    HAMBURGUESA — oculta en desktop
    ============================================= */
@@ -214,7 +213,7 @@ body {
 /* --- Hero contenido --- */
 .hero-contenido {
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
   margin-left: 130px;
   height: 85%;
   justify-self: start;
@@ -283,6 +282,8 @@ body {
   height: auto;
   object-fit: contain;
 }
+
+
  
  
 /* =============================================
@@ -568,7 +569,7 @@ body {
  
 .hoja-tienda-izq {
   left: 90px;
-  top: 1050px;
+  top: 950px;
   width: 650px;
   transform: translateX(-200px) rotate(90deg);
 }
@@ -785,21 +786,14 @@ INTERNAS
   z-index: -1;
 }
 
-.hoja-recorridos-mapa-arriba img{
-  width: 100%;
-  display: block;
-
-}
-
-
 .hoja-recorridos-tiendas-arriba{
   position: absolute;
-  left: 300px;
-  top: -100px;
+  left: 800px;
+  bottom: -450px;
 
-  width: 900px;
+  width: 800px;
 
-  z-index: 0;
+  z-index: -1;
 }
 
 .hoja-recorridos-tiendas-arriba img{
@@ -922,13 +916,10 @@ INTERNAS
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(64,76,16,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
  
-.tienda-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(64,76,16,0.15);
-}
- 
+
 .tienda-card-img {
   aspect-ratio: 4/3;
   background: var(--color-fondo-principal);
@@ -947,7 +938,7 @@ INTERNAS
 }
  
 .tienda-card-body {
-  padding: 18px;
+  padding: 30px;
 }
  
 .tienda-card-nombre {
@@ -968,13 +959,18 @@ INTERNAS
   color: var(--color-texto-principal);
   line-height: var(--interlineado-textos);
 }
- 
-.btn.btn-secondary{
-    color: var(--color-texto-light);
-    font-size: var(--tamano-fuente-textos);
-}
- 
 
+ .btn-recorridos{
+  color: var(--color-titulo-principal);
+  background-color: var(--color-boton-hover-principal);
+  padding: 10px;
+  border-radius: 20px;
+ }
+ 
+ .btn-recorridos:hover{
+  background-color: var(--color-boton-secundario);
+  transform: scale(1.04);
+ }
 /* ══════════════════════════════════════════════════════
    RELATOS
 ══════════════════════════════════════════════════════ */
@@ -992,7 +988,7 @@ INTERNAS
 
 
 .relatos-header-inner {
-  max-width: 900px;
+  max-width:800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -1025,7 +1021,7 @@ INTERNAS
   display: flex;
   flex-direction: column;
   gap: 14px;
-  max-width: 980px;
+  max-width: 880px;
   text-align: center;
   position: relative;
 
@@ -1044,9 +1040,14 @@ INTERNAS
   font-weight: 800;
   position: absolute;
   top: 200px;
-  left: 650px;
+  left: 40%;
   z-index: 5;
 
+}
+
+.relatos-documental:hover{
+  background-color: var(--color-boton-secundario);
+  transform: scale(1.04);
 }
  
 .relatos-intro__caja p {
@@ -1326,6 +1327,7 @@ INTERNAS
   z-index: 10;
 }
 
+
 /*═════════════════════════════════════════════════════
   LA CANASTA
 ══════════════════════════════════════════════════════ */
@@ -1374,7 +1376,7 @@ INTERNAS
   max-width: 800px;
   text-align: center;
 
-  margin: -120px 0 75px 75px;
+  margin: -120px 0 75px 65px;
 }
 
 .canasta-intro-p {
@@ -3055,6 +3057,60 @@ INTERNAS
   color: var(--color-caja-marron);
   line-height: 1.5;
 }
+
+/* ── Animación sutil de hojas ── */
+@keyframes hoja-flotar {
+  0%   { transform: translateY(0px)    rotate(0deg); }
+  33%  { transform: translateY(-8px)   rotate(1deg); }
+  66%  { transform: translateY(4px)    rotate(-0.8deg); }
+  100% { transform: translateY(0px)    rotate(0deg); }
+}
+
+@keyframes hoja-flotar-b {
+  0%   { transform: translateY(0px)    rotate(0deg); }
+  33%  { transform: translateY(6px)    rotate(-1.2deg); }
+  66%  { transform: translateY(-5px)   rotate(0.6deg); }
+  100% { transform: translateY(0px)    rotate(0deg); }
+}
+
+@keyframes hoja-flotar-c {
+  0%   { transform: translateY(0px)    rotate(0deg); }
+  33%  { transform: translateY(-5px)   rotate(0.5deg); }
+  66%  { transform: translateY(7px)    rotate(-1deg); }
+  100% { transform: translateY(0px)    rotate(0deg); }
+}
+
+.hoja-momentos-izq,
+.hoja-canasta-arriba-izq,
+.relato-card__hoja-nat {
+  animation: hoja-flotar 7s ease-in-out infinite;
+}
+
+.hoja-tienda,
+.hoja-canasta-arriba-der,
+.relato-card__hoja-bc {
+  animation: hoja-flotar-b 9s ease-in-out infinite;
+}
+
+.hoja-recorridos-arriba,
+.hoja-canasta-medio,
+.hoja-canasta-abajo,
+.relato-card__hoja-al {
+  animation: hoja-flotar-c 11s ease-in-out infinite;
+}
+
+.hoja.hoja-izq-arriba {
+  animation: hoja-flotar 13s ease-in-out infinite;
+}
+
+.hoja.hoja-der-abajo {
+  animation: hoja-flotar-b 8s ease-in-out infinite;
+}
+
+.hoja-recorridos-mapa-arriba,
+.hoja-recorridos-tiendas-arriba {
+  animation: hoja-flotar-c 10s ease-in-out infinite;
+}
  
 @media (min-width: 768px) {
   .footer__grid {
@@ -3066,7 +3122,7 @@ INTERNAS
    RESPONSIVE HOME— TABLET  (≤ 1024px)
    Canastas se ocultan, aparece hamburguesa
    ============================================= */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
 
   .hamburguesa { display: flex; }
  
@@ -3479,6 +3535,7 @@ INTERNAS
     top: 500px;
     left: 50%px;
   }
+
 
   /* ===== HOJAS ===== */
 

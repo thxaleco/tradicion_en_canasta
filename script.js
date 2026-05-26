@@ -587,3 +587,6 @@ function mostrarToast(mensaje) {
 actualizarBadge();
 carritoVacio.hidden  = false;
 carritoFooter.hidden = true;
+
+
+
