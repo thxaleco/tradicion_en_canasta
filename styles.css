@@ -3058,60 +3058,6 @@ INTERNAS
   line-height: 1.5;
 }
 
-/* ── Animación sutil de hojas ── */
-@keyframes hoja-flotar {
-  0%   { transform: translateY(0px)    rotate(0deg); }
-  33%  { transform: translateY(-8px)   rotate(1deg); }
-  66%  { transform: translateY(4px)    rotate(-0.8deg); }
-  100% { transform: translateY(0px)    rotate(0deg); }
-}
-
-@keyframes hoja-flotar-b {
-  0%   { transform: translateY(0px)    rotate(0deg); }
-  33%  { transform: translateY(6px)    rotate(-1.2deg); }
-  66%  { transform: translateY(-5px)   rotate(0.6deg); }
-  100% { transform: translateY(0px)    rotate(0deg); }
-}
-
-@keyframes hoja-flotar-c {
-  0%   { transform: translateY(0px)    rotate(0deg); }
-  33%  { transform: translateY(-5px)   rotate(0.5deg); }
-  66%  { transform: translateY(7px)    rotate(-1deg); }
-  100% { transform: translateY(0px)    rotate(0deg); }
-}
-
-.hoja-momentos-izq,
-.hoja-canasta-arriba-izq,
-.relato-card__hoja-nat {
-  animation: hoja-flotar 7s ease-in-out infinite;
-}
-
-.hoja-tienda,
-.hoja-canasta-arriba-der,
-.relato-card__hoja-bc {
-  animation: hoja-flotar-b 9s ease-in-out infinite;
-}
-
-.hoja-recorridos-arriba,
-.hoja-canasta-medio,
-.hoja-canasta-abajo,
-.relato-card__hoja-al {
-  animation: hoja-flotar-c 11s ease-in-out infinite;
-}
-
-.hoja.hoja-izq-arriba {
-  animation: hoja-flotar 13s ease-in-out infinite;
-}
-
-.hoja.hoja-der-abajo {
-  animation: hoja-flotar-b 8s ease-in-out infinite;
-}
-
-.hoja-recorridos-mapa-arriba,
-.hoja-recorridos-tiendas-arriba {
-  animation: hoja-flotar-c 10s ease-in-out infinite;
-}
- 
 @media (min-width: 768px) {
   .footer__grid {
     grid-template-columns: 1fr 1fr 1fr;
