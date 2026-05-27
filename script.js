@@ -261,9 +261,9 @@ const POSTALES = [
 ];
 
 const SELLOS = [
-  { id: 's1', nombre: ' Cosecha', img: 'IMG/SELLO-16.png', precio: '$5.000' } ,
-  { id: 's2', nombre: 'Despensa',         img: 'IMG/SELLO-18.png', precio: '$5.000' },
-  { id: 's3', nombre: 'Variedades',           img: 'IMG/SELLO-17', precio: '$5.000' },
+  { id: 's1', nombre: ' Cosecha', img: 'IMG/SELLOS-16.png', precio: '$5.000' } ,
+  { id: 's2', nombre: 'Despensa',         img: 'IMG/SELLOS-18.png', precio: '$5.000' },
+  { id: 's3', nombre: 'Variedades',           img: 'IMG/SELLOS-17', precio: '$5.000' },
  
 ];
 
