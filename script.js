@@ -242,21 +242,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
-/* ================================================================
-   galeria.js
-   Funcionalidades:
-   1. Flip de fotos al hacer click (muestra curaduría)
-   2. Popup de Postales  (selección múltiple + agregar al carrito)
-   3. Popup de Sellos    (selección múltiple + agregar al carrito)
-   4. Popup de Carrito   (listado, eliminar items, ir a WhatsApp)
-   5. Badge dinámico en botón comprar
-================================================================ */
+
 
 'use strict';
 
 // ── NÚMERO DE WHATSAPP ──────────────────────────────────────────
 // Cambia por el número real con código de país, sin espacios ni +
-const WHATSAPP_NUMERO = '573001234567';
+const WHATSAPP_NUMERO = '573103982677';
 
 // ── DATOS DE PRODUCTOS ──────────────────────────────────────────
 const POSTALES = [
@@ -269,12 +261,10 @@ const POSTALES = [
 ];
 
 const SELLOS = [
-  { id: 's1', nombre: 'Frutas & Verduras', img: 'IMG/sello_1.png', precio: '$8.000' },
-  { id: 's2', nombre: 'Panadería',         img: 'IMG/sello_2.png', precio: '$8.000' },
-  { id: 's3', nombre: 'Lácteos',           img: 'IMG/sello_3.png', precio: '$8.000' },
-  { id: 's4', nombre: 'Abarrotes',         img: 'IMG/sello_4.png', precio: '$8.000' },
-  { id: 's5', nombre: 'Carnes',            img: 'IMG/sello_5.png', precio: '$8.000' },
-  { id: 's6', nombre: 'Bebidas',           img: 'IMG/sello_6.png', precio: '$8.000' },
+  { id: 's1', nombre: ' Cosecha', img: 'IMG/SELLO-16.png', precio: '$5.000' } ,
+  { id: 's2', nombre: 'Despensa',         img: 'IMG/SELLO-18.png', precio: '$5.000' },
+  { id: 's3', nombre: 'Variedades',           img: 'IMG/SELLO-17', precio: '$5.000' },
+ 
 ];
 
 // ── ESTADO DEL CARRITO ──────────────────────────────────────────
